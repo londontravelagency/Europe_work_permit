@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UK Student Visa | London Travel Agency &amp; Consultancy</title>
+<meta name="description" content="UK Student Visa support from our London office: university and course selection, CAS guidance, financial and document checks, biometrics, interview preparation and pre-departure help.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+body { font-family: 'Inter', sans-serif; }
+.heading-font { font-family: 'Poppins', sans-serif; }
+.card-hover { transition: all .3s cubic-bezier(.4,0,.2,1); }
+.card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 30px -8px rgb(0 0 0/.14), 0 8px 10px -6px rgb(0 0 0/.1); }
+.whatsapp-float { position: fixed; bottom: 25px; right: 25px; width: 65px; height: 65px; background-color: #25D366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(37,211,102,.4); z-index: 1000; transition: all .3s ease; text-decoration: none; }
+.whatsapp-float:hover { transform: scale(1.1); }
+.whatsapp-pulse { animation: pulse 2s infinite; }
+@keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)} 70%{box-shadow:0 0 0 15px rgba(37,211,102,0)} 100%{box-shadow:0 0 0 0 rgba(37,211,102,0)} }
+.mobile-menu-open { max-height: 500px; opacity: 1; transition: max-height .3s ease-in-out, opacity .3s ease-in-out; }
+.mobile-menu-closed { max-height: 0; opacity: 0; overflow: hidden; transition: max-height .3s ease-in-out, opacity .3s ease-in-out; }
+/* Aligned photo frames - guarantees every image is the same shape */
+.ph { position: relative; overflow: hidden; background: #e5e7eb; }
+.ph > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s cubic-bezier(.2,.7,.3,1); }
+.ph:hover > img { transform: scale(1.07); }
+.ph-4x3 { aspect-ratio: 4/3; }
+.ph-1x1 { aspect-ratio: 1/1; }
+.ph-3x4 { aspect-ratio: 3/4; }
+.ph-16x9 { aspect-ratio: 16/9; }
+.ph-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: .75rem 1rem; background: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0)); color: #fff; font-size: .8rem; font-weight: 600; }
+.grad-text { background: linear-gradient(90deg,#93c5fd,#c4b5fd); -webkit-background-clip: text; background-clip: text; color: transparent; }
+/* Scroll reveal */
+html.js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+html.js .reveal.in { opacity: 1; transform: none; }
+/* FAQ */
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .faq-ico { transform: rotate(45deg); }
+.faq-ico { transition: transform .25s ease; }
+/* Uniform logo tiles */
+.logo-tile { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; min-height: 190px; }
+.logo-badge { width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 16px; font-weight: 800; letter-spacing: -.02em; flex-shrink: 0; }
+.uni-name { min-height: 44px; display: flex; align-items: center; justify-content: center; }
+.hero-overlay { background: linear-gradient(110deg, rgba(29,78,216,.94) 0%, rgba(30,64,175,.86) 45%, rgba(55,48,163,.72) 100%); }
+.dot-grid { background-image: radial-gradient(rgba(255,255,255,.22) 1px, transparent 1px); background-size: 18px 18px; }
+</style>
+<script>document.documentElement.className += " js";</script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<!-- ====== NAVBAR ====== -->
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 sm:py-2 flex justify-between items-center">
+<a href="index.html" class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+<img src="https://raw.githubusercontent.com/londontravelagency/bulgaria-work-permit/main/Company%20logo.jpeg" alt="London Travel Agency Logo" class="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain">
+<span class="text-sm sm:text-xl md:text-2xl font-bold heading-font text-blue-700 hidden xs:inline">London Travel Agency</span>
+</a>
+<div class="hidden md:flex items-center gap-3 lg:gap-4 text-xs lg:text-sm font-semibold">
+<a href="index.html" class="hover:text-blue-600 transition-colors pb-0.5 hover:border-b-2 hover:border-blue-600">Home</a>
+<a href="portugal.html" class="hover:text-blue-600 transition-colors pb-0.5 hover:border-b-2 hover:border-blue-600">Schengen</a>
+<a href="non-schengen.html" class="hover:text-blue-600 transition-colors pb-0.5 hover:border-b-2 hover:border-blue-600">Non Schengen</a>
+<a href="student-visa.html" class="text-blue-600 border-b-2 border-blue-600 pb-0.5">Student Visa</a>
+<a href="legal-services.html" class="hover:text-blue-600 transition-colors pb-0.5 hover:border-b-2 hover:border-blue-600">Legal Service</a>
+<a href="contact.html" class="hover:text-blue-600 transition-colors pb-0.5 hover:border-b-2 hover:border-blue-600">Contact</a>
+</div>
+<div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+<a href="contact.html" class="bg-blue-600 hover:bg-blue-700 text-white px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl font-semibold flex items-center gap-1 sm:gap-1.5 transition-all text-xs sm:text-sm">
+<i class="fas fa-phone text-xs"></i><span class="hidden sm:inline">Contact Us</span>
+</a>
+<button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none" aria-label="Toggle menu">
+<svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+</button>
+</div>
+</div>
+<div id="mobile-menu" class="mobile-menu-closed md:hidden bg-white border-t border-gray-200 px-4 sm:px-6">
+<div class="py-2 sm:py-3 space-y-1.5 sm:space-y-2 text-sm font-semibold">
+<a href="index.html" class="block hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Home</a>
+<a href="portugal.html" class="block hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Schengen</a>
+<a href="non-schengen.html" class="block hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Non Schengen</a>
+<a href="student-visa.html" class="block text-blue-600 bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Student Visa</a>
+<a href="legal-services.html" class="block hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Legal Service</a>
+<a href="contact.html" class="block hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Contact</a>
+</div>
+</div>
+</nav>
+<!-- ====== HERO ====== -->
+<section class="relative overflow-hidden">
+<img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&h=900&q=80" alt="Graduating students celebrating" class="absolute inset-0 w-full h-full object-cover">
+<div class="absolute inset-0 hero-overlay"></div>
+<div class="absolute inset-0 dot-grid opacity-40"></div>
+<div class="relative max-w-7xl mx-auto px-6 py-16 sm:py-24 md:py-28 text-white">
+<div class="max-w-3xl">
+<span class="inline-flex items-center gap-2 bg-white/15 border border-white/30 rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold mb-6 backdrop-blur-sm">
+<span class="text-base">&#127468;&#127463;</span> UK Student Visa Specialists
+</span>
+<h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold heading-font leading-[1.1] mb-5">
+Study in the <span class="grad-text">United Kingdom</span>
+</h1>
+<p class="text-base sm:text-lg md:text-xl text-blue-100 leading-relaxed mb-8 max-w-2xl">
+End-to-end guidance for your UK Student Visa &mdash; university selection, CAS, financial documents,
+biometrics and pre-departure support. Handled by our London-based team.
+</p>
+<div class="flex flex-wrap gap-3 mb-10">
+<a href="#contact" class="bg-white text-blue-700 hover:bg-blue-50 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base inline-flex items-center gap-2 transition-all shadow-xl">
+<i class="fas fa-clipboard-check"></i> Free Eligibility Check
+</a>
+<a href="#universities" class="bg-white/10 hover:bg-white/20 border border-white/40 text-white px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base inline-flex items-center gap-2 transition-all backdrop-blur-sm">
+<i class="fas fa-university"></i> View Universities
+</a>
+</div>
+<div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-xs sm:text-sm text-blue-100">
+<span class="inline-flex items-center gap-2"><i class="fas fa-circle-check text-green-300"></i> University &amp; course matching</span>
+<span class="inline-flex items-center gap-2"><i class="fas fa-circle-check text-green-300"></i> CAS &amp; document review</span>
+<span class="inline-flex items-center gap-2"><i class="fas fa-circle-check text-green-300"></i> Interview preparation</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ====== KEY FACTS STRIP ====== -->
+<section class="bg-white border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-6 py-8 sm:py-10">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center">
+<div class="reveal">
+<div class="text-2xl sm:text-4xl font-extrabold heading-font text-blue-700">160+</div>
+<p class="text-gray-500 text-xs sm:text-sm mt-1 font-medium">UK universities &amp; colleges</p>
+</div>
+<div class="reveal">
+<div class="text-2xl sm:text-4xl font-extrabold heading-font text-blue-700">2 Years</div>
+<p class="text-gray-500 text-xs sm:text-sm mt-1 font-medium">Graduate Route stay-back*</p>
+</div>
+<div class="reveal">
+<div class="text-2xl sm:text-4xl font-extrabold heading-font text-blue-700">20 hrs</div>
+<p class="text-gray-500 text-xs sm:text-sm mt-1 font-medium">Term-time work per week*</p>
+</div>
+<div class="reveal">
+<div class="text-2xl sm:text-4xl font-extrabold heading-font text-blue-700">3&ndash;8 wks</div>
+<p class="text-gray-500 text-xs sm:text-sm mt-1 font-medium">Typical decision time*</p>
+</div>
+</div>
+<p class="text-center text-[11px] text-gray-400 mt-6">*Indicative only. Immigration rules change frequently &mdash; current rules are published on GOV.UK and confirmed during your consultation.</p>
+</div>
+</section>
+
+<!-- ====== WHY THE UK ====== -->
+<section class="py-14 sm:py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+<div class="reveal order-2 lg:order-1">
+<span class="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Why the UK</span>
+<h2 class="text-2xl sm:text-4xl font-bold heading-font mt-3 mb-5 leading-tight">A degree that travels with you</h2>
+<p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-7">
+British qualifications are recognised by employers worldwide, courses are shorter than in many
+countries, and London puts you inside one of the world's largest graduate job markets.
+</p>
+<div class="space-y-4">
+<div class="flex gap-4">
+<div class="w-11 h-11 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-award"></i></div>
+<div><h3 class="font-bold text-sm sm:text-base mb-1">Globally respected degrees</h3><p class="text-gray-600 text-xs sm:text-sm">Quality assured institutions with strong international reputations.</p></div>
+</div>
+<div class="flex gap-4">
+<div class="w-11 h-11 rounded-xl bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-hourglass-half"></i></div>
+<div><h3 class="font-bold text-sm sm:text-base mb-1">Shorter, focused courses</h3><p class="text-gray-600 text-xs sm:text-sm">One-year master's programmes mean lower total cost and a faster return to work.</p></div>
+</div>
+<div class="flex gap-4">
+<div class="w-11 h-11 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-briefcase"></i></div>
+<div><h3 class="font-bold text-sm sm:text-base mb-1">Work while you study</h3><p class="text-gray-600 text-xs sm:text-sm">Most degree-level students may work limited hours in term time and full time in holidays.</p></div>
+</div>
+<div class="flex gap-4">
+<div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-people-group"></i></div>
+<div><h3 class="font-bold text-sm sm:text-base mb-1">Bring your family where eligible</h3><p class="text-gray-600 text-xs sm:text-sm">Dependant rules are restricted &mdash; we assess your specific course and eligibility honestly.</p></div>
+</div>
+</div>
+</div>
+
+<!-- Perfectly aligned 2x2 photo collage -->
+<div class="reveal order-1 lg:order-2 grid grid-cols-2 gap-3 sm:gap-4">
+<div class="ph ph-1x1 rounded-2xl shadow-lg"><img src="https://images.unsplash.com/photo-1616428394230-ba242d33e3ba?auto=format&fit=crop&w=700&h=700&q=80" alt="UK university campus building" loading="lazy"><span class="ph-cap">Campus life</span></div>
+<div class="ph ph-1x1 rounded-2xl shadow-lg"><img src="https://images.unsplash.com/photo-1494809610410-160faaed4de0?auto=format&fit=crop&w=700&h=700&q=80" alt="University library" loading="lazy"><span class="ph-cap">World-class libraries</span></div>
+<div class="ph ph-1x1 rounded-2xl shadow-lg"><img src="https://images.unsplash.com/photo-1567168539593-59673ababaae?auto=format&fit=crop&w=700&h=700&q=80" alt="Student studying" loading="lazy"><span class="ph-cap">Focused study</span></div>
+<div class="ph ph-1x1 rounded-2xl shadow-lg"><img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=700&h=700&q=80" alt="London skyline" loading="lazy"><span class="ph-cap">Live in London</span></div>
+</div>
+
+</div>
+</div>
+</section>
+<!-- ====== STUDY LEVELS ====== -->
+<section class="py-14 sm:py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 reveal">
+<span class="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Study Options</span>
+<h2 class="text-2xl sm:text-4xl font-bold heading-font mt-3 mb-4">Which route fits you?</h2>
+<p class="text-gray-600 text-sm sm:text-base">We match your academic history, budget and English level to the right course level &mdash; then build the visa file around it.</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
+<div class="reveal card-hover bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-7 flex flex-col h-full">
+<div class="w-14 h-14 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center mb-5 text-xl"><i class="fas fa-language"></i></div>
+<h3 class="text-lg sm:text-xl font-bold heading-font mb-2.5 leading-snug">English Language / Pre-Sessional</h3>
+<p class="text-gray-600 text-sm leading-relaxed flex-grow">Short IELTS and academic English programmes that bridge you to a degree offer.</p>
+<div class="mt-5 pt-4 border-t border-gray-200 flex items-center gap-2 text-xs font-semibold text-gray-500">
+<i class="fas fa-clock text-sky-500"></i> Typical duration: 6&ndash;44 weeks
+</div>
+</div>
+<div class="reveal card-hover bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-7 flex flex-col h-full">
+<div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-5 text-xl"><i class="fas fa-stairs"></i></div>
+<h3 class="text-lg sm:text-xl font-bold heading-font mb-2.5 leading-snug">Foundation Year</h3>
+<p class="text-gray-600 text-sm leading-relaxed flex-grow">A guided entry route when your grades or subject background need strengthening.</p>
+<div class="mt-5 pt-4 border-t border-gray-200 flex items-center gap-2 text-xs font-semibold text-gray-500">
+<i class="fas fa-clock text-emerald-500"></i> Typical duration: 1 year
+</div>
+</div>
+<div class="reveal card-hover bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-7 flex flex-col h-full">
+<div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mb-5 text-xl"><i class="fas fa-graduation-cap"></i></div>
+<h3 class="text-lg sm:text-xl font-bold heading-font mb-2.5 leading-snug">Undergraduate (BA / BSc / BEng)</h3>
+<p class="text-gray-600 text-sm leading-relaxed flex-grow">Full honours degrees, with January and September intakes at many institutions.</p>
+<div class="mt-5 pt-4 border-t border-gray-200 flex items-center gap-2 text-xs font-semibold text-gray-500">
+<i class="fas fa-clock text-blue-500"></i> Typical duration: 3&ndash;4 years
+</div>
+</div>
+<div class="reveal card-hover bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-7 flex flex-col h-full">
+<div class="w-14 h-14 rounded-2xl bg-violet-100 text-violet-600 flex items-center justify-center mb-5 text-xl"><i class="fas fa-book-open-reader"></i></div>
+<h3 class="text-lg sm:text-xl font-bold heading-font mb-2.5 leading-snug">Pre-Master&rsquo;s</h3>
+<p class="text-gray-600 text-sm leading-relaxed flex-grow">A postgraduate bridging programme for applicants just below direct-entry criteria.</p>
+<div class="mt-5 pt-4 border-t border-gray-200 flex items-center gap-2 text-xs font-semibold text-gray-500">
+<i class="fas fa-clock text-violet-500"></i> Typical duration: 1&ndash;2 terms
+</div>
+</div>
+<div class="reveal card-hover bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-7 flex flex-col h-full">
+<div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-5 text-xl"><i class="fas fa-user-graduate"></i></div>
+<h3 class="text-lg sm:text-xl font-bold heading-font mb-2.5 leading-snug">Postgraduate (MA / MSc / MBA)</h3>
+<p class="text-gray-600 text-sm leading-relaxed flex-grow">One-year taught master&rsquo;s degrees &mdash; the most popular route for our applicants.</p>
+<div class="mt-5 pt-4 border-t border-gray-200 flex items-center gap-2 text-xs font-semibold text-gray-500">
+<i class="fas fa-clock text-amber-500"></i> Typical duration: 1&ndash;2 years
+</div>
+</div>
+<div class="reveal card-hover bg-gray-50 border border-gray-100 rounded-3xl p-6 sm:p-7 flex flex-col h-full">
+<div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center mb-5 text-xl"><i class="fas fa-flask"></i></div>
+<h3 class="text-lg sm:text-xl font-bold heading-font mb-2.5 leading-snug">Research (MPhil / PhD)</h3>
+<p class="text-gray-600 text-sm leading-relaxed flex-grow">Supervisor matching, research proposal review and funding guidance.</p>
+<div class="mt-5 pt-4 border-t border-gray-200 flex items-center gap-2 text-xs font-semibold text-gray-500">
+<i class="fas fa-clock text-rose-500"></i> Typical duration: 3&ndash;4 years
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ====== UNIVERSITIES ====== -->
+<section id="universities" class="py-14 sm:py-20 bg-gradient-to-b from-gray-50 to-white scroll-mt-24">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 reveal">
+<span class="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Institutions</span>
+<h2 class="text-2xl sm:text-4xl font-bold heading-font mt-3 mb-4">Universities we prepare applications for</h2>
+<p class="text-gray-600 text-sm sm:text-base">A selection of UK institutions our applicants commonly apply to. Availability, entry criteria and intakes change every cycle &mdash; ask us for the current list for your subject.</p>
+</div>
+
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+<div class="reveal card-hover logo-tile bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+<div class="logo-badge text-white text-base sm:text-lg mb-4" style="background:#00435c">GRE</div>
+<h3 class="uni-name font-bold heading-font text-[13px] sm:text-[15px] leading-snug text-gray-900">University of Greenwich</h3>
+<p class="text-gray-500 text-[11px] sm:text-xs mt-2 flex items-center gap-1.5"><i class="fas fa-location-dot text-gray-400"></i> London</p>
+<span class="mt-auto pt-4 text-[10px] sm:text-[11px] font-bold tracking-wide text-blue-700 bg-blue-50 rounded-full px-3 py-1">UG &middot; PG</span>
+</div>
+<div class="reveal card-hover logo-tile bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+<div class="logo-badge text-white text-base sm:text-lg mb-4" style="background:#c8102e">UEL</div>
+<h3 class="uni-name font-bold heading-font text-[13px] sm:text-[15px] leading-snug text-gray-900">University of East London</h3>
+<p class="text-gray-500 text-[11px] sm:text-xs mt-2 flex items-center gap-1.5"><i class="fas fa-location-dot text-gray-400"></i> London</p>
+<span class="mt-auto pt-4 text-[10px] sm:text-[11px] font-bold tracking-wide text-blue-700 bg-blue-50 rounded-full px-3 py-1">UG &middot; PG</span>
+</div>
+<div class="reveal card-hover logo-tile bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+<div class="logo-badge text-white text-base sm:text-lg mb-4" style="background:#7a1420">MDX</div>
+<h3 class="uni-name font-bold heading-font text-[13px] sm:text-[15px] leading-snug text-gray-900">Middlesex University</h3>
+<p class="text-gray-500 text-[11px] sm:text-xs mt-2 flex items-center gap-1.5"><i class="fas fa-location-dot text-gray-400"></i> London</p>
+<span class="mt-auto pt-4 text-[10px] sm:text-[11px] font-bold tracking-wide text-blue-700 bg-blue-50 rounded-full px-3 py-1">UG &middot; PG</span>
+</div>
+<div class="reveal card-hover logo-tile bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+<div class="logo-badge text-white text-base sm:text-lg mb-4" style="background:#0033a0">UH</div>
+<h3 class="uni-name font-bold heading-font text-[13px] sm:text-[15px] leading-snug text-gray-900">University of Hertfordshire</h3>
+<p class="text-gray-500 text-[11px] sm:text-xs mt-2 flex items-center gap-1.5"><i class="fas fa-location-dot text-gray-400"></i> Hatfield</p>
+<span class="mt-auto pt-4 text-[10px] sm:text-[11px] font-bold tracking-wide text-blue-700 bg-blue-50 rounded-full px-3 py-1">UG &middot; PG</span>
+</div>
+<div class="reveal card-hover logo-tile bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+<div class="logo-badge text-white text-base sm:text-lg mb-4" style="background:#1c2e5a">CU</div>
+<h3 class="uni-name font-bold heading-font text-[13px] sm:text-[15px] leading-snug text-gray-900">Coventry University</h3>
+<p class="text-gray-500 text-[11px] sm:text-xs mt-2 flex items-center gap-1.5"><i class="fas fa-location-dot text-gray-400"></i> Coventry &middot; London</p>
+<span class="mt-auto pt-4 text-[10px] sm:text-[11px] font-bold tracking-wide text-blue-700 bg-blue-50 rounded-full px-3 py-1">UG &middot; PG</span>
+</div>
+<div class="reveal card-hover logo-tile bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+<div class="logo-badge text-white text-base sm:text-lg mb-4" style="background:#0f766e">BPP</div>
+<h3 class="uni-name font-bold heading-font text-[13px] sm:text-[15px] leading-snug text-gray-900">BPP University</h3>
+<p class="text-gray-500 text-[11px] sm:text-xs mt-2 flex items-center gap-1.5"><i class="fas fa-location-dot text-gray-400"></i> London</p>
+<span class="mt-auto pt-4 text-[10px] sm:text-[11px] font-bold tracking-wide text-blue-700 bg-blue-50 rounded-full px-3 py-1">PG &middot; Law</span>
+</div>
+<div class="reveal card-hover logo-tile bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+<div class="logo-badge text-white text-base sm:text-lg mb-4" style="background:#5b2a86">UU</div>
+<h3 class="uni-name font-bold heading-font text-[13px] sm:text-[15px] leading-snug text-gray-900">Ulster University</h3>
+<p class="text-gray-500 text-[11px] sm:text-xs mt-2 flex items-center gap-1.5"><i class="fas fa-location-dot text-gray-400"></i> London &middot; Belfast</p>
+<span class="mt-auto pt-4 text-[10px] sm:text-[11px] font-bold tracking-wide text-blue-700 bg-blue-50 rounded-full px-3 py-1">PG &middot; MBA</span>
+</div>
+<div class="reveal card-hover logo-tile bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+<div class="logo-badge text-white text-base sm:text-lg mb-4" style="background:#00417d">BED</div>
+<h3 class="uni-name font-bold heading-font text-[13px] sm:text-[15px] leading-snug text-gray-900">University of Bedfordshire</h3>
+<p class="text-gray-500 text-[11px] sm:text-xs mt-2 flex items-center gap-1.5"><i class="fas fa-location-dot text-gray-400"></i> Luton</p>
+<span class="mt-auto pt-4 text-[10px] sm:text-[11px] font-bold tracking-wide text-blue-700 bg-blue-50 rounded-full px-3 py-1">UG &middot; PG</span>
+</div>
+<div class="reveal card-hover logo-tile bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+<div class="logo-badge text-white text-base sm:text-lg mb-4" style="background:#b91c1c">NU</div>
+<h3 class="uni-name font-bold heading-font text-[13px] sm:text-[15px] leading-snug text-gray-900">Northumbria University</h3>
+<p class="text-gray-500 text-[11px] sm:text-xs mt-2 flex items-center gap-1.5"><i class="fas fa-location-dot text-gray-400"></i> Newcastle &middot; London</p>
+<span class="mt-auto pt-4 text-[10px] sm:text-[11px] font-bold tracking-wide text-blue-700 bg-blue-50 rounded-full px-3 py-1">UG &middot; PG</span>
+</div>
+<div class="reveal card-hover logo-tile bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+<div class="logo-badge text-white text-base sm:text-lg mb-4" style="background:#00539b">TU</div>
+<h3 class="uni-name font-bold heading-font text-[13px] sm:text-[15px] leading-snug text-gray-900">Teesside University</h3>
+<p class="text-gray-500 text-[11px] sm:text-xs mt-2 flex items-center gap-1.5"><i class="fas fa-location-dot text-gray-400"></i> Middlesbrough &middot; London</p>
+<span class="mt-auto pt-4 text-[10px] sm:text-[11px] font-bold tracking-wide text-blue-700 bg-blue-50 rounded-full px-3 py-1">UG &middot; PG</span>
+</div>
+<div class="reveal card-hover logo-tile bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+<div class="logo-badge text-white text-base sm:text-lg mb-4" style="background:#a3161c">SUN</div>
+<h3 class="uni-name font-bold heading-font text-[13px] sm:text-[15px] leading-snug text-gray-900">University of Sunderland</h3>
+<p class="text-gray-500 text-[11px] sm:text-xs mt-2 flex items-center gap-1.5"><i class="fas fa-location-dot text-gray-400"></i> Sunderland &middot; London</p>
+<span class="mt-auto pt-4 text-[10px] sm:text-[11px] font-bold tracking-wide text-blue-700 bg-blue-50 rounded-full px-3 py-1">UG &middot; PG</span>
+</div>
+<div class="reveal card-hover logo-tile bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+<div class="logo-badge text-white text-base sm:text-lg mb-4" style="background:#166534">LBU</div>
+<h3 class="uni-name font-bold heading-font text-[13px] sm:text-[15px] leading-snug text-gray-900">Leeds Beckett University</h3>
+<p class="text-gray-500 text-[11px] sm:text-xs mt-2 flex items-center gap-1.5"><i class="fas fa-location-dot text-gray-400"></i> Leeds</p>
+<span class="mt-auto pt-4 text-[10px] sm:text-[11px] font-bold tracking-wide text-blue-700 bg-blue-50 rounded-full px-3 py-1">UG &middot; PG</span>
+</div>
+</div>
+
+<p class="text-[11px] text-gray-400 mt-8 text-center max-w-3xl mx-auto leading-relaxed">
+Institution names are shown for identification purposes only and do not imply endorsement. We are an independent
+consultancy; we are not an agent of every institution listed. Admission decisions rest solely with the institution.
+</p>
+
+<div class="mt-10 sm:mt-14 grid sm:grid-cols-3 gap-4 sm:gap-6">
+<div class="reveal ph ph-4x3 rounded-2xl shadow-lg"><img src="https://images.unsplash.com/photo-1709085760758-e164037c58e0?auto=format&fit=crop&w=800&h=600&q=80" alt="Historic UK university building" loading="lazy"><span class="ph-cap">Historic campuses</span></div>
+<div class="reveal ph ph-4x3 rounded-2xl shadow-lg"><img src="https://images.unsplash.com/photo-1638636214032-581196ffd400?auto=format&fit=crop&w=800&h=600&q=80" alt="Aerial view of a university campus" loading="lazy"><span class="ph-cap">Green campus grounds</span></div>
+<div class="reveal ph ph-4x3 rounded-2xl shadow-lg"><img src="https://images.unsplash.com/photo-1633734973050-d6499a977c17?auto=format&fit=crop&w=800&h=600&q=80" alt="Graduation ceremony" loading="lazy"><span class="ph-cap">Graduation day</span></div>
+</div>
+</div>
+</section>
+<!-- ====== DOCUMENTS ====== -->
+<section class="py-14 sm:py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+
+<div class="reveal lg:col-span-2 lg:sticky lg:top-28">
+<div class="ph ph-3x4 rounded-3xl shadow-2xl"><img src="https://images.unsplash.com/photo-1581553673739-c4906b5d0de8?auto=format&fit=crop&w=700&h=933&q=80" alt="Passport open at a page of visa stamps" loading="lazy"></div>
+<div class="mt-5 bg-blue-50 border border-blue-100 rounded-2xl p-5">
+<p class="text-blue-900 text-xs sm:text-sm leading-relaxed flex gap-3">
+<i class="fas fa-circle-info text-blue-600 mt-0.5"></i>
+<span>Every document is checked line-by-line before submission. Genuine documents only &mdash; we will not submit a file we cannot stand behind.</span>
+</p>
+</div>
+</div>
+
+<div class="reveal lg:col-span-3">
+<span class="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Checklist</span>
+<h2 class="text-2xl sm:text-4xl font-bold heading-font mt-3 mb-5 leading-tight">Documents you will need</h2>
+<p class="text-gray-600 text-sm sm:text-base mb-8">Your exact list depends on your nationality, course level and sponsor. This is the standard core file we build for UK Student Visa applicants.</p>
+<div class="grid sm:grid-cols-2 gap-4">
+<div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-blue-200 hover:bg-blue-50/40 transition-colors">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-gray-200 text-blue-600 flex items-center justify-center flex-shrink-0 text-sm"><i class="fas fa-passport"></i></div>
+<div><h3 class="font-bold text-sm mb-1 leading-snug">Valid passport</h3><p class="text-gray-600 text-xs leading-relaxed">Machine-readable, with enough validity for the full course.</p></div>
+</div>
+</div>
+<div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-blue-200 hover:bg-blue-50/40 transition-colors">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-gray-200 text-blue-600 flex items-center justify-center flex-shrink-0 text-sm"><i class="fas fa-file-signature"></i></div>
+<div><h3 class="font-bold text-sm mb-1 leading-snug">CAS from your university</h3><p class="text-gray-600 text-xs leading-relaxed">Confirmation of Acceptance for Studies &mdash; issued after you accept an offer.</p></div>
+</div>
+</div>
+<div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-blue-200 hover:bg-blue-50/40 transition-colors">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-gray-200 text-blue-600 flex items-center justify-center flex-shrink-0 text-sm"><i class="fas fa-certificate"></i></div>
+<div><h3 class="font-bold text-sm mb-1 leading-snug">Academic transcripts &amp; certificates</h3><p class="text-gray-600 text-xs leading-relaxed">All previous qualifications, plus certified translations where needed.</p></div>
+</div>
+</div>
+<div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-blue-200 hover:bg-blue-50/40 transition-colors">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-gray-200 text-blue-600 flex items-center justify-center flex-shrink-0 text-sm"><i class="fas fa-comments"></i></div>
+<div><h3 class="font-bold text-sm mb-1 leading-snug">English language evidence</h3><p class="text-gray-600 text-xs leading-relaxed">IELTS / SELT or an approved university-assessed exemption.</p></div>
+</div>
+</div>
+<div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-blue-200 hover:bg-blue-50/40 transition-colors">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-gray-200 text-blue-600 flex items-center justify-center flex-shrink-0 text-sm"><i class="fas fa-sterling-sign"></i></div>
+<div><h3 class="font-bold text-sm mb-1 leading-snug">Financial evidence</h3><p class="text-gray-600 text-xs leading-relaxed">Tuition and living costs held for the required qualifying period.</p></div>
+</div>
+</div>
+<div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-blue-200 hover:bg-blue-50/40 transition-colors">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-gray-200 text-blue-600 flex items-center justify-center flex-shrink-0 text-sm"><i class="fas fa-heart-pulse"></i></div>
+<div><h3 class="font-bold text-sm mb-1 leading-snug">TB test certificate</h3><p class="text-gray-600 text-xs leading-relaxed">Required from many countries, from a UKVI-approved clinic.</p></div>
+</div>
+</div>
+<div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-blue-200 hover:bg-blue-50/40 transition-colors">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-gray-200 text-blue-600 flex items-center justify-center flex-shrink-0 text-sm"><i class="fas fa-camera"></i></div>
+<div><h3 class="font-bold text-sm mb-1 leading-snug">Biometrics &amp; photograph</h3><p class="text-gray-600 text-xs leading-relaxed">Appointment booked at your local visa application centre.</p></div>
+</div>
+</div>
+<div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-blue-200 hover:bg-blue-50/40 transition-colors">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-gray-200 text-blue-600 flex items-center justify-center flex-shrink-0 text-sm"><i class="fas fa-file-shield"></i></div>
+<div><h3 class="font-bold text-sm mb-1 leading-snug">Sponsorship / no-objection letters</h3><p class="text-gray-600 text-xs leading-relaxed">Where a third party, employer or government is funding you.</p></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ====== PROCESS ====== -->
+<section class="py-14 sm:py-20 bg-gray-900 text-white relative overflow-hidden">
+<div class="absolute inset-0 dot-grid opacity-20"></div>
+<div class="relative max-w-7xl mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 reveal">
+<span class="text-blue-400 font-bold text-xs sm:text-sm uppercase tracking-widest">Our Process</span>
+<h2 class="text-2xl sm:text-4xl font-bold heading-font mt-3 mb-4">Six steps from enquiry to departure</h2>
+<p class="text-gray-400 text-sm sm:text-base">One case handler stays with you from the first call until you land in the UK.</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
+<div class="reveal card-hover bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-7 backdrop-blur-sm flex flex-col h-full">
+<div class="flex items-center justify-between mb-5">
+<span class="w-11 h-11 rounded-xl bg-blue-600 text-white font-extrabold heading-font flex items-center justify-center text-lg">1</span>
+<i class="fas fa-comments-question text-2xl text-blue-400/60"></i>
+</div>
+<h3 class="text-base sm:text-lg font-bold heading-font mb-2.5 leading-snug">Free assessment</h3>
+<p class="text-gray-400 text-xs sm:text-sm leading-relaxed flex-grow">We review your grades, English level, budget and study goals, then tell you honestly what is realistic.</p>
+</div>
+<div class="reveal card-hover bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-7 backdrop-blur-sm flex flex-col h-full">
+<div class="flex items-center justify-between mb-5">
+<span class="w-11 h-11 rounded-xl bg-blue-600 text-white font-extrabold heading-font flex items-center justify-center text-lg">2</span>
+<i class="fas fa-list-check text-2xl text-blue-400/60"></i>
+</div>
+<h3 class="text-base sm:text-lg font-bold heading-font mb-2.5 leading-snug">Course &amp; university shortlist</h3>
+<p class="text-gray-400 text-xs sm:text-sm leading-relaxed flex-grow">A shortlist matched to your profile, with entry criteria, fees, intakes and city comparison.</p>
+</div>
+<div class="reveal card-hover bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-7 backdrop-blur-sm flex flex-col h-full">
+<div class="flex items-center justify-between mb-5">
+<span class="w-11 h-11 rounded-xl bg-blue-600 text-white font-extrabold heading-font flex items-center justify-center text-lg">3</span>
+<i class="fas fa-file-import text-2xl text-blue-400/60"></i>
+</div>
+<h3 class="text-base sm:text-lg font-bold heading-font mb-2.5 leading-snug">Application &amp; offer</h3>
+<p class="text-gray-400 text-xs sm:text-sm leading-relaxed flex-grow">We prepare your application, personal statement and references, and track the offer.</p>
+</div>
+<div class="reveal card-hover bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-7 backdrop-blur-sm flex flex-col h-full">
+<div class="flex items-center justify-between mb-5">
+<span class="w-11 h-11 rounded-xl bg-blue-600 text-white font-extrabold heading-font flex items-center justify-center text-lg">4</span>
+<i class="fas fa-handshake text-2xl text-blue-400/60"></i>
+</div>
+<h3 class="text-base sm:text-lg font-bold heading-font mb-2.5 leading-snug">CAS &amp; deposit</h3>
+<p class="text-gray-400 text-xs sm:text-sm leading-relaxed flex-grow">Deposit guidance, credibility-interview preparation and CAS issuance follow-up.</p>
+</div>
+<div class="reveal card-hover bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-7 backdrop-blur-sm flex flex-col h-full">
+<div class="flex items-center justify-between mb-5">
+<span class="w-11 h-11 rounded-xl bg-blue-600 text-white font-extrabold heading-font flex items-center justify-center text-lg">5</span>
+<i class="fas fa-paper-plane text-2xl text-blue-400/60"></i>
+</div>
+<h3 class="text-base sm:text-lg font-bold heading-font mb-2.5 leading-snug">Visa file &amp; submission</h3>
+<p class="text-gray-400 text-xs sm:text-sm leading-relaxed flex-grow">Full document audit, online application, IHS payment, biometrics booking and submission.</p>
+</div>
+<div class="reveal card-hover bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-7 backdrop-blur-sm flex flex-col h-full">
+<div class="flex items-center justify-between mb-5">
+<span class="w-11 h-11 rounded-xl bg-blue-600 text-white font-extrabold heading-font flex items-center justify-center text-lg">6</span>
+<i class="fas fa-plane-departure text-2xl text-blue-400/60"></i>
+</div>
+<h3 class="text-base sm:text-lg font-bold heading-font mb-2.5 leading-snug">Decision &amp; departure</h3>
+<p class="text-gray-400 text-xs sm:text-sm leading-relaxed flex-grow">Outcome tracking, then flights, accommodation, airport pickup and arrival briefing.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ====== COSTS ====== -->
+<section class="py-14 sm:py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 reveal">
+<span class="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Budgeting</span>
+<h2 class="text-2xl sm:text-4xl font-bold heading-font mt-3 mb-4">What it costs, in plain numbers</h2>
+<p class="text-gray-600 text-sm sm:text-base">Indicative ranges so you can plan. We confirm the exact figures for your institution and nationality in writing.</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+<div class="reveal card-hover rounded-3xl p-6 sm:p-7 bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-xl">
+<i class="fas fa-building-columns text-2xl mb-4 opacity-80"></i>
+<p class="text-xs font-semibold uppercase tracking-wider text-blue-200 mb-2">Tuition per year</p>
+<p class="text-2xl sm:text-3xl font-extrabold heading-font mb-2">&pound;11k &ndash; &pound;22k</p>
+<p class="text-blue-100 text-xs leading-relaxed">Varies widely by institution, city and subject.</p>
+</div>
+<div class="reveal card-hover rounded-3xl p-6 sm:p-7 bg-gray-50 border border-gray-200">
+<i class="fas fa-house-chimney text-2xl mb-4 text-emerald-600"></i>
+<p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">Living funds (in London)</p>
+<p class="text-2xl sm:text-3xl font-extrabold heading-font mb-2 text-gray-900">~&pound;1,483<span class="text-sm font-bold text-gray-500">/mo</span></p>
+<p class="text-gray-600 text-xs leading-relaxed">Held for up to 9 months as maintenance evidence.</p>
+</div>
+<div class="reveal card-hover rounded-3xl p-6 sm:p-7 bg-gray-50 border border-gray-200">
+<i class="fas fa-map-location-dot text-2xl mb-4 text-violet-600"></i>
+<p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">Living funds (outside London)</p>
+<p class="text-2xl sm:text-3xl font-extrabold heading-font mb-2 text-gray-900">~&pound;1,136<span class="text-sm font-bold text-gray-500">/mo</span></p>
+<p class="text-gray-600 text-xs leading-relaxed">Lower threshold outside Greater London.</p>
+</div>
+<div class="reveal card-hover rounded-3xl p-6 sm:p-7 bg-gray-50 border border-gray-200">
+<i class="fas fa-receipt text-2xl mb-4 text-amber-600"></i>
+<p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">Official UKVI fees</p>
+<p class="text-2xl sm:text-3xl font-extrabold heading-font mb-2 text-gray-900">Visa + IHS</p>
+<p class="text-gray-600 text-xs leading-relaxed">Application fee plus the Immigration Health Surcharge per year of study.</p>
+</div>
+</div>
+<p class="text-[11px] text-gray-400 mt-7 text-center max-w-3xl mx-auto leading-relaxed">
+Figures are indicative and were accurate at the time of writing. UKVI fees, the Immigration Health Surcharge and
+maintenance thresholds are set by the UK Government and change regularly &mdash; always confirm current rates on GOV.UK
+or with our team before budgeting.
+</p>
+</div>
+</section>
+
+<!-- ====== GALLERY ====== -->
+<section class="py-14 sm:py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12 reveal">
+<span class="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Gallery</span>
+<h2 class="text-2xl sm:text-4xl font-bold heading-font mt-3 mb-4">Student life in the UK</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+<div class="reveal ph ph-4x3 rounded-2xl shadow-lg"><img src="https://images.unsplash.com/photo-1529007196863-d07650a3f0ea?auto=format&fit=crop&w=800&h=600&q=80" alt="Student choosing a book in a university library" loading="lazy"><span class="ph-cap">Library resources</span></div>
+<div class="reveal ph ph-4x3 rounded-2xl shadow-lg"><img src="https://images.unsplash.com/photo-1631599143468-b7d2d09820b6?auto=format&fit=crop&w=800&h=600&q=80" alt="University lecture theatre" loading="lazy"><span class="ph-cap">Lectures &amp; seminars</span></div>
+<div class="reveal ph ph-4x3 rounded-2xl shadow-lg"><img src="https://images.unsplash.com/photo-1638636214032-581196ffd400?auto=format&fit=crop&w=800&h=600&q=80" alt="Aerial view of a university campus" loading="lazy"><span class="ph-cap">Campus grounds</span></div>
+<div class="reveal ph ph-4x3 rounded-2xl shadow-lg"><img src="https://images.unsplash.com/photo-1501960986979-0a84e0e6c8f7?auto=format&fit=crop&w=800&h=600&q=80" alt="People walking beside the River Thames in London" loading="lazy"><span class="ph-cap">Living in London</span></div>
+<div class="reveal ph ph-4x3 rounded-2xl shadow-lg"><img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&h=600&q=80" alt="Student walking between library shelves" loading="lazy"><span class="ph-cap">Study space</span></div>
+<div class="reveal ph ph-4x3 rounded-2xl shadow-lg"><img src="https://images.unsplash.com/photo-1627556704283-452301a45fd0?auto=format&fit=crop&w=800&h=600&q=80" alt="Graduates throwing their caps in the air" loading="lazy"><span class="ph-cap">Graduation day</span></div>
+</div>
+</div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="py-14 sm:py-20 bg-white">
+<div class="max-w-4xl mx-auto px-6">
+<div class="text-center mb-10 sm:mb-12 reveal">
+<span class="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">FAQ</span>
+<h2 class="text-2xl sm:text-4xl font-bold heading-font mt-3">Questions students ask us most</h2>
+</div>
+<div class="space-y-3.5">
+<details class="faq reveal group bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden">
+<summary class="flex items-center justify-between gap-4 p-5 sm:p-6 font-bold text-sm sm:text-base text-gray-900 hover:text-blue-700 transition-colors">
+<span>How much does the whole process cost?</span>
+<i class="fas fa-plus faq-ico text-blue-600 flex-shrink-0"></i>
+</summary>
+<div class="px-5 sm:px-6 pb-5 sm:pb-6 -mt-1 text-gray-600 text-sm leading-relaxed">Costs fall into three parts: our service fee, the university tuition deposit, and the official UKVI fees. We give you a single written breakdown before you commit, with no charges added later.</div>
+</details>
+<details class="faq reveal group bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden">
+<summary class="flex items-center justify-between gap-4 p-5 sm:p-6 font-bold text-sm sm:text-base text-gray-900 hover:text-blue-700 transition-colors">
+<span>Do I definitely need IELTS?</span>
+<i class="fas fa-plus faq-ico text-blue-600 flex-shrink-0"></i>
+</summary>
+<div class="px-5 sm:px-6 pb-5 sm:pb-6 -mt-1 text-gray-600 text-sm leading-relaxed">Not always. Some institutions accept their own internal English assessment or accept prior study in English. We check what your chosen institution will accept before you spend money on a test.</div>
+</details>
+<details class="faq reveal group bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden">
+<summary class="flex items-center justify-between gap-4 p-5 sm:p-6 font-bold text-sm sm:text-base text-gray-900 hover:text-blue-700 transition-colors">
+<span>How long should I hold my funds in the bank?</span>
+<i class="fas fa-plus faq-ico text-blue-600 flex-shrink-0"></i>
+</summary>
+<div class="px-5 sm:px-6 pb-5 sm:pb-6 -mt-1 text-gray-600 text-sm leading-relaxed">Financial evidence must normally be held for a continuous qualifying period ending shortly before you apply. The exact period and amount are set by UKVI, so we confirm the current requirement for your case.</div>
+</details>
+<details class="faq reveal group bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden">
+<summary class="flex items-center justify-between gap-4 p-5 sm:p-6 font-bold text-sm sm:text-base text-gray-900 hover:text-blue-700 transition-colors">
+<span>Can I work while studying?</span>
+<i class="fas fa-plus faq-ico text-blue-600 flex-shrink-0"></i>
+</summary>
+<div class="px-5 sm:px-6 pb-5 sm:pb-6 -mt-1 text-gray-600 text-sm leading-relaxed">Most students on degree-level courses at recognised institutions may work limited hours during term and full time in vacations. Your visa will state your exact permission, and we explain it clearly before you travel.</div>
+</details>
+<details class="faq reveal group bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden">
+<summary class="flex items-center justify-between gap-4 p-5 sm:p-6 font-bold text-sm sm:text-base text-gray-900 hover:text-blue-700 transition-colors">
+<span>Can my spouse or children come with me?</span>
+<i class="fas fa-plus faq-ico text-blue-600 flex-shrink-0"></i>
+</summary>
+<div class="px-5 sm:px-6 pb-5 sm:pb-6 -mt-1 text-gray-600 text-sm leading-relaxed">Dependant rights are now limited to specific course types. We assess this honestly at the first consultation rather than after you have paid a deposit.</div>
+</details>
+<details class="faq reveal group bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden">
+<summary class="flex items-center justify-between gap-4 p-5 sm:p-6 font-bold text-sm sm:text-base text-gray-900 hover:text-blue-700 transition-colors">
+<span>What happens if my visa is refused?</span>
+<i class="fas fa-plus faq-ico text-blue-600 flex-shrink-0"></i>
+</summary>
+<div class="px-5 sm:px-6 pb-5 sm:pb-6 -mt-1 text-gray-600 text-sm leading-relaxed">We review the refusal notice with you, identify whether the issue can be cured, and advise on re-application or an administrative review. Our legal team handles this in-house.</div>
+</details>
+<details class="faq reveal group bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden">
+<summary class="flex items-center justify-between gap-4 p-5 sm:p-6 font-bold text-sm sm:text-base text-gray-900 hover:text-blue-700 transition-colors">
+<span>Do you guarantee a visa?</span>
+<i class="fas fa-plus faq-ico text-blue-600 flex-shrink-0"></i>
+</summary>
+<div class="px-5 sm:px-6 pb-5 sm:pb-6 -mt-1 text-gray-600 text-sm leading-relaxed">No one can. Admission decisions rest with the institution and visa decisions rest with the Home Office. What we guarantee is a complete, accurate and honestly prepared application.</div>
+</details>
+</div>
+</div>
+</section>
+<!-- ====== CONTACT / CTA ====== -->
+<section id="contact" class="py-14 sm:py-20 bg-gradient-to-br from-blue-700 to-indigo-800 text-white scroll-mt-24">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+<div class="reveal">
+<span class="inline-flex items-center gap-2 bg-white/15 border border-white/25 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide uppercase mb-5">
+<i class="fas fa-comments"></i> Free Initial Consultation
+</span>
+<h2 class="text-3xl sm:text-4xl font-bold heading-font mb-4 leading-tight">Start your UK study plan today</h2>
+<p class="text-blue-100 text-base sm:text-lg mb-8 max-w-xl">Send us your latest transcript and English test result. We will tell you which courses you realistically qualify for, what it will cost, and what happens next &mdash; before you pay anything.</p>
+
+<div class="grid sm:grid-cols-2 gap-4 mb-8">
+<div class="bg-white/10 border border-white/20 rounded-2xl p-5 backdrop-blur-sm">
+<div class="flex items-center gap-2 mb-2"><span class="text-xl">&#127468;&#127463;</span><span class="font-bold text-sm">UK Office</span></div>
+<p class="text-blue-100 text-xs leading-relaxed">102-105 Whitechapel High Street, Office No. 201, E1 7RA, London, UK</p>
+</div>
+<div class="bg-white/10 border border-white/20 rounded-2xl p-5 backdrop-blur-sm">
+<div class="flex items-center gap-2 mb-2"><span class="text-xl">&#127463;&#127465;</span><span class="font-bold text-sm">Bangladesh Office</span></div>
+<p class="text-blue-100 text-xs leading-relaxed">Lift 6, Office No. 105, Mukto Bangla Shopping Complex, Mirpur 1, Dhaka 1216</p>
+</div>
+<div class="bg-white/10 border border-white/20 rounded-2xl p-5 backdrop-blur-sm">
+<div class="flex items-center gap-2 mb-2"><i class="fab fa-whatsapp text-green-300 text-lg"></i><span class="font-bold text-sm">WhatsApp</span></div>
+<a href="https://wa.me/13477067980" class="text-blue-100 text-sm hover:text-white transition-colors">+1 (347) 706-7980</a>
+</div>
+<div class="bg-white/10 border border-white/20 rounded-2xl p-5 backdrop-blur-sm">
+<div class="flex items-center gap-2 mb-2"><i class="fas fa-phone text-blue-200"></i><span class="font-bold text-sm">UK Mobile</span></div>
+<a href="tel:+447448270044" class="text-blue-100 text-sm hover:text-white transition-colors">+44 7448 270044</a>
+</div>
+<div class="bg-white/10 border border-white/20 rounded-2xl p-5 backdrop-blur-sm sm:col-span-2">
+<div class="flex items-center gap-2 mb-2"><i class="fas fa-envelope text-blue-200"></i><span class="font-bold text-sm">Email</span></div>
+<a href="mailto:info@londontac.com" class="text-blue-100 text-sm hover:text-white transition-colors break-all">info@londontac.com</a>
+</div>
+</div>
+
+<div class="flex flex-wrap gap-3">
+<a href="contact.html" class="bg-white text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-xl font-bold text-sm inline-flex items-center gap-2 transition-all shadow-lg">
+<i class="fas fa-paper-plane"></i> Send an Enquiry
+</a>
+<a href="https://wa.me/13477067980" target="_blank" rel="noopener" class="bg-[#25D366] hover:bg-[#1eb257] text-white px-6 py-3 rounded-xl font-bold text-sm inline-flex items-center gap-2 transition-all shadow-lg">
+<i class="fab fa-whatsapp text-lg"></i> Chat on WhatsApp
+</a>
+</div>
+<p class="text-blue-200 text-xs mt-5 flex items-center gap-2"><i class="fas fa-clock"></i> 24-hour service &mdash; we reply to every message</p>
+</div>
+
+<div class="reveal grid grid-cols-2 gap-4">
+<div class="ph ph-3x4 rounded-2xl shadow-2xl ring-1 ring-white/20"><img src="https://images.unsplash.com/photo-1511376979163-f804dff7ad7b?auto=format&fit=crop&w=600&h=800&q=80" alt="Adviser meeting a student for a consultation" loading="lazy"></div>
+<div class="ph ph-3x4 rounded-2xl shadow-2xl ring-1 ring-white/20 mt-8"><img src="https://images.unsplash.com/photo-1661693758705-4fa65572bced?auto=format&fit=crop&w=600&h=800&q=80" alt="Graduating students in gowns" loading="lazy"></div>
+</div>
+
+</div>
+</div>
+</section>
+<!-- ====== FOOTER ====== -->
+<footer class="bg-gray-900 text-gray-400 py-8 sm:py-12">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<div class="flex justify-center items-center gap-3 mb-4 sm:mb-6">
+<span class="text-2xl">&#127468;&#127463;</span>
+<span class="text-white font-semibold text-sm sm:text-base">London Travel Agency &amp; Consultancy</span>
+<span class="text-2xl">&#127463;&#127465;</span>
+</div>
+<div class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs sm:text-sm mb-6">
+<a href="index.html" class="hover:text-white transition-colors">Home</a>
+<a href="portugal.html" class="hover:text-white transition-colors">Schengen</a>
+<a href="non-schengen.html" class="hover:text-white transition-colors">Non Schengen</a>
+<a href="student-visa.html" class="hover:text-white transition-colors">Student Visa</a>
+<a href="legal-services.html" class="hover:text-white transition-colors">Legal Services</a>
+<a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+</div>
+<div class="text-xs sm:text-sm text-gray-500 mb-4 space-y-1">
+<p><span class="text-gray-400 font-medium">&#127468;&#127463; UK Office:</span> 102-105 Whitechapel High Street, Office No. 201, E1 7RA, London, UK</p>
+<p><span class="text-gray-400 font-medium">&#127463;&#127465; Bangladesh Office:</span> Lift 6, Office No. 105, Mukto Bangla Shopping Complex, Mirpur 1, Dhaka 1216</p>
+<p class="mt-2 text-xs sm:text-sm">WhatsApp: +1 (347) 706-7980 | UK Mobile: +44 7448 270044<br class="sm:hidden"><span class="hidden sm:inline"> | </span>Email: <a href="mailto:info@londontac.com" class="hover:text-white transition-colors">info@londontac.com</a></p>
+</div>
+<p class="text-[10px] sm:text-xs max-w-3xl mx-auto leading-relaxed">Admission decisions are made solely by the institution and visa decisions solely by the UK Home Office. All documents must be genuine. This page is general information and is not immigration advice for your individual case.</p>
+<div class="mt-4 sm:mt-8 text-[10px] sm:text-xs">&copy; 2026 London Travel Agency. All Rights Reserved.</div>
+</div>
+</footer>
+
+<a href="https://wa.me/13477067980" target="_blank" rel="noopener" class="whatsapp-float whatsapp-pulse" title="Chat with us on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var menuButton = document.getElementById('mobile-menu-button');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var BAR = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+  var X = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', function () {
+      var isOpen = mobileMenu.classList.contains('mobile-menu-open');
+      mobileMenu.classList.toggle('mobile-menu-open');
+      mobileMenu.classList.toggle('mobile-menu-closed');
+      menuButton.querySelector('svg').innerHTML = isOpen ? BAR : X;
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('mobile-menu-open');
+        mobileMenu.classList.add('mobile-menu-closed');
+        menuButton.querySelector('svg').innerHTML = BAR;
+      });
+    });
+  }
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { items.forEach(function(el){ el.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  items.forEach(function (el) { io.observe(el); });
+});
+</script>
+
+</body>
+</html>
