@@ -17,7 +17,6 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1);
         }
-
         /* WhatsApp Floating Button */
         .whatsapp-float {
             position: fixed;
@@ -44,7 +43,6 @@
             70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
-
         /* Mobile Menu Transition */
         .mobile-menu-open {
             max-height: 500px;
@@ -57,7 +55,6 @@
             overflow: hidden;
             transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
         }
-
         /* Animated contact header - decorative, sits behind the tint */
         .hero-video {
             position: absolute; inset: 0;
@@ -72,7 +69,6 @@
         @media (prefers-reduced-motion: reduce) {
             .hero-video { display: none; }
         }
-
         /* Map Container */
         .map-container {
             position: relative;
@@ -87,7 +83,6 @@
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-
 <!-- ====== NAVBAR - WITH COMPANY LOGO ====== -->
 <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 sm:py-2 flex justify-between items-center">
@@ -98,7 +93,6 @@
                  class="h-14 sm:h-16 md:h-24 lg:h-28 xl:h-32 w-auto object-contain">
             <span class="text-sm sm:text-xl md:text-2xl font-bold heading-font text-blue-700 hidden xs:inline">London Travel Agency</span>
         </a>
-
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center gap-3 lg:gap-4 text-xs lg:text-sm font-semibold">
             <a href="index.html" class="hover:text-blue-600 transition-colors pb-0.5 hover:border-b-2 hover:border-blue-600">Home</a>
@@ -108,7 +102,6 @@
             <a href="legal-services.html" class="hover:text-blue-600 transition-colors">Legal Service</a>
             <a href="contact.html" class="text-blue-600 border-b-2 border-blue-600 pb-0.5">Contact</a>
         </div>
-
         <!-- Right Side: Contact Us + Hamburger -->
         <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
             <a href="contact.html"
@@ -116,7 +109,6 @@
                 <i class="fas fa-phone text-xs"></i>
                 <span class="hidden sm:inline">Contact Us</span>
             </a>
-
             <!-- Mobile Hamburger Button -->
             <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none" aria-label="Toggle menu">
                 <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -125,7 +117,6 @@
             </button>
         </div>
     </div>
-
     <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="mobile-menu-closed md:hidden bg-white border-t border-gray-200 px-4 sm:px-6">
         <div class="py-2 sm:py-3 space-y-1.5 sm:space-y-2 text-sm font-semibold">
@@ -138,7 +129,6 @@
         </div>
     </div>
 </nav>
-
 <!-- CONTACT HERO -->
 <section class="relative overflow-hidden bg-gradient-to-br from-blue-700 to-indigo-800 text-white py-12 sm:py-16 md:py-20">
     <video class="hero-video" autoplay muted loop playsinline preload="auto"
@@ -154,7 +144,6 @@
         </p>
     </div>
 </section>
-
 <!-- CONTACT INFO -->
 <section class="py-12 sm:py-16 md:py-20 bg-white" id="contact">
     <div class="max-w-7xl mx-auto px-6">
@@ -163,7 +152,6 @@
             <div>
                 <h2 class="text-2xl sm:text-3xl font-bold heading-font mb-4 sm:mb-6">Get in Touch</h2>
                 <p class="text-gray-600 text-sm sm:text-base mb-6 sm:mb-8">We're here to help you with your European journey. Reach out to us through any of the following channels.</p>
-
                 <div class="space-y-4 sm:space-y-6">
                     <!-- UK Office -->
                     <div class="flex items-start gap-3 sm:gap-4">
@@ -180,7 +168,6 @@
                             </a>
                         </div>
                     </div>
-
                     <!-- Bangladesh Office -->
                     <div class="flex items-start gap-3 sm:gap-4">
                         <div class="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -196,7 +183,6 @@
                             </a>
                         </div>
                     </div>
-
                     <!-- WhatsApp -->
                     <div class="flex items-start gap-3 sm:gap-4">
                         <div class="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -207,7 +193,6 @@
                             <p class="text-gray-600 text-xs sm:text-sm">+1 (347) 706-7980</p>
                         </div>
                     </div>
-
                     <!-- UK Mobile -->
                     <div class="flex items-start gap-3 sm:gap-4">
                         <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -218,7 +203,6 @@
                             <p class="text-gray-600 text-xs sm:text-sm">+44 7448 270044</p>
                         </div>
                     </div>
-
                     <!-- Service Hours -->
                     <div class="flex items-start gap-3 sm:gap-4">
                         <div class="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -234,7 +218,6 @@
 </div>
                     </div>
                 </div>
-
                 <!-- Support illustration - decorative, sits alongside the message form -->
                 <picture>
                     <source media="(prefers-reduced-motion: reduce)" srcset="contactagentstill.png">
@@ -243,41 +226,50 @@
                          class="hidden md:block w-full max-w-sm mx-auto mt-8 h-auto" loading="lazy" decoding="async">
                 </picture>
             </div>
-
             <!-- Contact Form -->
             <div class="bg-gray-50 rounded-3xl p-6 sm:p-8 shadow-lg">
                 <h3 class="text-xl sm:text-2xl font-bold heading-font mb-4 sm:mb-6">Send Us a Message</h3>
-                <form>
+                <form id="contact-form" novalidate>
                     <div class="mb-3 sm:mb-4">
-                        <label class="block text-xs sm:text-sm font-semibold mb-1 sm:mb-2">Full Name</label>
-                        <input type="text" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:outline-none text-sm sm:text-base" placeholder="Your full name">
+                        <label for="cf-name" class="block text-xs sm:text-sm font-semibold mb-1 sm:mb-2">Full Name</label>
+                        <input id="cf-name" name="name" type="text" required autocomplete="name" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:outline-none text-sm sm:text-base" placeholder="Your full name">
                     </div>
                     <div class="mb-3 sm:mb-4">
-                        <label class="block text-xs sm:text-sm font-semibold mb-1 sm:mb-2">Email Address</label>
-                        <input type="email" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:outline-none text-sm sm:text-base" placeholder="your@email.com">
+                        <label for="cf-email" class="block text-xs sm:text-sm font-semibold mb-1 sm:mb-2">Email Address</label>
+                        <input id="cf-email" name="email" type="email" required autocomplete="email" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:outline-none text-sm sm:text-base" placeholder="your@email.com">
                     </div>
                     <div class="mb-3 sm:mb-4">
-                        <label class="block text-xs sm:text-sm font-semibold mb-1 sm:mb-2">Phone Number</label>
-                        <input type="tel" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:outline-none text-sm sm:text-base" placeholder="+44 7448 270044">
+                        <label for="cf-phone" class="block text-xs sm:text-sm font-semibold mb-1 sm:mb-2">Phone Number</label>
+                        <input id="cf-phone" name="phone" type="tel" autocomplete="tel" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:outline-none text-sm sm:text-base" placeholder="+44 7448 270044">
                     </div>
                     <div class="mb-4 sm:mb-6">
-                        <label class="block text-xs sm:text-sm font-semibold mb-1 sm:mb-2">Message</label>
-                        <textarea rows="4" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:outline-none text-sm sm:text-base" placeholder="Tell us about your visa requirements..."></textarea>
+                        <label for="cf-message" class="block text-xs sm:text-sm font-semibold mb-1 sm:mb-2">Message</label>
+                        <textarea id="cf-message" name="message" rows="4" required class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:outline-none text-sm sm:text-base" placeholder="Tell us about your visa requirements..."></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 sm:py-4 rounded-2xl font-semibold transition-all text-sm sm:text-base">
-                        Send Message
-                    </button>
+
+                    <!-- Spam trap: real people never fill this in. -->
+                    <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+
+                    <div class="grid sm:grid-cols-2 gap-3">
+                        <button type="submit" id="cf-send"
+                                class="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-60 text-white py-3 sm:py-4 rounded-2xl font-semibold transition-all text-sm sm:text-base flex items-center justify-center gap-2">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        <button type="button" id="cf-whatsapp"
+                                class="w-full bg-[#25D366] hover:bg-[#1eb257] text-white py-3 sm:py-4 rounded-2xl font-semibold transition-all text-sm sm:text-base flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-lg"></i> Send via WhatsApp
+                        </button>
+                    </div>
+                    <p id="cf-status" role="status" aria-live="polite" class="text-sm mt-3 hidden"></p>
                 </form>
             </div>
         </div>
     </div>
 </section>
-
 <!-- LIVE LOCATION MAP -->
 <section class="py-8 sm:py-12 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
         <h2 class="text-2xl sm:text-3xl font-bold heading-font text-center mb-6 sm:mb-8">Find Our Offices</h2>
-
         <div class="grid md:grid-cols-2 gap-6">
             <!-- UK Office Map -->
             <div class="bg-white rounded-3xl shadow-lg overflow-hidden card-hover">
@@ -297,7 +289,6 @@
                     </iframe>
                 </div>
             </div>
-
             <!-- Bangladesh Office Map -->
             <div class="bg-white rounded-3xl shadow-lg overflow-hidden card-hover">
                 <div class="p-4 sm:p-6">
@@ -317,7 +308,6 @@
                 </div>
             </div>
         </div>
-
         <div class="mt-6 text-center">
             <p class="text-gray-500 text-xs sm:text-sm">
                 <i class="fas fa-info-circle mr-1"></i>
@@ -326,7 +316,6 @@
         </div>
     </div>
 </section>
-
 <!-- FOOTER -->
 <footer class="bg-gray-900 text-gray-400 py-8 sm:py-12">
     <div class="max-w-7xl mx-auto px-6 text-center">
@@ -344,26 +333,22 @@
         <div class="mt-4 sm:mt-8 text-[10px] sm:text-xs">© 2026 London Travel Agency. All Rights Reserved.</div>
     </div>
 </footer>
-
 <!-- WHATSAPP FLOATING BUTTON -->
 <a href="https://wa.me/13477067980" target="_blank"
    class="whatsapp-float whatsapp-pulse"
    title="Chat with us on WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     // Mobile Menu Toggle
     const menuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-
     if (menuButton && mobileMenu) {
         menuButton.addEventListener('click', function() {
             const isOpen = mobileMenu.classList.contains('mobile-menu-open');
             mobileMenu.classList.toggle('mobile-menu-open');
             mobileMenu.classList.toggle('mobile-menu-closed');
-
             const icon = menuButton.querySelector('svg');
             if (isOpen) {
                 icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
@@ -371,7 +356,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
             }
         });
-
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 mobileMenu.classList.remove('mobile-menu-open');
@@ -383,6 +367,95 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 </script>
+<script>
+(function () {
+    /* ---------------------------------------------------------------
+       CONTACT FORM
+       Email delivery uses Web3Forms (free, unlimited).
+       Get a key at https://web3forms.com - enter your email, the key is
+       emailed to you. Paste it below, replacing the placeholder.
+       Until a real key is set, "Send Message" opens the visitor's email
+       app with everything pre-filled, so no enquiry is silently lost.
+       --------------------------------------------------------------- */
+    var WEB3FORMS_KEY = 'c405f4a3-63c0-4413-8e66-d5d0fad79d2f';
+    var TO_EMAIL      = 'info@londontac.com';
+    var WHATSAPP_NUM  = '13477067980';
 
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    var statusEl = document.getElementById('cf-status');
+    var sendBtn  = document.getElementById('cf-send');
+
+    function show(msg, kind) {
+        statusEl.textContent = msg;
+        statusEl.className = 'text-sm mt-3 font-medium ' +
+            (kind === 'ok' ? 'text-green-700' : kind === 'err' ? 'text-red-600' : 'text-gray-600');
+    }
+    function v(id) { return (document.getElementById(id).value || '').trim(); }
+    function data() {
+        return { name: v('cf-name'), email: v('cf-email'), phone: v('cf-phone'), message: v('cf-message') };
+    }
+    function valid(d) {
+        if (!d.name) { show('Please enter your name.', 'err'); document.getElementById('cf-name').focus(); return false; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) { show('Please enter a valid email address.', 'err'); document.getElementById('cf-email').focus(); return false; }
+        if (!d.message) { show('Please tell us how we can help.', 'err'); document.getElementById('cf-message').focus(); return false; }
+        return true;
+    }
+    function asText(d) {
+        return 'New enquiry from londontac.com' + '\n\n'
+             + 'Name: '  + d.name  + '\n'
+             + 'Email: ' + d.email + '\n'
+             + 'Phone: ' + (d.phone || 'not given') + '\n\n'
+             + d.message;
+    }
+
+    document.getElementById('cf-whatsapp').addEventListener('click', function () {
+        var d = data();
+        if (!valid(d)) return;
+        window.open('https://wa.me/' + WHATSAPP_NUM + '?text=' + encodeURIComponent(asText(d)), '_blank', 'noopener');
+        show('Opening WhatsApp with your message ready to send.', 'ok');
+    });
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (form.botcheck && form.botcheck.checked) return;
+        var d = data();
+        if (!valid(d)) return;
+
+        var keySet = WEB3FORMS_KEY.indexOf('PASTE-') === -1;
+        if (!keySet) {
+            window.location.href = 'mailto:' + TO_EMAIL
+                + '?subject=' + encodeURIComponent('Website enquiry from ' + d.name)
+                + '&body='    + encodeURIComponent(asText(d));
+            show('Opening your email app with the message ready to send.', 'ok');
+            return;
+        }
+
+        sendBtn.disabled = true;
+        show('Sending...', 'info');
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+                access_key: WEB3FORMS_KEY,
+                subject: 'Website enquiry from ' + d.name,
+                from_name: 'londontac.com',
+                name: d.name, email: d.email, phone: d.phone, message: d.message
+            })
+        })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+            if (!j.success) throw new Error(j.message || 'failed');
+            show('Thank you. Your message has been sent - we reply to every enquiry.', 'ok');
+            form.reset();
+        })
+        .catch(function () {
+            show('Sorry, that did not send. Please use the WhatsApp button, or email ' + TO_EMAIL + '.', 'err');
+        })
+        .then(function () { sendBtn.disabled = false; });
+    });
+})();
+</script>
 </body>
+
 </html>
