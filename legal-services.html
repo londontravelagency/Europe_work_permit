@@ -41,7 +41,13 @@ details[open] .faq-ico { transform: rotate(45deg); }
 .logo-tile { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; min-height: 190px; }
 .logo-badge { width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 16px; font-weight: 800; letter-spacing: -.02em; flex-shrink: 0; }
 .uni-name { min-height: 44px; display: flex; align-items: center; justify-content: center; }
-.hero-overlay { background: linear-gradient(110deg, rgba(29,78,216,.94) 0%, rgba(30,64,175,.86) 45%, rgba(55,48,163,.72) 100%); }
+/* Deep tint across the left half where the copy sits (keeps text above WCAG AA),
+   falling away to the right so the building reads. */
+.hero-overlay { background: linear-gradient(100deg, rgba(15,32,90,.96) 0%, rgba(21,50,145,.93) 48%, rgba(29,78,216,.80) 66%, rgba(30,64,175,.52) 83%, rgba(55,48,163,.38) 100%); }
+/* Below lg the copy spans the full width, so tint the whole frame. */
+@media (max-width: 1023px) {
+  .hero-overlay { background: linear-gradient(160deg, rgba(15,32,90,.94) 0%, rgba(23,60,175,.91) 55%, rgba(48,42,150,.89) 100%); }
+}
 .dot-grid { background-image: radial-gradient(rgba(255,255,255,.22) 1px, transparent 1px); background-size: 18px 18px; }
 </style>
 <script>document.documentElement.className += " js";</script>
@@ -84,7 +90,12 @@ details[open] .faq-ico { transform: rotate(45deg); }
 </nav>
 <!-- ====== HERO ====== -->
 <section class="relative overflow-hidden">
-<img src="https://images.unsplash.com/photo-1494922275507-58dc039ed337?auto=format&fit=crop&w=1600&h=900&q=80" alt="Westminster and the Houses of Parliament in London" class="absolute inset-0 w-full h-full object-cover">
+<picture>
+<source type="image/webp" media="(max-width: 767px)" srcset="legal-hero-1280.webp">
+<source type="image/jpeg" media="(max-width: 767px)" srcset="legal-hero-1280.jpg">
+<source type="image/webp" srcset="legal-hero.webp">
+<img src="legal-hero.jpg" width="2560" height="1206" alt="Neoclassical stone facade of a historic London legal building" class="absolute inset-0 w-full h-full object-cover object-center" fetchpriority="high" decoding="async">
+</picture>
 <div class="absolute inset-0 hero-overlay"></div>
 <div class="absolute inset-0 dot-grid opacity-40"></div>
 <div class="relative max-w-7xl mx-auto px-6 py-16 sm:py-24 md:py-28 text-white">
