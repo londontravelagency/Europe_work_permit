@@ -58,6 +58,21 @@
             transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
         }
 
+        /* Animated contact header - decorative, sits behind the tint */
+        .hero-video {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover; border: 0;
+        }
+        .hero-tint {
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(29,78,216,.30) 0%, rgba(49,46,129,.40) 100%);
+        }
+        /* Respect users who ask the OS to reduce motion - the blue gradient shows instead. */
+        @media (prefers-reduced-motion: reduce) {
+            .hero-video { display: none; }
+        }
+
         /* Map Container */
         .map-container {
             position: relative;
@@ -125,10 +140,16 @@
 </nav>
 
 <!-- CONTACT HERO -->
-<section class="bg-gradient-to-br from-blue-700 to-indigo-800 text-white py-12 sm:py-16 md:py-20">
-    <div class="max-w-7xl mx-auto px-6 text-center">
+<section class="relative overflow-hidden bg-gradient-to-br from-blue-700 to-indigo-800 text-white py-12 sm:py-16 md:py-20">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto"
+           poster="contactheroposter.jpg" aria-hidden="true" tabindex="-1" disablepictureinpicture>
+        <source src="contacthero.webm" type="video/webm">
+        <source src="contacthero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-tint"></div>
+    <div class="relative max-w-7xl mx-auto px-6 text-center">
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold heading-font mb-4">Contact Us</h1>
-        <p class="text-base sm:text-lg md:text-xl text-blue-100 max-w-3xl mx-auto">
+        <p class="text-base sm:text-lg md:text-xl text-white max-w-3xl mx-auto">
             Get in touch with our team for expert visa and immigration guidance
         </p>
     </div>
@@ -204,14 +225,23 @@
                             <i class="fas fa-clock text-xl sm:text-2xl text-purple-600"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm sm:text-base">Service Hours</h4>
-                            <p class="text-gray-600 text-xs sm:text-sm">24-Hour Service</p>
-                             <p class="text-gray-600 text-xs sm:text-sm">
-                              Contact Email ID: <strong style="color: blue;">info@londontac.com</strong>
-                            </p>
-                        </div>
+    <h4 class="font-semibold text-sm sm:text-base">Service Hours</h4>
+    <p class="text-gray-600 text-xs sm:text-sm">24-Hour Service</p>
+    <p class="text-gray-600 text-xs sm:text-sm">
+        <span>Email ID: </span>
+        <strong class="font-bold text-blue-600">info@londontac.com</strong>
+    </p>
+</div>
                     </div>
                 </div>
+
+                <!-- Support illustration - decorative, sits alongside the message form -->
+                <picture>
+                    <source media="(prefers-reduced-motion: reduce)" srcset="contactagentstill.png">
+                    <img src="contactagent.gif" width="735" height="690"
+                         alt="Illustration of a customer support agent at a desk with a headset and laptop"
+                         class="hidden md:block w-full max-w-sm mx-auto mt-8 h-auto" loading="lazy" decoding="async">
+                </picture>
             </div>
 
             <!-- Contact Form -->
@@ -309,10 +339,6 @@
             <p><span class="text-gray-400 font-medium">🇬🇧 UK Office:</span> 102-105 Whitechapel High Street, Office No. 201, E1 7RA, London, UK</p>
             <p><span class="text-gray-400 font-medium">🇧🇩 Bangladesh Office:</span> Lift 6, Office No. 105, Mukto Bangla Shopping Complex, Mirpur 1, Dhaka 1216</p>
             <p class="mt-2 text-xs sm:text-sm">WhatsApp: +1 (347) 706-7980 | UK Mobile: +44 7448 270044</p>
-            <p class="text-gray-600 text-xs sm:text-sm">
-              Contact Email ID: <strong style="color: Neon Green;">info@londontac.com</strong>
-                </p>
-       
         </div>
         <p class="text-[10px] sm:text-sm">Visa approval is at the sole discretion of Bulgarian authorities.<br>All documents must be genuine.</p>
         <div class="mt-4 sm:mt-8 text-[10px] sm:text-xs">© 2026 London Travel Agency. All Rights Reserved.</div>
