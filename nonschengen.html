@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portugal Work Permit Visa | London Travel Agency</title>
+    <title>Non-Schengen Europe Work Permit | London Travel Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -16,7 +16,7 @@
             font-family: 'Poppins', sans-serif;
         }
         .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url('images/portugal-hero.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('europe-non-schengen.jpg') center/cover no-repeat;
         }
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -58,6 +58,26 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
+        /* Country Flag Cards */
+        .country-flag {
+            font-size: 4rem;
+            line-height: 1;
+        }
+        .country-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        .country-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+            border-color: #04aa6d;
+        }
+
         /* Mobile Menu Transition */
         .mobile-menu-open {
             max-height: 500px;
@@ -88,8 +108,8 @@
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center gap-3 lg:gap-4 text-xs lg:text-sm font-semibold">
                 <a href="index.html" class="hover:text-blue-600 transition-colors pb-0.5 hover:border-b-2 hover:border-blue-600">Home</a>
-                <a href="portugal.html" class="text-blue-600 border-b-2 border-blue-600 pb-0.5">Schengen</a>
-                <a href="non-schengen.html" class="hover:text-blue-600 transition-colors pb-0.5 hover:border-b-2 hover:border-blue-600">Non Schengen</a>
+                <a href="portugal.html" class="hover:text-blue-600 transition-colors pb-0.5 hover:border-b-2 hover:border-blue-600">Schengen</a>
+                <a href="non-schengen.html" class="text-blue-600 border-b-2 border-blue-600 pb-0.5">Non Schengen</a>
                 <a href="student-visa.html" class="hover:text-blue-600 transition-colors">Student Visa</a>
                 <a href="legal-services.html" class="hover:text-blue-600 transition-colors">Legal Service</a>
                 <a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a>
@@ -116,8 +136,8 @@
         <div id="mobile-menu" class="mobile-menu-closed md:hidden bg-white border-t border-gray-200 px-4 sm:px-6">
             <div class="py-2 sm:py-3 space-y-1.5 sm:space-y-2 text-sm font-semibold">
                 <a href="index.html" class="block hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Home</a>
-                <a href="portugal.html" class="block text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Schengen</a>
-                <a href="non-schengen.html" class="block hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Non Schengen</a>
+                <a href="portugal.html" class="block hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Schengen</a>
+                <a href="non-schengen.html" class="block text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Non Schengen</a>
                 <a href="student-visa.html" class="block hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Student Visa</a>
                 <a href="legal-services.html" class="block hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Legal Service</a>
                 <a href="contact.html" class="block hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors">Contact</a>
@@ -125,33 +145,22 @@
         </div>
     </nav>
 
-    <!-- Portugal page navigation -->
-    <div class="bg-blue-50 border-b border-blue-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-semibold">
-            <span class="text-blue-800">Portugal:</span>
-            <a href="#jobs" class="text-gray-700 hover:text-blue-600 transition-colors">Jobs</a>
-            <a href="#benefits" class="text-gray-700 hover:text-blue-600 transition-colors">Benefits</a>
-            <a href="#process" class="text-gray-700 hover:text-blue-600 transition-colors">Process</a>
-            <a href="#why" class="text-gray-700 hover:text-blue-600 transition-colors">Why Us</a>
-        </div>
-    </div>
-
     <!-- ====== HERO SECTION ====== -->
     <section class="hero-bg text-white min-h-[70vh] flex items-center">
         <div class="max-w-7xl mx-auto px-6 py-12 md:py-16">
             <div class="max-w-3xl">
                 <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-3xl text-sm mb-6">
                     <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                    Schengen Area Opportunity
+                    Non-Schengen Europe Opportunity
                 </div>
                 
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold heading-font leading-tight">
-                    Portugal<br>
+                    Non-Schengen Europe<br>
                     <span class="text-yellow-300">Work Permit Visa</span>
                 </h1>
                 
                 <p class="text-lg sm:text-xl text-gray-200 max-w-2xl mt-6">
-                    Portugal is a member of the Schengen Area. A Portugal Work Permit allows you to live and work legally in Portugal, with a pathway to long-term residence.
+                    Start Your Career in Europe with professional assistance for work permit visa applications to selected Non-Schengen European countries.
                 </p>
                 
                 <div class="flex flex-wrap gap-4 mt-8">
@@ -160,70 +169,104 @@
                         Apply Now
                         <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#benefits" 
+                    <a href="#countries" 
                        class="border-2 border-white/70 hover:border-white px-6 sm:px-8 py-3 sm:py-4 rounded-3xl font-semibold text-base sm:text-lg transition-all">
-                        View Benefits
+                        View Countries
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== TRUST BAR ====== -->
-    <div class="bg-white py-4 sm:py-6 border-b">
+    <!-- ====== COUNTRIES SECTION ====== -->
+    <section id="countries" class="py-16 sm:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-wrap justify-center items-center gap-x-8 sm:gap-x-12 gap-y-4 sm:gap-y-6 text-gray-500 text-xs sm:text-sm">
-                <div class="flex items-center gap-2 sm:gap-3">
-                    <i class="fas fa-shield-alt text-xl sm:text-2xl text-blue-600"></i>
-                    <div>
-                        <div class="font-semibold text-gray-700 text-xs sm:text-sm">20+ Years Experience</div>
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold heading-font mb-4">
+                    <i class="fas fa-globe-europe text-blue-600"></i>
+                    Countries We Serve
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+                    We provide professional assistance for work permit visa applications to selected Non-Schengen European countries
+                </p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+                <!-- Montenegro -->
+                <div class="country-card">
+                    <div class="country-flag">🇲🇪</div>
+                    <h3 class="text-xl sm:text-2xl font-bold mt-3">Montenegro</h3>
+                    <p class="text-gray-600 mt-2 text-sm sm:text-base">Legal employment opportunities with pathway to long-term residence</p>
+                    <div class="mt-4 flex items-center justify-center gap-2 text-sm text-green-600">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Work Permit Available</span>
                     </div>
                 </div>
-                <div class="flex items-center gap-2 sm:gap-3">
-                    <i class="fas fa-passport text-xl sm:text-2xl text-blue-600"></i>
-                    <div>
-                        <div class="font-semibold text-gray-700 text-xs sm:text-sm">Work Permit Experts</div>
+                
+                <!-- Moldova -->
+                <div class="country-card">
+                    <div class="country-flag">🇲🇩</div>
+                    <h3 class="text-xl sm:text-2xl font-bold mt-3">Moldova</h3>
+                    <p class="text-gray-600 mt-2 text-sm sm:text-base">Legal employment opportunities with pathway to long-term residence</p>
+                    <div class="mt-4 flex items-center justify-center gap-2 text-sm text-green-600">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Work Permit Available</span>
                     </div>
                 </div>
-                <div class="flex items-center gap-2 sm:gap-3">
-                    <i class="fas fa-plane text-xl sm:text-2xl text-blue-600"></i>
-                    <div>
-                        <div class="font-semibold text-gray-700 text-xs sm:text-sm">Air Ticket Included</div>
+            </div>
+            
+            <!-- Future Countries -->
+            <div class="mt-12">
+                <h3 class="text-xl sm:text-2xl font-bold heading-font text-center mb-6">Future Countries We Also Process</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto">
+                    <div class="bg-gray-50 rounded-xl p-3 sm:p-4 text-center">
+                        <span class="text-2xl sm:text-3xl">🇷🇸</span>
+                        <p class="font-semibold mt-1 text-sm sm:text-base">Serbia</p>
                     </div>
-                </div>
-                <div class="flex items-center gap-2 sm:gap-3">
-                    <i class="fas fa-graduation-cap text-xl sm:text-2xl text-blue-600"></i>
-                    <div>
-                        <div class="font-semibold text-gray-700 text-xs sm:text-sm">Director is Immigration Lawyer</div>
+                    <div class="bg-gray-50 rounded-xl p-3 sm:p-4 text-center">
+                        <span class="text-2xl sm:text-3xl">🇲🇰</span>
+                        <p class="font-semibold mt-1 text-sm sm:text-base">North Macedonia</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-3 sm:p-4 text-center">
+                        <span class="text-2xl sm:text-3xl">🇧🇦</span>
+                        <p class="font-semibold mt-1 text-sm sm:text-base">Bosnia & Herzegovina</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-3 sm:p-4 text-center">
+                        <span class="text-2xl sm:text-3xl">🇨🇾</span>
+                        <p class="font-semibold mt-1 text-sm sm:text-base">Cyprus</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- ====== JOB SECTORS ====== -->
-    <section id="jobs" class="py-16 sm:py-20 bg-white">
+    <section id="jobs" class="py-16 sm:py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-12 sm:mb-16">
                 <h2 class="text-3xl sm:text-4xl font-bold heading-font mb-4">Available Job Sectors</h2>
-                <p class="text-gray-600 text-sm sm:text-base max-w-md mx-auto">Immediate opportunities with reliable employers in Portugal</p>
+                <p class="text-gray-600 text-sm sm:text-base">We recruit for a variety of industries across Non-Schengen European countries</p>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto">
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover">
-                    <i class="fas fa-seedling text-2xl sm:text-3xl text-green-600 mb-2 sm:mb-3"></i>
-                    <p class="font-semibold text-sm sm:text-base">Agriculture</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4 max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover">
+                    <i class="fas fa-utensils text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
+                    <p class="font-semibold text-sm sm:text-base">Restaurant</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover">
+                <div class="bg-white rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover">
                     <i class="fas fa-hard-hat text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-sm sm:text-base">Construction</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover">
-                    <i class="fas fa-utensils text-2xl sm:text-3xl text-orange-600 mb-2 sm:mb-3"></i>
-                    <p class="font-semibold text-sm sm:text-base">Restaurant</p>
+                <div class="bg-white rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover">
+                    <i class="fas fa-seedling text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
+                    <p class="font-semibold text-sm sm:text-base">Agriculture</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover">
-                    <i class="fas fa-store text-2xl sm:text-3xl text-purple-600 mb-2 sm:mb-3"></i>
+                <div class="bg-white rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover">
+                    <i class="fas fa-shopping-cart text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
+                    <p class="font-semibold text-sm sm:text-base">Supermarket</p>
+                </div>
+                <div class="bg-white rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover col-span-2 sm:col-span-1">
+                    <i class="fas fa-store text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-sm sm:text-base">Retail Stores</p>
                 </div>
             </div>
@@ -231,16 +274,16 @@
     </section>
 
     <!-- ====== SALARY & BENEFITS ====== -->
-    <section id="benefits" class="py-16 sm:py-20 bg-gradient-to-br from-green-700 to-teal-800 text-white">
+    <section id="benefits" class="py-16 sm:py-20 bg-gradient-to-br from-blue-700 to-indigo-800 text-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div>
                     <h2 class="text-3xl sm:text-4xl font-bold heading-font mb-6">Salary &amp; Benefits</h2>
                     
                     <div class="bg-white/10 rounded-3xl p-6 sm:p-8 mb-6">
-                        <div class="text-4xl sm:text-5xl font-bold text-yellow-300">€920</div>
-                        <div class="text-lg sm:text-xl">to <span class="font-bold text-yellow-300">€1,200</span></div>
-                        <div class="text-blue-200 mt-1 text-sm sm:text-base">Monthly Salary</div>
+                        <div class="text-4xl sm:text-5xl font-bold text-yellow-300">€550</div>
+                        <div class="text-lg sm:text-xl">to <span class="font-bold text-yellow-300">€650</span></div>
+                        <div class="text-blue-200 mt-1">Monthly Salary</div>
                     </div>
                     
                     <div class="grid sm:grid-cols-2 gap-3 sm:gap-4">
@@ -256,11 +299,11 @@
                 </div>
                 
                 <div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 sm:p-8">
-                    <h3 class="text-xl sm:text-2xl font-bold heading-font mb-6">Why Work in Portugal?</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold heading-font mb-6">Why Work in Non-Schengen Europe?</h3>
                     <ul class="space-y-3 sm:space-y-4">
                         <li class="flex items-start gap-3">
                             <i class="fas fa-check-circle text-green-400 text-lg sm:text-xl mt-1"></i>
-                            <span class="text-sm sm:text-base">Legal employment opportunity</span>
+                            <span class="text-sm sm:text-base">Legal employment opportunities</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fas fa-check-circle text-green-400 text-lg sm:text-xl mt-1"></i>
@@ -276,7 +319,7 @@
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fas fa-check-circle text-green-400 text-lg sm:text-xl mt-1"></i>
-                            <span class="text-sm sm:text-base">Potential pathway to long-term or permanent residence</span>
+                            <span class="text-sm sm:text-base">Potential pathway to long-term residence</span>
                         </li>
                     </ul>
                 </div>
@@ -311,9 +354,22 @@
                 <div class="bg-gray-50 rounded-2xl p-4 sm:p-6">
                     <div class="flex items-center gap-3 mb-2">
                         <i class="fas fa-certificate text-xl sm:text-2xl text-blue-600"></i>
-                        <span class="font-semibold text-sm sm:text-base">Bangladesh Police Clearance Certificate</span>
+                        <span class="font-semibold text-sm sm:text-base">Police Clearance Certificate (PCC)</span>
                     </div>
-                    <p class="text-xs sm:text-sm text-gray-500 mt-1">Required after work permit approval</p>
+                </div>
+            </div>
+            
+            <div class="mt-6 sm:mt-8 bg-blue-50 rounded-2xl p-4 sm:p-6 border border-blue-200">
+                <h4 class="font-bold text-blue-800 mb-3 text-sm sm:text-base">📋 Important Notes by Country</h4>
+                <div class="grid sm:grid-cols-2 gap-3 sm:gap-4">
+                    <div class="bg-white rounded-xl p-3 sm:p-4">
+                        <span class="font-bold text-base sm:text-lg">🇲🇩 Moldova</span>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-1">Bangladesh Police Clearance Certificate is required before visa processing.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-3 sm:p-4">
+                        <span class="font-bold text-base sm:text-lg">🇲🇪 Montenegro</span>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-1">Police Clearance Certificate is generally required after work permit approval.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -324,8 +380,8 @@
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-8 sm:mb-12">
                 <h2 class="text-3xl sm:text-4xl font-bold heading-font mb-4">Package Cost</h2>
-                <p class="text-2xl sm:text-3xl font-bold text-green-600">BDT 22,00,000</p>
-                <p class="text-gray-500 text-sm sm:text-base">(22 Lakh)</p>
+                <p class="text-2xl sm:text-3xl font-bold text-green-600">BDT 12,00,000</p>
+                <p class="text-gray-500 text-sm sm:text-base">(12 Lakh)</p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
@@ -350,61 +406,34 @@
                     </ul>
                 </div>
                 
-                <!-- Package Not Included -->
-                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg border border-red-200 card-hover">
-                    <h3 class="text-xl sm:text-2xl font-bold heading-font text-red-700 mb-4 sm:mb-6">
-                        <i class="fas fa-circle-xmark text-red-500"></i> Package Does Not Include
+                <!-- Payment Plan -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg border border-blue-200 card-hover">
+                    <h3 class="text-xl sm:text-2xl font-bold heading-font text-blue-700 mb-4 sm:mb-6">
+                        <i class="fas fa-credit-card text-blue-500"></i> Payment Plan
                     </h3>
-                    <ul class="space-y-3 sm:space-y-4">
-                        <li class="flex items-center gap-3 text-sm sm:text-base">
-                            <i class="fas fa-times text-red-500"></i>
-                            <span>India Visa</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-sm sm:text-base">
-                            <i class="fas fa-times text-red-500"></i>
-                            <span>India Travel Expenses</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-sm sm:text-base">
-                            <i class="fas fa-times text-red-500"></i>
-                            <span>External Government or Third-Party Charges</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== PAYMENT PLAN ====== -->
-    <section class="py-16 sm:py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl sm:text-4xl font-bold heading-font text-center mb-8 sm:mb-12">Payment Plan</h2>
-            
-            <div class="grid sm:grid-cols-3 gap-4 sm:gap-6">
-                <div class="bg-blue-50 rounded-2xl p-4 sm:p-6 text-center card-hover border border-blue-200">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mx-auto mb-3 sm:mb-4">1</div>
-                    <h4 class="font-semibold text-base sm:text-lg mb-2">File Opening</h4>
-                    <div class="text-xl sm:text-2xl font-bold text-blue-600">BDT 2,00,000</div>
-                    <p class="text-xs sm:text-sm text-gray-500">(2 Lakh)</p>
-                </div>
-                
-                <div class="bg-indigo-50 rounded-2xl p-4 sm:p-6 text-center card-hover border border-indigo-200">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mx-auto mb-3 sm:mb-4">2</div>
-                    <h4 class="font-semibold text-base sm:text-lg mb-2">After Work Permit</h4>
-                    <div class="text-xl sm:text-2xl font-bold text-indigo-600">BDT 3,00,000</div>
-                    <p class="text-xs sm:text-sm text-gray-500">(3 Lakh) - Processing 2-3 months</p>
-                </div>
-                
-                <div class="bg-green-50 rounded-2xl p-4 sm:p-6 text-center card-hover border border-green-200">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mx-auto mb-3 sm:mb-4">3</div>
-                    <h4 class="font-semibold text-base sm:text-lg mb-2">After Visa Approval</h4>
-                    <div class="text-xl sm:text-2xl font-bold text-green-600">BDT 17,00,000</div>
-                    <p class="text-xs sm:text-sm text-gray-500">(17 Lakh) - Before departure</p>
+                    <div class="space-y-3 sm:space-y-4">
+                        <div class="bg-blue-50 rounded-xl p-3 sm:p-4">
+                            <div class="font-semibold text-blue-800 text-sm sm:text-base">Step 1 – File Opening</div>
+                            <div class="text-xl sm:text-2xl font-bold text-blue-600">BDT 1,00,000</div>
+                            <div class="text-xs sm:text-sm text-gray-500">(1 Lakh)</div>
+                        </div>
+                        <div class="bg-indigo-50 rounded-xl p-3 sm:p-4">
+                            <div class="font-semibold text-indigo-800 text-sm sm:text-base">Step 2 – After Work Permit Approval</div>
+                            <div class="text-xl sm:text-2xl font-bold text-indigo-600">BDT 2,00,000</div>
+                            <div class="text-xs sm:text-sm text-gray-500">(2 Lakh) - Processing takes 1-2 months</div>
+                        </div>
+                        <div class="bg-green-50 rounded-xl p-3 sm:p-4">
+                            <div class="font-semibold text-green-800 text-sm sm:text-base">Step 3 – After Visa Approval</div>
+                            <div class="text-xl sm:text-2xl font-bold text-green-600">BDT 9,00,000</div>
+                            <div class="text-xs sm:text-sm text-gray-500">(9 Lakh) - Before departure</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <div class="mt-6 sm:mt-8 bg-yellow-50 border border-yellow-200 rounded-2xl p-4 sm:p-6 text-center">
                 <p class="font-semibold text-yellow-800 text-sm sm:text-base">
-                    <i class="fas fa-clock mr-2"></i> Estimated Processing Time: Approximately 6-7 months
+                    <i class="fas fa-clock mr-2"></i> Estimated Processing Time: Approximately 3-4 months
                 </p>
                 <p class="text-xs sm:text-sm text-gray-600 mt-1">Processing times may vary depending on the employer, embassy, and government procedures.</p>
             </div>
@@ -499,13 +528,13 @@
     </section>
 
     <!-- ====== CONTACT / CTA ====== -->
-    <section id="contact" class="py-16 sm:py-20 bg-gradient-to-br from-green-700 to-teal-900 text-white">
+    <section id="contact" class="py-16 sm:py-20 bg-gradient-to-br from-blue-700 to-indigo-900 text-white">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold heading-font mb-6">
                 Apply Today
             </h2>
             <p class="text-lg sm:text-xl text-blue-100 mb-6 sm:mb-8">
-                Limited vacancies are available. Contact us today to check your eligibility and begin your Portugal Work Permit Visa application.
+                Limited vacancies are available. Contact us today to check your eligibility and begin your Non-Schengen Europe Work Permit Visa application.
             </p>
             
             <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-white/20">
@@ -541,7 +570,7 @@
                 <div class="mt-6 sm:mt-8">
                     <a href="https://wa.me/13477067980" 
                        target="_blank"
-                       class="inline-block bg-white text-green-700 hover:bg-yellow-300 hover:text-green-900 px-6 sm:px-10 py-3 sm:py-4 rounded-3xl font-bold text-base sm:text-lg transition-all">
+                       class="inline-block bg-white text-blue-700 hover:bg-yellow-300 hover:text-blue-900 px-6 sm:px-10 py-3 sm:py-4 rounded-3xl font-bold text-base sm:text-lg transition-all">
                         <i class="fab fa-whatsapp text-green-500 text-lg sm:text-xl mr-3"></i>
                         Apply on WhatsApp Now
                     </a>
@@ -565,7 +594,7 @@
                 <p class="mt-2 text-xs sm:text-sm">WhatsApp: +1 (347) 706-7980 | UK Mobile: +44 7448 270044</p>
             </div>
             
-            <p class="text-[10px] sm:text-sm">Visa approval is solely at the discretion of the Portuguese immigration authorities.<br>All documents must be genuine.</p>
+            <p class="text-[10px] sm:text-sm">Visa approval is solely at the discretion of the immigration authorities of the destination country.<br>All documents must be genuine.</p>
             <div class="mt-4 sm:mt-8 text-[10px] sm:text-xs">© 2026 London Travel Agency. All Rights Reserved.</div>
         </div>
     </footer>
