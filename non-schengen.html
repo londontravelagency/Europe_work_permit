@@ -508,38 +508,40 @@
                         </ul>
                     </div>
 
-                    <div class="bg-amber-50 rounded-3xl p-6 shadow-xl border border-amber-200">
-                        <p class="font-semibold text-amber-900 text-sm sm:text-base flex items-start gap-3">
-                            <i class="fas fa-clock mt-1"></i>
-                            <span>Estimated Processing Time: Approximately 3-4 months</span>
-                        </p>
-                        <p class="text-xs sm:text-sm text-gray-700 mt-2 pl-7">Processing times may vary depending on the employer, embassy, and government procedures.</p>
+                    <!-- Bar chart: amount paid at each step -->
+                    <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-xl border border-indigo-200">
+                        <h3 class="text-xl sm:text-2xl font-bold heading-font text-indigo-700 mb-1 flex items-center gap-2">
+                            <i class="fas fa-chart-column text-indigo-500"></i> Payment Breakdown
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-500 mb-5">Amount paid at each step (Total: 12 Lakh)</p>
+                        <div class="flex items-end gap-4 sm:gap-6 h-48 border-b-2 border-gray-200 px-2" role="img" aria-label="Bar chart: Step 1 is 1 Lakh, Step 2 is 2 Lakh, Step 3 is 9 Lakh">
+                            <div class="flex-1 h-full flex flex-col items-center justify-end">
+                                <span class="text-sm font-bold text-blue-700 mb-1">1 Lakh</span>
+                                <div class="w-full max-w-[64px] bg-blue-500 rounded-t-lg" style="height: 9.4%;"></div>
+                            </div>
+                            <div class="flex-1 h-full flex flex-col items-center justify-end">
+                                <span class="text-sm font-bold text-indigo-700 mb-1">2 Lakh</span>
+                                <div class="w-full max-w-[64px] bg-indigo-500 rounded-t-lg" style="height: 18.9%;"></div>
+                            </div>
+                            <div class="flex-1 h-full flex flex-col items-center justify-end">
+                                <span class="text-sm font-bold text-green-700 mb-1">9 Lakh</span>
+                                <div class="w-full max-w-[64px] bg-green-500 rounded-t-lg" style="height: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 sm:gap-6 px-2 mt-2 text-center text-xs sm:text-sm">
+                            <div class="flex-1"><div class="font-semibold text-gray-800">Step 1</div><div class="text-gray-500">File Opening</div></div>
+                            <div class="flex-1"><div class="font-semibold text-gray-800">Step 2</div><div class="text-gray-500">After Work Permit</div></div>
+                            <div class="flex-1"><div class="font-semibold text-gray-800">Step 3</div><div class="text-gray-500">After Visa</div></div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Right column: payment plan -->
-                <div class="md:col-span-3 bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-blue-200">
+                <!-- Right column: payment plan + processing time -->
+                <div class="md:col-span-3 space-y-6">
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-blue-200">
                     <h3 class="text-xl sm:text-2xl font-bold heading-font text-blue-700 mb-5 flex items-center gap-2">
                         <i class="fas fa-credit-card text-blue-500"></i> Payment Plan
                     </h3>
-
-                    <!-- Bar chart: share of the 12 Lakh paid at each step -->
-                    <div class="mb-6">
-                        <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-2">
-                            <span>How the 12 Lakh is paid</span>
-                            <span class="font-semibold text-gray-800">Total: 12 Lakh</span>
-                        </div>
-                        <div class="flex h-5 rounded-full overflow-hidden bg-gray-100" role="img" aria-label="Payment split: Step 1 is 1 Lakh, Step 2 is 2 Lakh, Step 3 is 9 Lakh">
-                            <div class="bg-blue-500" style="width: 8.33%;"></div>
-                            <div class="bg-indigo-500 border-l-2 border-white" style="width: 16.67%;"></div>
-                            <div class="bg-green-500 border-l-2 border-white" style="width: 75%;"></div>
-                        </div>
-                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-gray-600">
-                            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>Step 1</span>
-                            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>Step 2</span>
-                            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>Step 3</span>
-                        </div>
-                    </div>
 
                     <div class="space-y-3 sm:space-y-4">
                         <div class="rounded-2xl bg-blue-50 border border-blue-100 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
@@ -575,6 +577,15 @@
                             <div class="text-xl sm:text-2xl font-bold text-green-700 whitespace-nowrap pl-10 sm:pl-0">BDT 9,00,000</div>
                         </div>
                     </div>
+                </div>
+
+                        <div class="bg-amber-50 rounded-3xl p-6 shadow-xl border border-amber-200">
+                            <p class="font-semibold text-amber-900 text-sm sm:text-base flex items-start gap-3">
+                                <i class="fas fa-clock mt-1"></i>
+                                <span>Estimated Processing Time: Approximately 3-4 months</span>
+                            </p>
+                            <p class="text-xs sm:text-sm text-gray-700 mt-2 pl-7">Processing times may vary depending on the employer, embassy, and government procedures.</p>
+                        </div>
                 </div>
             </div>
         </div>
