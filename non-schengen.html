@@ -30,12 +30,38 @@
         .bn-font, .bn-font .heading-font {
             font-family: 'Hind Siliguri', sans-serif;
         }
-        /* Our Services background: Sveti Stefan, Montenegro */
+        /* Our Services background: Sveti Stefan, Montenegro, with slow zoom-and-pan motion */
         .services-bg {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1607625901435-5f896ba02bf5?auto=format&fit=crop&w=2400&q=80');
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .services-bg::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            background-image: url('https://images.unsplash.com/photo-1607625901435-5f896ba02bf5?auto=format&fit=crop&w=2400&q=80');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
+            transform-origin: center;
+            animation: services-kenburns 24s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+        .services-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.7));
+        }
+        @keyframes services-kenburns {
+            0%   { transform: scale(1) translate(0, 0); }
+            50%  { transform: scale(1.12) translate(-2%, -1.5%); }
+            100% { transform: scale(1.18) translate(2%, 1%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .services-bg::before { animation: none; }
         }
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
