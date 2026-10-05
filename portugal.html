@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* Portugal: warm stone, Atlantic green, and restrained spatial motion. */
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600&display=swap');
         :root { --ink:#183e35; --forest:#153f35; --muted:#68756f; --paper:#f7f7f0; --lime:#d8ed9a; --line:#dce4dc; }
         * { box-sizing:border-box; }
         html:root { scroll-behavior:smooth; scroll-padding-top:112px; }
@@ -111,6 +111,13 @@
         :root #benefits .benefits-list { position:relative; isolation:isolate; overflow:hidden; color:#fff; border:0; border-radius:24px; padding:36px 34px; backdrop-filter:none;
             background:linear-gradient(160deg,#0f3329eb 0%,#153f35d1 55%,#153f35a6 100%),var(--photo) center/cover,#153f35; box-shadow:0 10px 0 #c6d3b9,0 30px 50px -30px #0f332980; }
         :root #benefits h3 { font-size:27px; font-weight:600; }
+        /* Bangla translations sit under each English line. */
+        :root #benefits .bn { display:block; font-family:'Hind Siliguri','Noto Sans Bengali',sans-serif; letter-spacing:0; font-weight:500; line-height:1.55; margin-top:3px; }
+        :root #benefits h2 .bn { font-size:.56em; font-weight:600; color:#557259; margin-top:8px; }
+        :root #benefits h3 .bn { font-size:.6em; font-weight:500; color:var(--lime); margin-top:6px; }
+        :root #benefits .salary-card .bn { font-size:15px; color:var(--lime); margin-top:4px; }
+        :root #benefits .benefit-small .bn { font-size:13.5px; color:#5d7154; font-weight:500; }
+        :root #benefits li span.bn { font-size:14px; color:#c9dcc4; margin-top:1px; }
         :root #benefits .benefits-list h3 { color:#fff; }
         :root #benefits li { align-items:center; padding:12px 0; border-bottom:1px solid #ffffff26; margin:0; gap:14px; }
         :root #benefits li:last-child { border:0; }
@@ -577,49 +584,52 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div>
-                    <h2 class="text-3xl sm:text-4xl font-bold heading-font mb-6">Salary &amp; Benefits</h2>
+                    <h2 class="text-3xl sm:text-4xl font-bold heading-font mb-6">Salary &amp; Benefits<span class="bn" lang="bn">বেতন ও সুবিধাসমূহ</span></h2>
                     
                     <div class="salary-card bg-white/10 rounded-3xl p-6 sm:p-8 mb-6">
                         <div class="text-4xl sm:text-5xl font-bold text-yellow-300">€920</div>
                         <div class="text-lg sm:text-xl">to <span class="font-bold text-yellow-300">€1,200</span></div>
                         <div class="text-blue-200 mt-1 text-sm sm:text-base">Monthly Salary</div>
+                        <div class="bn" lang="bn">মাসিক বেতন: ৯২০ থেকে ১,২০০ ইউরো</div>
                     </div>
                     
                     <div class="grid sm:grid-cols-2 gap-3 sm:gap-4">
                         <div class="benefit-small bg-white/10 rounded-2xl p-4 sm:p-5">
                             <i class="fas fa-home text-xl sm:text-2xl mb-2"></i>
                             <div class="font-semibold text-sm sm:text-base">Employer-Provided Accommodation</div>
+                            <div class="bn" lang="bn">নিয়োগকর্তা কর্তৃক আবাসন সুবিধা</div>
                         </div>
                         <div class="benefit-small bg-white/10 rounded-2xl p-4 sm:p-5">
                             <i class="fas fa-utensils text-xl sm:text-2xl mb-2"></i>
                             <div class="font-semibold text-sm sm:text-base">Food Not Included</div>
+                            <div class="bn" lang="bn">খাবার অন্তর্ভুক্ত নয়</div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Panel photo: Ribeira, Porto (Unsplash, https://unsplash.com/photos/mVq5nE3Yahw) -->
                 <div class="benefits-list bg-white/10 backdrop-blur-md rounded-3xl p-6 sm:p-8" style="--photo:url('https://images.unsplash.com/photo-1591040973846-61888c2de010?auto=format&amp;fit=crop&amp;w=900&amp;q=70')">
-                    <h3 class="text-xl sm:text-2xl font-bold heading-font mb-6">Why Work in Portugal?</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold heading-font mb-6">Why Work in Portugal?<span class="bn" lang="bn">কেন পর্তুগালে কাজ করবেন?</span></h3>
                     <ul class="space-y-3 sm:space-y-4">
                         <li class="flex items-start gap-3">
                             <i class="fas fa-check-circle text-green-400 text-lg sm:text-xl mt-1"></i>
-                            <span class="text-sm sm:text-base">Legal employment opportunity</span>
+                            <span class="text-sm sm:text-base">Legal employment opportunity<span class="bn" lang="bn">বৈধভাবে চাকরির সুযোগ</span></span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fas fa-check-circle text-green-400 text-lg sm:text-xl mt-1"></i>
-                            <span class="text-sm sm:text-base">Employer-provided accommodation</span>
+                            <span class="text-sm sm:text-base">Employer-provided accommodation<span class="bn" lang="bn">নিয়োগকর্তা কর্তৃক আবাসন সুবিধা</span></span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fas fa-check-circle text-green-400 text-lg sm:text-xl mt-1"></i>
-                            <span class="text-sm sm:text-base">Stable monthly income</span>
+                            <span class="text-sm sm:text-base">Stable monthly income<span class="bn" lang="bn">স্থিতিশীল মাসিক আয়</span></span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fas fa-check-circle text-green-400 text-lg sm:text-xl mt-1"></i>
-                            <span class="text-sm sm:text-base">Valuable European work experience</span>
+                            <span class="text-sm sm:text-base">Valuable European work experience<span class="bn" lang="bn">মূল্যবান ইউরোপীয় কাজের অভিজ্ঞতা</span></span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fas fa-check-circle text-green-400 text-lg sm:text-xl mt-1"></i>
-                            <span class="text-sm sm:text-base">Potential pathway to long-term or permanent residence</span>
+                            <span class="text-sm sm:text-base">Potential pathway to long-term or permanent residence<span class="bn" lang="bn">দীর্ঘমেয়াদি বা স্থায়ী বসবাসের সম্ভাব্য সুযোগ</span></span>
                         </li>
                     </ul>
                 </div>
