@@ -63,6 +63,13 @@
         @media (prefers-reduced-motion: reduce) {
             .services-bg::before { animation: none; }
         }
+        /* Apply Today / Contact background: consultants meeting clients in a glass-walled office */
+        .contact-bg {
+            background-image: linear-gradient(135deg, rgba(29, 78, 216, 0.55), rgba(30, 27, 75, 0.75)), url('https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?auto=format&fit=crop&w=2400&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -610,16 +617,16 @@
     </section>
 
     <!-- ====== CONTACT / CTA ====== -->
-    <section id="contact" class="py-16 sm:py-20 bg-gradient-to-br from-blue-700 to-indigo-900 text-white">
+    <section id="contact" class="contact-bg w-full py-16 sm:py-24 text-white">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold heading-font mb-6">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold heading-font mb-6" style="text-shadow: 0 2px 12px rgba(0,0,0,0.5);">
                 Apply Today
             </h2>
             <p class="text-lg sm:text-xl text-blue-100 mb-6 sm:mb-8">
                 Limited vacancies are available. Contact us today to check your eligibility and begin your Non-Schengen Europe Work Permit Visa application.
             </p>
             
-            <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-white/20">
+            <div class="bg-slate-900/40 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-white/20">
                 <h3 class="text-xl sm:text-2xl font-bold mb-6">Contact Information</h3>
                 
                 <div class="grid sm:grid-cols-2 gap-6 text-left">
