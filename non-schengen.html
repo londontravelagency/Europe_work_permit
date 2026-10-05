@@ -16,7 +16,15 @@
             font-family: 'Poppins', sans-serif;
         }
         .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('europe-non-schengen.jpg') center/cover no-repeat;
+            /* Full-width scenic background: Bay of Kotor, Montenegro (Non-Schengen) */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1614122027743-50a9e6e8002f?auto=format&fit=crop&w=2400&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+        }
+        @media (min-width: 1024px) {
+            .hero-bg { background-attachment: fixed; }
         }
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -146,7 +154,7 @@
     </nav>
 
     <!-- ====== HERO SECTION ====== -->
-    <section class="hero-bg text-white min-h-[70vh] flex items-center">
+    <section class="hero-bg w-full text-white min-h-[85vh] flex items-center">
         <div class="max-w-7xl mx-auto px-6 py-12 md:py-16">
             <div class="max-w-3xl">
                 <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-3xl text-sm mb-6">
