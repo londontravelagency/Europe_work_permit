@@ -262,6 +262,18 @@
         :root .scene-flag { transform:none; rotate:8deg; translate:0 0 55px; }
         @keyframes orbit-spin { to { transform:rotate(360deg); } }
 
+        /* Full-bleed Lisbon photo behind the hero, tinted forest green so the copy keeps its contrast. */
+        :root .hero-backdrop { position:absolute; inset:-7% -4%; z-index:-2; pointer-events:none; }
+        :root .hero-backdrop img { width:100%; height:100%; object-fit:cover; object-position:center 40%; transform:scale(1.04); will-change:transform; }
+        :root .hero-backdrop::after { content:''; position:absolute; inset:0;
+            background:linear-gradient(90deg,#0f3329f5 0%,#133b31e6 34%,#153f35b3 62%,#153f3580 100%),
+                       linear-gradient(0deg,#0d2c24cc 0%,transparent 38%),
+                       radial-gradient(ellipse at 72% 42%,#d8ed9a1a 0,transparent 55%); }
+        @media(max-width:767px) {
+            :root .hero-backdrop img { object-position:30% center; }
+            :root .hero-backdrop::after { background:linear-gradient(180deg,#0f3329f2 0%,#133b31e0 48%,#153f35b8 72%,#0d2c24e6 100%); }
+        }
+
         /* Hidden only while Motion is about to play the entrance; a head-script failsafe removes it. */
         html.motion-pending .hero-copy > *,html.motion-pending .scene-layer { opacity:0; }
         html.motion-pending .hero-scene,html.has-motion .hero-scene { animation:none; }
@@ -366,6 +378,14 @@
 
     <!-- ====== HERO SECTION ====== -->
     <section class="hero-bg text-white min-h-[70vh] flex items-center">
+        <!-- Background: Alfama rooftops, Lisbon (Unsplash, https://unsplash.com/photos/WlgYp2677Xk) -->
+        <div class="hero-backdrop" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1501927023255-9063be98970c?auto=format&amp;fit=crop&amp;w=2000&amp;q=75"
+                 srcset="https://images.unsplash.com/photo-1501927023255-9063be98970c?auto=format&amp;fit=crop&amp;w=900&amp;q=70 900w,
+                         https://images.unsplash.com/photo-1501927023255-9063be98970c?auto=format&amp;fit=crop&amp;w=1400&amp;q=72 1400w,
+                         https://images.unsplash.com/photo-1501927023255-9063be98970c?auto=format&amp;fit=crop&amp;w=2000&amp;q=75 2000w"
+                 sizes="100vw" alt="" width="2000" height="1333" fetchpriority="high" decoding="async">
+        </div>
         <div class="hero-layout max-w-7xl mx-auto px-6 py-12 md:py-16">
             <div class="hero-copy max-w-3xl">
                 <div class="hero-badge inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-3xl text-sm mb-6">
@@ -396,7 +416,7 @@
             </div>
             <!-- Decorative Lisbon photography, Unsplash.
                  Sources: https://unsplash.com/photos/I7HKbpZM8kk
-                          https://unsplash.com/photos/WlgYp2677Xk -->
+                          https://unsplash.com/photos/anrBiSm4iFQ -->
             <div class="hero-scene" aria-hidden="true">
                 <div class="scene-scroll"><div class="scene-float"><div class="scene-rig">
                     <div class="scene-orbit scene-layer"></div>
@@ -405,7 +425,7 @@
                              alt="" width="1000" height="1200" fetchpriority="high" decoding="async">
                     </div>
                     <div class="scene-postcard scene-layer">
-                        <img src="https://images.unsplash.com/photo-1501927023255-9063be98970c?auto=format&amp;fit=crop&amp;w=360&amp;h=260&amp;q=80"
+                        <img src="https://images.unsplash.com/photo-1599069158346-684fee0e414a?auto=format&amp;fit=crop&amp;w=360&amp;h=260&amp;q=80"
                              alt="" width="360" height="260" decoding="async">
                     </div>
                     <div class="scene-stamp scene-layer">
@@ -893,7 +913,7 @@
                 cssReveals();
             }
 
-            function initMotion({ animate, inView, scroll, stagger, hover, press }) {
+            function initMotion({ animate, inView, stagger, hover, press }) {
                 root.classList.add('has-motion');
                 const hero = document.querySelector('.hero-bg');
                 const scene = hero.querySelector('.hero-scene');
@@ -907,6 +927,8 @@
                 const orbit = scene.querySelector('.scene-orbit');
                 const copy = hero.querySelector('.hero-copy');
                 const toggle = hero.querySelector('.motion-toggle');
+                const backdrop = hero.querySelector('.hero-backdrop');
+                const backdropImg = backdrop.querySelector('img');
                 const settle = { type: 'spring', stiffness: 120, damping: 17, mass: .9 };
                 const snappy = { type: 'spring', stiffness: 520, damping: 26 };
                 const loops = [];
@@ -917,6 +939,7 @@
                 const reveal = (els, extra = {}) => animate(els,
                     { opacity: [0, 1], translate: ['0px 30px', '0px 0px'] },
                     { type: 'spring', bounce: .22, visualDuration: .75, ...extra });
+                animate(backdropImg, { scale: paused ? 1.04 : [1.16, 1.04] }, { duration: paused ? 0 : 2.4, ease: [.16, 1, .3, 1] });
                 const entrance = paused ? [] : [
                     reveal([...copy.children], { delay: stagger(.09) }),
                     animate(orbit, { opacity: [0, 1] }, { duration: 1.4, delay: .15 }),
@@ -938,7 +961,8 @@
                         animate(floatLayer, { y: [0, -14, 0] }, { duration: 6.5, repeat: Infinity, ease }),
                         animate(stamp, { y: [0, -12, 0], rotate: [0, -7, 0] }, { duration: 4.6, repeat: Infinity, ease }),
                         animate(postcard, { y: [0, 6, 0], rotate: [0, 2.5, 0] }, { duration: 7.5, repeat: Infinity, ease }),
-                        animate(flag, { rotate: [0, -3, 0] }, { duration: 5.2, repeat: Infinity, ease })
+                        animate(flag, { rotate: [0, -3, 0] }, { duration: 5.2, repeat: Infinity, ease }),
+                        animate(backdropImg, { scale: [1.04, 1.1, 1.04] }, { duration: 26, repeat: Infinity, ease })
                     );
                     // Touch screens get a slow automatic turn so the 3D depth is still visible.
                     if (!finePointer.matches) loops.push(animate(rig, { rotateY: [-9, 9, -9], rotateX: [3, -3, 3] }, { duration: 11, repeat: Infinity, ease }));
@@ -958,18 +982,31 @@
                         animate(rig, { rotateY: nx * 16, rotateX: -ny * 12 }, settle);
                         animate(photo, { '--sx': `${50 + nx * 45}%`, '--sy': `${35 + ny * 45}%` }, settle);
                         animate(copy, { x: nx * -10, y: ny * -6 }, settle);
+                        animate(backdropImg, { x: nx * -22, y: ny * -14 }, { type: 'spring', stiffness: 60, damping: 18 });
                     });
                 }, { passive: true });
                 const recentre = () => {
                     cancelAnimationFrame(frame);
                     animate(rig, { rotateY: 0, rotateX: 0 }, settle);
                     animate(copy, { x: 0, y: 0 }, settle);
+                    animate(backdropImg, { x: 0, y: 0 }, { type: 'spring', stiffness: 60, damping: 18 });
                 };
                 hero.addEventListener('pointerleave', recentre);
 
-                /* 4. Scroll-linked depth: the scene sinks back and tips away as the hero leaves. */
-                scroll(animate(scrollLayer, { y: [0, 80], rotateX: [0, 14], scale: [1, .94] }, { ease: 'linear' }),
-                    { target: hero, offset: ['start start', 'end start'] });
+                /* 4. Scroll-linked depth: the scene sinks back and tips away as the hero leaves,
+                      while the background photo scrolls slower than the page. Progress is read from
+                      the hero's live position each frame, so late layout shifts can't skew it. */
+                let scrollFrame = 0;
+                const onScroll = () => {
+                    scrollFrame = 0;
+                    const box = hero.getBoundingClientRect();
+                    const t = Math.max(0, Math.min(1, -box.top / box.height));
+                    scrollLayer.style.transform = `translateY(${t * 80}px) rotateX(${t * 14}deg) scale(${1 - t * .06})`;
+                    backdrop.style.transform = `translateY(${t * 140}px)`;
+                };
+                window.addEventListener('scroll', () => { if (!scrollFrame) scrollFrame = requestAnimationFrame(onScroll); }, { passive: true });
+                window.addEventListener('resize', onScroll, { passive: true });
+                onScroll();
 
                 /* 5. Pause control. */
                 function setPaused(value) {
