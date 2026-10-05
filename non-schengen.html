@@ -30,6 +30,13 @@
         .bn-font, .bn-font .heading-font {
             font-family: 'Hind Siliguri', sans-serif;
         }
+        /* Our Services background: Sveti Stefan, Montenegro */
+        .services-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1607625901435-5f896ba02bf5?auto=format&fit=crop&w=2400&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -543,32 +550,32 @@
     </section>
 
     <!-- ====== SERVICES ====== -->
-    <section class="py-16 sm:py-20 bg-white">
+    <section class="services-bg relative w-full py-16 sm:py-24 text-white">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl sm:text-4xl font-bold heading-font text-center mb-8 sm:mb-12">Our Services</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold heading-font text-center mb-8 sm:mb-12" style="text-shadow: 0 2px 12px rgba(0,0,0,0.5);">Our Services</h2>
             
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-5 max-w-5xl mx-auto">
+                <div class="bg-white/90 backdrop-blur-sm text-gray-900 rounded-2xl p-4 sm:p-6 text-center shadow-lg card-hover">
                     <i class="fas fa-file-circle-check text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-xs sm:text-sm">Work Permit Processing</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
+                <div class="bg-white/90 backdrop-blur-sm text-gray-900 rounded-2xl p-4 sm:p-6 text-center shadow-lg card-hover">
                     <i class="fas fa-passport text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-xs sm:text-sm">Visa Application Assistance</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
+                <div class="bg-white/90 backdrop-blur-sm text-gray-900 rounded-2xl p-4 sm:p-6 text-center shadow-lg card-hover">
                     <i class="fas fa-plane-departure text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-xs sm:text-sm">Air Ticket Booking</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
+                <div class="bg-white/90 backdrop-blur-sm text-gray-900 rounded-2xl p-4 sm:p-6 text-center shadow-lg card-hover">
                     <i class="fas fa-graduation-cap text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-xs sm:text-sm">Student Visas</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
-                    <i class="fas fa-umrah text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
+                <div class="bg-white/90 backdrop-blur-sm text-gray-900 rounded-2xl p-4 sm:p-6 text-center shadow-lg card-hover">
+                    <i class="fas fa-kaaba text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-xs sm:text-sm">Umrah Packages</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
+                <div class="bg-white/90 backdrop-blur-sm text-gray-900 rounded-2xl p-4 sm:p-6 text-center shadow-lg card-hover">
                     <i class="fas fa-gavel text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-xs sm:text-sm">Immigration Consultancy</p>
                 </div>
