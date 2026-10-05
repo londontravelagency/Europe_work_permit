@@ -165,10 +165,35 @@
         :root #why .max-w-4xl { max-width:none; }
         :root #why .text-yellow-400 { color:var(--lime); }
         :root .services-section { background:var(--paper); }
-        :root .services-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
-        :root .services-grid .card-hover { display:flex; align-items:center; text-align:left; gap:18px; background:#fffefa; border:1px solid var(--line); border-radius:17px; padding:25px; min-height:100px; }
-        :root .services-grid i { margin:0; font-size:24px; color:#739062; flex:0 0 30px; }
-        :root .services-grid p { font-size:13px; line-height:1.6; }
+        /* Services: drifting colour fields, a dotted grid and a flight path behind glass cards with floating 3D icons. */
+        :root .services-section { position:relative; isolation:isolate; overflow:hidden; }
+        :root .svc-bg { position:absolute; inset:0; margin:0; z-index:-1; pointer-events:none; overflow:hidden; }
+        :root .svc-bg .blob { position:absolute; border-radius:50%; filter:blur(70px); opacity:.7; will-change:transform; animation:blob-drift 22s ease-in-out infinite alternate; }
+        :root .svc-bg .b1 { width:520px; height:520px; background:#d8ed9a; left:-160px; top:-180px; }
+        :root .svc-bg .b2 { width:460px; height:460px; background:#bcdccb; right:-140px; top:18%; animation-duration:27s; animation-delay:-9s; }
+        :root .svc-bg .b3 { width:440px; height:440px; background:#f1d9bb; left:34%; bottom:-230px; animation-duration:31s; animation-delay:-15s; }
+        :root .svc-bg .dots { position:absolute; inset:0; background-image:radial-gradient(#153f3526 1.1px,transparent 1.4px); background-size:24px 24px;
+            -webkit-mask-image:radial-gradient(ellipse at 50% 45%,#000 25%,transparent 72%); mask-image:radial-gradient(ellipse at 50% 45%,#000 25%,transparent 72%); animation:dots-pan 50s linear infinite; }
+        :root .svc-bg .flight { position:absolute; inset:0; width:100%; height:100%; }
+        :root .svc-bg .flight-path { fill:none; stroke:#153f3540; stroke-width:1.6; stroke-dasharray:2 10; stroke-linecap:round; animation:dash-flow 6s linear infinite; }
+        @keyframes blob-drift { 0% { transform:translate(0,0) scale(1); } 50% { transform:translate(90px,40px) scale(1.15); } 100% { transform:translate(-40px,100px) scale(.92); } }
+        @keyframes dots-pan { to { background-position:240px 120px; } }
+        @keyframes dash-flow { to { stroke-dashoffset:-120; } }
+        :root .services-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+        :root .services-grid .card-hover { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:12px; min-height:220px; padding:28px 20px 26px;
+            perspective:700px; background:#fffefabf; -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); border:1px solid #ffffffd9; border-radius:24px; box-shadow:0 6px 0 #e1e8d6,0 26px 44px -30px #153f3555; }
+        :root .services-grid p { font-size:15px; line-height:1.5; letter-spacing:-.01em; color:var(--forest); }
+        :root .svc-icon { position:relative; display:grid; place-items:center; width:112px; height:112px; perspective:500px; }
+        :root .svc-icon img { width:92px; height:92px; object-fit:contain; transform-style:preserve-3d; filter:drop-shadow(0 12px 12px #153f3533); will-change:transform; animation:svc-float 5.5s ease-in-out infinite; }
+        :root .svc-shadow { position:absolute; left:50%; bottom:0; width:62px; height:12px; margin-left:-31px; border-radius:50%; background:radial-gradient(closest-side,#153f3547,transparent); animation:svc-shadow 5.5s ease-in-out infinite; }
+        :root .services-grid .card-hover:nth-child(2) :is(img,.svc-shadow) { animation-delay:-.9s; }
+        :root .services-grid .card-hover:nth-child(3) :is(img,.svc-shadow) { animation-delay:-1.8s; }
+        :root .services-grid .card-hover:nth-child(4) :is(img,.svc-shadow) { animation-delay:-2.7s; }
+        :root .services-grid .card-hover:nth-child(5) :is(img,.svc-shadow) { animation-delay:-3.6s; }
+        :root .services-grid .card-hover:nth-child(6) :is(img,.svc-shadow) { animation-delay:-4.5s; }
+        @keyframes svc-float { 0%,100% { transform:translateY(0) rotateY(-16deg) rotateX(8deg); } 50% { transform:translateY(-10px) rotateY(16deg) rotateX(-4deg); } }
+        @keyframes svc-shadow { 0%,100% { transform:scale(1); opacity:1; } 50% { transform:scale(.72); opacity:.55; } }
+        html.motion-paused .services-section *,html.motion-paused .services-section *::before { animation-play-state:paused !important; }
         :root #contact { position:relative; background:#e8eddf; color:var(--forest); border-top:1px solid #d4dfcb; }
         :root #contact > div { max-width:1000px; }
         :root #contact h2 { font-size:clamp(36px,4vw,50px); }
@@ -244,9 +269,12 @@
             :root #benefits .salary-card > div:first-child { font-size:48px; }
             :root #benefits .benefit-small { padding:18px; }
             :root .services-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-            :root .services-grid .card-hover { display:block; padding:20px; min-height:140px; }
-            :root .services-grid i { display:block; margin-bottom:18px; }
-            :root .services-grid p { font-size:12px; }
+            :root .services-grid .card-hover { min-height:178px; padding:20px 12px 18px; gap:8px; border-radius:20px; }
+            :root .svc-icon { width:84px; height:84px; }
+            :root .svc-icon img { width:70px; height:70px; }
+            :root .svc-shadow { width:48px; margin-left:-24px; }
+            :root .services-grid p { font-size:13px; }
+            :root .svc-bg .blob { width:320px; height:320px; }
             :root .payment-grid::before { display:none; }
             :root .payment-grid .card-hover > div:nth-of-type(2) { font-size:22px; }
             :root #contact .contact-card { padding:24px; }
@@ -334,6 +362,7 @@
             :root .motion-toggle span { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
         }
         @media(prefers-reduced-motion:reduce) {
+            :root .svc-bg .plane { display:none; }
             html.motion-pending .hero-copy > *,html.motion-pending .scene-layer { opacity:1; }
             :root .motion-toggle { display:none !important; }
         }
@@ -784,32 +813,44 @@
 
     <!-- ====== SERVICES ====== -->
     <section class="services-section py-16 sm:py-20 bg-white">
+        <figure class="svc-bg" aria-hidden="true">
+            <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+            <span class="dots"></span>
+            <svg class="flight" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <path id="svc-route" class="flight-path" d="M-60 560 C 180 420, 330 640, 560 470 S 900 150, 1060 260 S 1240 420, 1290 300"/>
+                <g class="plane" fill="#153f35" fill-opacity=".45">
+                    <path d="M-14 -2 L4 -2 L12 -11 L16 -11 L11 -2 L18 -2 L21 -6 L24 -6 L22 0 L24 6 L21 6 L18 2 L11 2 L16 11 L12 11 L4 2 L-14 2 Q-18 0 -14 -2 Z" transform="rotate(180)"/>
+                    <animateMotion dur="16s" repeatCount="indefinite" rotate="auto"><mpath href="#svc-route"/></animateMotion>
+                </g>
+            </svg>
+        </figure>
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl sm:text-4xl font-bold heading-font text-center mb-8 sm:mb-12">Our Services</h2>
             
+            <!-- 3D icons: Microsoft Fluent Emoji 3D (MIT licence), https://github.com/microsoft/fluentui-emoji -->
             <div class="services-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
                 <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
-                    <i class="fas fa-file-circle-check text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
+                    <span class="svc-icon" aria-hidden="true"><img src="icon-3d-briefcase.png" alt="" width="192" height="192" loading="lazy" decoding="async"><span class="svc-shadow"></span></span>
                     <p class="font-semibold text-xs sm:text-sm">Work Permit Processing</p>
                 </div>
                 <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
-                    <i class="fas fa-passport text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
+                    <span class="svc-icon" aria-hidden="true"><img src="icon-3d-id-card.png" alt="" width="192" height="192" loading="lazy" decoding="async"><span class="svc-shadow"></span></span>
                     <p class="font-semibold text-xs sm:text-sm">Visa Application Assistance</p>
                 </div>
                 <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
-                    <i class="fas fa-plane-departure text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
+                    <span class="svc-icon" aria-hidden="true"><img src="icon-3d-airplane.png" alt="" width="192" height="192" loading="lazy" decoding="async"><span class="svc-shadow"></span></span>
                     <p class="font-semibold text-xs sm:text-sm">Air Ticket Booking</p>
                 </div>
                 <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
-                    <i class="fas fa-graduation-cap text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
+                    <span class="svc-icon" aria-hidden="true"><img src="icon-3d-graduation-cap.png" alt="" width="192" height="192" loading="lazy" decoding="async"><span class="svc-shadow"></span></span>
                     <p class="font-semibold text-xs sm:text-sm">Student Visas</p>
                 </div>
                 <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
-                    <i class="fas fa-kaaba text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
+                    <span class="svc-icon" aria-hidden="true"><img src="icon-3d-kaaba.png" alt="" width="192" height="192" loading="lazy" decoding="async"><span class="svc-shadow"></span></span>
                     <p class="font-semibold text-xs sm:text-sm">Umrah Packages</p>
                 </div>
                 <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
-                    <i class="fas fa-gavel text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
+                    <span class="svc-icon" aria-hidden="true"><img src="icon-3d-balance-scale.png" alt="" width="192" height="192" loading="lazy" decoding="async"><span class="svc-shadow"></span></span>
                     <p class="font-semibold text-xs sm:text-sm">Immigration Consultancy</p>
                 </div>
             </div>
@@ -1070,12 +1111,22 @@
                     loops.forEach(loop => (value ? loop.pause() : loop.play()));
                     if (value && finePointer.matches) recentre();
                     root.classList.toggle('motion-paused', value);
+                    document.querySelectorAll('.svc-bg svg').forEach(svg => { try { value ? svg.pauseAnimations() : svg.unpauseAnimations(); } catch (e) {} });
                     toggle.setAttribute('aria-pressed', String(value));
                     toggle.querySelector('span').textContent = value ? 'Play motion' : 'Pause motion';
                     toggle.querySelector('i').className = value ? 'fas fa-play' : 'fas fa-pause';
                     try { localStorage.setItem('lta-motion-paused', value ? '1' : '0'); } catch (e) {}
                 }
                 toggle.addEventListener('click', () => setPaused(!paused));
+
+                /* 5b. Services: the 3D icon turns a full revolution and lifts on hover. */
+                hover('.services-grid .card-hover', card => {
+                    const icon = card.querySelector('.svc-icon');
+                    if (!icon || paused) return;
+                    animate(icon, { rotateY: [0, 360] }, { duration: .95, ease: [.2, .75, .25, 1] });
+                    animate(icon, { scale: 1.14, y: -6 }, { type: 'spring', stiffness: 320, damping: 16 });
+                    return () => animate(icon, { scale: 1, y: 0 }, { type: 'spring', stiffness: 260, damping: 18 });
+                });
                 if (paused) setPaused(true);
 
                 /* 6. Spring feedback on every call to action. */
