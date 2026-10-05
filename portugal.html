@@ -122,6 +122,17 @@
         :root .document-card i { color:#66835a; width:40px; flex-shrink:0; font-size:26px; }
         :root .document-card span { font-size:14px; line-height:1.6; }
         :root .document-card p { padding-left:57px; font-size:12px; line-height:1.6; }
+        /* Document photo cards: each box shows the document it names. */
+        :root .documents-section .document-card.doc-photo { position:relative; isolation:isolate; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end;
+            min-height:250px; padding:22px 24px; border:1px solid #d3ddcc; background:#153f35; box-shadow:0 6px 0 #dfe6d6; }
+        :root .doc-photo::before { content:''; position:absolute; inset:0; z-index:-2; background:var(--photo) var(--pos,center) / cover no-repeat; transform:scale(1.01); transition:transform .7s cubic-bezier(.2,.7,.2,1); }
+        :root .doc-photo::after { content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,#0d2c2400 30%,#0d2c24a6 62%,#0d2c24f0 100%); }
+        :root .doc-photo:hover::before { transform:scale(1.07); }
+        :root .doc-photo > div { min-height:0; }
+        :root .doc-photo i { display:grid; place-items:center; width:40px; height:40px; border-radius:12px; background:#fffefa; color:#4f7148; font-size:19px; box-shadow:0 3px 0 #0d2c2440; }
+        :root .doc-photo span { color:#fff; font-size:16px; letter-spacing:-.01em; text-shadow:0 1px 8px #0d2c2466; }
+        :root .doc-photo p { color:#dfe9db; margin-top:6px; }
+        @media(max-width:767px) { :root .documents-section .document-card.doc-photo { min-height:200px; padding:18px 20px; } }
         :root #process { background:#f0f2e8; border-top:1px solid #e3e8da; }
         :root #process .package-heading p:nth-child(2) { color:var(--forest); font-size:40px; font-family:'Manrope',sans-serif; letter-spacing:-.045em; margin-top:16px; }
         :root #process .package-heading p:nth-child(3) { font-size:13px; margin-top:5px; }
@@ -593,25 +604,25 @@
             <h2 class="text-3xl sm:text-4xl font-bold heading-font text-center mb-8 sm:mb-12">Required Documents</h2>
             
             <div class="grid sm:grid-cols-2 gap-4 sm:gap-6">
-                <div class="document-card bg-gray-50 rounded-2xl p-4 sm:p-6">
+                <div class="document-card doc-photo bg-gray-50 rounded-2xl p-4 sm:p-6" style="--photo:url('doc-passport-copy.jpg'); --pos:center 40%">
                     <div class="flex items-center gap-3 mb-2">
                         <i class="fas fa-passport text-xl sm:text-2xl text-blue-600"></i>
                         <span class="font-semibold text-sm sm:text-base">Valid Passport Copy</span>
                     </div>
                 </div>
-                <div class="document-card bg-gray-50 rounded-2xl p-4 sm:p-6">
+                <div class="document-card doc-photo bg-gray-50 rounded-2xl p-4 sm:p-6" style="--photo:url('doc-passport-photo.jpg'); --pos:center 45%">
                     <div class="flex items-center gap-3 mb-2">
                         <i class="fas fa-image text-xl sm:text-2xl text-blue-600"></i>
                         <span class="font-semibold text-sm sm:text-base">Recent Passport Photo (35 × 45 mm)</span>
                     </div>
                 </div>
-                <div class="document-card bg-gray-50 rounded-2xl p-4 sm:p-6">
+                <div class="document-card doc-photo bg-gray-50 rounded-2xl p-4 sm:p-6" style="--photo:url('doc-cv-resume.jpg'); --pos:center 30%">
                     <div class="flex items-center gap-3 mb-2">
                         <i class="fas fa-file-alt text-xl sm:text-2xl text-blue-600"></i>
                         <span class="font-semibold text-sm sm:text-base">Updated CV / Resume</span>
                     </div>
                 </div>
-                <div class="document-card bg-gray-50 rounded-2xl p-4 sm:p-6">
+                <div class="document-card doc-photo bg-gray-50 rounded-2xl p-4 sm:p-6" style="--photo:url('doc-police-clearance.jpg'); --pos:center 25%">
                     <div class="flex items-center gap-3 mb-2">
                         <i class="fas fa-certificate text-xl sm:text-2xl text-blue-600"></i>
                         <span class="font-semibold text-sm sm:text-base">Bangladesh Police Clearance Certificate</span>
