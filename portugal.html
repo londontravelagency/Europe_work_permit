@@ -342,10 +342,20 @@
         :root #why .card-hover { background:#0f332966; backdrop-filter:blur(6px); }
         :root #why .section-bg img { object-position:center 60%; }
         :root #contact.has-photo { color:#fff; border-top:0; }
-        :root #contact .section-bg::after { background:linear-gradient(180deg,#0f3329e6 0%,#153f35c7 50%,#0f3329f0 100%); }
+        :root #contact .section-bg::after { background:linear-gradient(180deg,rgba(15,51,41,.38) 0%,rgba(15,51,41,.28) 50%,rgba(15,51,41,.5) 100%); }
         :root #contact.has-photo h2 { color:#fff; }
         :root #contact.has-photo > div > p { color:#d9e5d8; }
         :root #contact.has-photo .contact-card { color:var(--forest); }
+        /* Apply Today: clear (unblurred) glass card so the office photo stays sharp behind it */
+        :root #contact .section-bg img { object-position:center 45%; }
+        :root #contact.has-photo h2 { text-shadow:0 2px 12px rgba(0,0,0,.55); }
+        :root #contact.has-photo > div > p { color:#fff; text-shadow:0 1px 8px rgba(0,0,0,.7); }
+        :root #contact.has-photo .contact-card { background:rgba(12,40,32,.42); border:1px solid rgba(255,255,255,.35); box-shadow:0 24px 40px -24px rgba(0,0,0,.55); color:#fff; -webkit-backdrop-filter:none; backdrop-filter:none; text-shadow:0 1px 6px rgba(0,0,0,.75); }
+        :root #contact.has-photo .contact-card h4 { color:#fde68a; }
+        :root #contact.has-photo .contact-card .text-blue-100 { color:#f1f5ef; }
+        :root #contact.has-photo .contact-card .text-green-300 { color:#bbf7d0; }
+        :root #contact.has-photo .contact-card .text-blue-400 { color:#bfdbfe; }
+        :root #contact.has-photo .contact-card a { text-shadow:none; }
 
         /* Hidden only while Motion is about to play the entrance; a head-script failsafe removes it. */
         html.motion-pending .hero-copy > *,html.motion-pending .scene-layer { opacity:0; }
@@ -869,9 +879,9 @@
 
     <!-- ====== CONTACT / CTA ====== -->
     <section id="contact" class="has-photo py-16 sm:py-20 bg-gradient-to-br from-green-700 to-teal-900 text-white">
-        <!-- Background: aircraft wing above the clouds (Unsplash, https://unsplash.com/photos/84qOq203MS0) -->
+        <!-- Background: consultants meeting clients in a glass-walled office (Unsplash) -->
         <figure class="section-bg" aria-hidden="true">
-            <img src="https://images.unsplash.com/photo-1529947327457-8f5cb53bc1b6?auto=format&amp;fit=crop&amp;w=1800&amp;q=65" alt="" width="1800" height="1200" loading="lazy" decoding="async">
+            <img src="https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?auto=format&amp;fit=crop&amp;w=1800&amp;q=70" alt="" width="1800" height="1200" loading="lazy" decoding="async">
         </figure>
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold heading-font mb-6">
@@ -881,7 +891,7 @@
                 Limited vacancies are available. Contact us today to check your eligibility and begin your Portugal Work Permit Visa application.
             </p>
             
-            <div class="contact-card bg-white/10 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-white/20">
+            <div class="contact-card bg-white/10 rounded-3xl p-6 sm:p-8 border border-white/20">
                 <h3 class="text-xl sm:text-2xl font-bold mb-6">Contact Information</h3>
                 
                 <div class="grid sm:grid-cols-2 gap-6 text-left">
