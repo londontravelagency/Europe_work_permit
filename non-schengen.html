@@ -73,6 +73,15 @@
         /* Clear (unblurred) glass panel: photo stays sharp behind it; shadow keeps text readable */
         .contact-glass { text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75); }
         .contact-glass a { text-shadow: none; }
+        /* Package Cost background: calculator and budget photo */
+        .cost-bg {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-image: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.82)), url('https://images.unsplash.com/photo-1707902665498-a202981fb5ac?auto=format&fit=crop&w=2400&q=80');
+            background-size: cover;
+            background-position: center;
+        }
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -468,12 +477,24 @@
     </section>
 
     <!-- ====== PACKAGE COST ====== -->
-    <section id="process" class="py-16 sm:py-20 bg-gray-50">
+    <section id="process" class="cost-bg py-16 sm:py-20">
+        <!-- Transparent background bar chart of the payment plan (decorative; the figures are in the cards below) -->
+        <div class="absolute inset-0 -z-10 pointer-events-none flex items-end gap-4 sm:gap-8 px-4 sm:px-10" aria-hidden="true">
+            <div class="flex-1 h-[9.5%] rounded-t-2xl bg-sky-300/15 border border-b-0 border-sky-200/30 flex justify-center">
+                <span class="mt-2 text-[10px] sm:text-xs font-semibold text-white/50 whitespace-nowrap">Step 1 · 1 Lakh</span>
+            </div>
+            <div class="flex-1 h-[19%] rounded-t-2xl bg-indigo-300/15 border border-b-0 border-indigo-200/30 flex justify-center">
+                <span class="mt-2 text-[10px] sm:text-xs font-semibold text-white/50 whitespace-nowrap">Step 2 · 2 Lakh</span>
+            </div>
+            <div class="flex-1 h-[85%] rounded-t-2xl bg-emerald-300/15 border border-b-0 border-emerald-200/30 flex justify-center">
+                <span class="mt-3 text-[10px] sm:text-xs font-semibold text-white/50 whitespace-nowrap">Step 3 · 9 Lakh</span>
+            </div>
+        </div>
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-8 sm:mb-12">
-                <h2 class="text-3xl sm:text-4xl font-bold heading-font mb-4">Package Cost</h2>
-                <p class="text-2xl sm:text-3xl font-bold text-green-600">BDT 12,00,000</p>
-                <p class="text-gray-500 text-sm sm:text-base">(12 Lakh)</p>
+                <h2 class="text-3xl sm:text-4xl font-bold heading-font mb-4 text-white" style="text-shadow: 0 2px 12px rgba(0,0,0,0.5);">Package Cost</h2>
+                <p class="text-2xl sm:text-3xl font-bold text-green-400">BDT 12,00,000</p>
+                <p class="text-gray-200 text-sm sm:text-base">(12 Lakh)</p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
