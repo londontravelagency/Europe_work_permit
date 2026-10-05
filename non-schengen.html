@@ -78,7 +78,7 @@
             position: relative;
             overflow: hidden;
             isolation: isolate;
-            background-image: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1707902665498-a202981fb5ac?auto=format&fit=crop&w=2400&q=80');
+            background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.72)), url('https://images.unsplash.com/photo-1707902665498-a202981fb5ac?auto=format&fit=crop&w=2400&q=80');
             background-size: cover;
             background-position: center;
         }
@@ -478,77 +478,104 @@
 
     <!-- ====== PACKAGE COST ====== -->
     <section id="process" class="cost-bg py-16 sm:py-20">
-        <!-- Transparent background bar chart of the payment plan (decorative; the figures are in the cards below) -->
-        <div class="absolute inset-0 -z-10 pointer-events-none flex items-end gap-4 sm:gap-8 px-4 sm:px-10" aria-hidden="true">
-            <div class="flex-1 h-[9.5%] rounded-t-2xl bg-sky-400/30 border border-b-0 border-sky-200/60 backdrop-blur-[1px] flex justify-center items-end">
-                <span class="mb-3 text-xs sm:text-sm font-semibold text-white/90 whitespace-nowrap">Step 1 · 1 Lakh</span>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+
+            <!-- Total price -->
+            <div class="text-center bg-white rounded-3xl shadow-xl border border-green-200 px-6 py-6 sm:py-8 max-w-md mx-auto mb-8 sm:mb-10">
+                <h2 class="text-3xl sm:text-4xl font-bold heading-font text-gray-900 mb-2">Package Cost</h2>
+                <p class="text-3xl sm:text-4xl font-bold text-green-600">BDT 12,00,000</p>
+                <p class="text-gray-500 text-sm sm:text-base mt-1">(12 Lakh)</p>
             </div>
-            <div class="flex-1 h-[19%] rounded-t-2xl bg-indigo-400/30 border border-b-0 border-indigo-200/60 backdrop-blur-[1px] flex justify-center items-end">
-                <span class="mb-3 text-xs sm:text-sm font-semibold text-white/90 whitespace-nowrap">Step 2 · 2 Lakh</span>
-            </div>
-            <div class="flex-1 h-[85%] rounded-t-2xl bg-emerald-400/30 border border-b-0 border-emerald-200/60 backdrop-blur-[1px] flex justify-center items-end">
-                <span class="mb-3 text-xs sm:text-sm font-semibold text-white/90 whitespace-nowrap">Step 3 · 9 Lakh</span>
-            </div>
-        </div>
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-8 sm:mb-12 bg-white rounded-3xl shadow-xl border border-green-200 px-6 py-6 sm:py-8 max-w-md mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-bold heading-font mb-3 text-gray-900">Package Cost</h2>
-                <p class="text-2xl sm:text-3xl font-bold text-green-600">BDT 12,00,000</p>
-                <p class="text-gray-500 text-sm sm:text-base">(12 Lakh)</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
-                <!-- Package Includes -->
-                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg border border-green-200 card-hover">
-                    <h3 class="text-xl sm:text-2xl font-bold heading-font text-green-700 mb-4 sm:mb-6">
-                        <i class="fas fa-check-circle text-green-500"></i> Package Includes
-                    </h3>
-                    <ul class="space-y-3 sm:space-y-4">
-                        <li class="flex items-center gap-3 text-sm sm:text-base">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Work Permit Processing</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-sm sm:text-base">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Visa Processing Assistance</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-sm sm:text-base">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Air Ticket</span>
-                        </li>
-                    </ul>
+
+            <div class="grid md:grid-cols-5 gap-6 sm:gap-8 items-start">
+
+                <!-- Left column: what's included + processing time -->
+                <div class="md:col-span-2 space-y-6">
+                    <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-xl border border-green-200">
+                        <h3 class="text-xl sm:text-2xl font-bold heading-font text-green-700 mb-5 flex items-center gap-2">
+                            <i class="fas fa-check-circle text-green-500"></i> Package Includes
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 bg-green-50 rounded-xl px-4 py-3 text-sm sm:text-base font-medium text-gray-800">
+                                <i class="fas fa-file-signature text-green-600 w-5 text-center"></i> Work Permit Processing
+                            </li>
+                            <li class="flex items-center gap-3 bg-green-50 rounded-xl px-4 py-3 text-sm sm:text-base font-medium text-gray-800">
+                                <i class="fas fa-passport text-green-600 w-5 text-center"></i> Visa Processing Assistance
+                            </li>
+                            <li class="flex items-center gap-3 bg-green-50 rounded-xl px-4 py-3 text-sm sm:text-base font-medium text-gray-800">
+                                <i class="fas fa-plane text-green-600 w-5 text-center"></i> Air Ticket
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-amber-50 rounded-3xl p-6 shadow-xl border border-amber-200">
+                        <p class="font-semibold text-amber-900 text-sm sm:text-base flex items-start gap-3">
+                            <i class="fas fa-clock mt-1"></i>
+                            <span>Estimated Processing Time: Approximately 3-4 months</span>
+                        </p>
+                        <p class="text-xs sm:text-sm text-gray-700 mt-2 pl-7">Processing times may vary depending on the employer, embassy, and government procedures.</p>
+                    </div>
                 </div>
-                
-                <!-- Payment Plan -->
-                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg border border-blue-200 card-hover">
-                    <h3 class="text-xl sm:text-2xl font-bold heading-font text-blue-700 mb-4 sm:mb-6">
+
+                <!-- Right column: payment plan -->
+                <div class="md:col-span-3 bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-blue-200">
+                    <h3 class="text-xl sm:text-2xl font-bold heading-font text-blue-700 mb-5 flex items-center gap-2">
                         <i class="fas fa-credit-card text-blue-500"></i> Payment Plan
                     </h3>
+
+                    <!-- Bar chart: share of the 12 Lakh paid at each step -->
+                    <div class="mb-6">
+                        <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-2">
+                            <span>How the 12 Lakh is paid</span>
+                            <span class="font-semibold text-gray-800">Total: 12 Lakh</span>
+                        </div>
+                        <div class="flex h-5 rounded-full overflow-hidden bg-gray-100" role="img" aria-label="Payment split: Step 1 is 1 Lakh, Step 2 is 2 Lakh, Step 3 is 9 Lakh">
+                            <div class="bg-blue-500" style="width: 8.33%;"></div>
+                            <div class="bg-indigo-500 border-l-2 border-white" style="width: 16.67%;"></div>
+                            <div class="bg-green-500 border-l-2 border-white" style="width: 75%;"></div>
+                        </div>
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-gray-600">
+                            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>Step 1</span>
+                            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>Step 2</span>
+                            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>Step 3</span>
+                        </div>
+                    </div>
+
                     <div class="space-y-3 sm:space-y-4">
-                        <div class="bg-blue-50 rounded-xl p-3 sm:p-4">
-                            <div class="font-semibold text-blue-800 text-sm sm:text-base">Step 1 – File Opening</div>
-                            <div class="text-xl sm:text-2xl font-bold text-blue-600">BDT 1,00,000</div>
-                            <div class="text-xs sm:text-sm text-gray-500">(1 Lakh)</div>
+                        <div class="rounded-2xl bg-blue-50 border border-blue-100 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                            <div class="flex items-start gap-3">
+                                <span class="shrink-0 w-7 h-7 rounded-full bg-blue-600 text-white text-sm font-bold flex items-center justify-center">1</span>
+                                <div>
+                                    <div class="font-semibold text-blue-900 text-sm sm:text-base">Step 1 – File Opening</div>
+                                    <div class="text-xs sm:text-sm text-gray-500">(1 Lakh)</div>
+                                </div>
+                            </div>
+                            <div class="text-xl sm:text-2xl font-bold text-blue-700 whitespace-nowrap pl-10 sm:pl-0">BDT 1,00,000</div>
                         </div>
-                        <div class="bg-indigo-50 rounded-xl p-3 sm:p-4">
-                            <div class="font-semibold text-indigo-800 text-sm sm:text-base">Step 2 – After Work Permit Approval</div>
-                            <div class="text-xl sm:text-2xl font-bold text-indigo-600">BDT 2,00,000</div>
-                            <div class="text-xs sm:text-sm text-gray-500">(2 Lakh) - Processing takes 1-2 months</div>
+
+                        <div class="rounded-2xl bg-indigo-50 border border-indigo-100 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                            <div class="flex items-start gap-3">
+                                <span class="shrink-0 w-7 h-7 rounded-full bg-indigo-600 text-white text-sm font-bold flex items-center justify-center">2</span>
+                                <div>
+                                    <div class="font-semibold text-indigo-900 text-sm sm:text-base">Step 2 – After Work Permit Approval</div>
+                                    <div class="text-xs sm:text-sm text-gray-500">(2 Lakh) - Processing takes 1-2 months</div>
+                                </div>
+                            </div>
+                            <div class="text-xl sm:text-2xl font-bold text-indigo-700 whitespace-nowrap pl-10 sm:pl-0">BDT 2,00,000</div>
                         </div>
-                        <div class="bg-green-50 rounded-xl p-3 sm:p-4">
-                            <div class="font-semibold text-green-800 text-sm sm:text-base">Step 3 – After Visa Approval</div>
-                            <div class="text-xl sm:text-2xl font-bold text-green-600">BDT 9,00,000</div>
-                            <div class="text-xs sm:text-sm text-gray-500">(9 Lakh) - Before departure</div>
+
+                        <div class="rounded-2xl bg-green-50 border border-green-100 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                            <div class="flex items-start gap-3">
+                                <span class="shrink-0 w-7 h-7 rounded-full bg-green-600 text-white text-sm font-bold flex items-center justify-center">3</span>
+                                <div>
+                                    <div class="font-semibold text-green-900 text-sm sm:text-base">Step 3 – After Visa Approval</div>
+                                    <div class="text-xs sm:text-sm text-gray-500">(9 Lakh) - Before departure</div>
+                                </div>
+                            </div>
+                            <div class="text-xl sm:text-2xl font-bold text-green-700 whitespace-nowrap pl-10 sm:pl-0">BDT 9,00,000</div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="mt-6 sm:mt-8 bg-yellow-50 border border-yellow-200 rounded-2xl p-4 sm:p-6 text-center">
-                <p class="font-semibold text-yellow-800 text-sm sm:text-base">
-                    <i class="fas fa-clock mr-2"></i> Estimated Processing Time: Approximately 3-4 months
-                </p>
-                <p class="text-xs sm:text-sm text-gray-600 mt-1">Processing times may vary depending on the employer, embassy, and government procedures.</p>
             </div>
         </div>
     </section>
