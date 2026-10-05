@@ -90,6 +90,14 @@
         :root #jobs .card-hover:nth-child(3) i { color:#b4784e; }
         :root #jobs .card-hover:nth-child(4) i { color:#5a7d74; }
         :root #jobs .card-hover p { font-size:15px; }
+        /* Sector photo cards: photo on a pseudo-layer so it can zoom without fighting the card tilt. */
+        :root #jobs .card-hover.photo-card { display:flex; flex-direction:column; justify-content:flex-end; min-height:250px; overflow:hidden; isolation:isolate;
+            background:#153f35; border-color:#153f35; color:#fff; box-shadow:0 6px 0 #c9d3c0; }
+        :root #jobs .photo-card::before { content:''; position:absolute; inset:0; z-index:-2; background:var(--photo) center/cover; transform:scale(1.02); transition:transform .7s cubic-bezier(.2,.7,.2,1); }
+        :root #jobs .photo-card::after { content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,#0d2c2400 25%,#0d2c24b3 62%,#0d2c24f2 100%); }
+        :root #jobs .photo-card:hover::before { transform:scale(1.09); }
+        :root #jobs .photo-card i { margin-bottom:16px; }
+        :root #jobs .photo-card p { color:#fff; font-size:17px; letter-spacing:-.01em; }
         :root #benefits { background:#e9eee2; color:var(--ink); }
         :root #benefits > div > .grid { gap:70px; }
         :root #benefits .salary-card { background:var(--forest); position:relative; overflow:hidden; border:1px solid #345a49; box-shadow:0 8px 0 #c6d3b9; border-radius:22px; color:#fff; padding:28px 32px; }
@@ -100,12 +108,14 @@
         :root #benefits .benefit-small { background:#ffffff80; border:1px solid #d3decc; border-radius:15px; padding:20px; }
         :root #benefits .benefit-small i { color:#6c8259; font-size:20px; margin-bottom:14px; }
         :root #benefits .benefit-small .font-semibold { font-size:13px; line-height:1.65; }
-        :root #benefits .benefits-list { background:transparent; border:0; padding:0; backdrop-filter:none; }
+        :root #benefits .benefits-list { position:relative; isolation:isolate; overflow:hidden; color:#fff; border:0; border-radius:24px; padding:36px 34px; backdrop-filter:none;
+            background:linear-gradient(160deg,#0f3329eb 0%,#153f35d1 55%,#153f35a6 100%),var(--photo) center/cover,#153f35; box-shadow:0 10px 0 #c6d3b9,0 30px 50px -30px #0f332980; }
         :root #benefits h3 { font-size:27px; font-weight:600; }
-        :root #benefits li { align-items:center; padding:12px 0; border-bottom:1px solid #cad6c3; margin:0; gap:14px; }
+        :root #benefits .benefits-list h3 { color:#fff; }
+        :root #benefits li { align-items:center; padding:12px 0; border-bottom:1px solid #ffffff26; margin:0; gap:14px; }
         :root #benefits li:last-child { border:0; }
-        :root #benefits li i { color:#6f8656; font-size:17px; flex-shrink:0; margin:0; }
-        :root #benefits li span { font-size:14px; line-height:1.7; }
+        :root #benefits li i { color:var(--lime); font-size:17px; flex-shrink:0; margin:0; }
+        :root #benefits li span { font-size:14px; line-height:1.7; color:#e6eee1; }
         :root .documents-section { background:#fffefa; }
         :root .documents-section .document-card { border:1px solid var(--line); background:#f6f7f0; border-radius:16px; padding:25px; }
         :root .document-card > div { margin:0; min-height:40px; gap:17px; }
@@ -214,6 +224,9 @@
             :root .section-heading p { margin-top:12px; }
             :root #jobs .job-grid { gap:14px; }
             :root #jobs .card-hover { padding:21px; min-height:158px; }
+            :root #jobs .card-hover.photo-card { min-height:200px; padding:18px; }
+            :root #jobs .photo-card p { font-size:14px; }
+            :root #benefits .benefits-list { padding:28px 22px; }
             :root #jobs .card-hover p { font-size:13px; }
             :root #jobs .card-hover i { width:48px; height:48px; font-size:22px; margin-bottom:20px; }
             :root #benefits > div > .grid { grid-template-columns:1fr; }
@@ -273,6 +286,19 @@
             :root .hero-backdrop img { object-position:30% center; }
             :root .hero-backdrop::after { background:linear-gradient(180deg,#0f3329f2 0%,#133b31e0 48%,#153f35b8 72%,#0d2c24e6 100%); }
         }
+
+        /* Section photo backgrounds (Why Us, Contact): a tinted photo layer that drifts on scroll. */
+        :root .has-photo { position:relative; isolation:isolate; overflow:hidden; }
+        :root .section-bg { position:absolute; inset:-70px 0; margin:0; z-index:-1; pointer-events:none; }
+        :root .section-bg img { width:100%; height:100%; object-fit:cover; display:block; }
+        :root .section-bg::after { content:''; position:absolute; inset:0; }
+        :root #why .section-bg::after { background:linear-gradient(180deg,#163b31f0 0%,#163b31d9 45%,#12352cf5 100%),radial-gradient(ellipse at top right,#2c513d99,transparent 60%); }
+        :root #why .section-bg img { object-position:center 60%; }
+        :root #contact.has-photo { color:#fff; border-top:0; }
+        :root #contact .section-bg::after { background:linear-gradient(180deg,#0f3329e6 0%,#153f35c7 50%,#0f3329f0 100%); }
+        :root #contact.has-photo h2 { color:#fff; }
+        :root #contact.has-photo > div > p { color:#d9e5d8; }
+        :root #contact.has-photo .contact-card { color:var(--forest); }
 
         /* Hidden only while Motion is about to play the entrance; a head-script failsafe removes it. */
         html.motion-pending .hero-copy > *,html.motion-pending .scene-layer { opacity:0; }
@@ -483,20 +509,21 @@
                 <p class="text-gray-600 text-sm sm:text-base max-w-md mx-auto">Immediate opportunities with reliable employers in Portugal</p>
             </div>
             
+            <!-- Sector photos, Unsplash: 5ZmAyIG_OrI (Douro vineyards), VLPUm5wP5Z0, 4NQEvxW2_4w, P3pI6xzovu0 -->
             <div class="job-grid grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto">
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover">
+                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover photo-card" style="--photo:url('https://images.unsplash.com/photo-1603657289433-e4983d2114b9?auto=format&amp;fit=crop&amp;w=640&amp;h=560&amp;q=70')">
                     <i class="fas fa-seedling text-2xl sm:text-3xl text-green-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-sm sm:text-base">Agriculture</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover">
+                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover photo-card" style="--photo:url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&amp;fit=crop&amp;w=640&amp;h=560&amp;q=70')">
                     <i class="fas fa-hard-hat text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-sm sm:text-base">Construction</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover">
+                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover photo-card" style="--photo:url('https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&amp;fit=crop&amp;w=640&amp;h=560&amp;q=70')">
                     <i class="fas fa-utensils text-2xl sm:text-3xl text-orange-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-sm sm:text-base">Restaurant</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover">
+                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover photo-card" style="--photo:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&amp;fit=crop&amp;w=640&amp;h=560&amp;q=70')">
                     <i class="fas fa-store text-2xl sm:text-3xl text-purple-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-sm sm:text-base">Retail Stores</p>
                 </div>
@@ -529,7 +556,8 @@
                     </div>
                 </div>
                 
-                <div class="benefits-list bg-white/10 backdrop-blur-md rounded-3xl p-6 sm:p-8">
+                <!-- Panel photo: Ribeira, Porto (Unsplash, https://unsplash.com/photos/mVq5nE3Yahw) -->
+                <div class="benefits-list bg-white/10 backdrop-blur-md rounded-3xl p-6 sm:p-8" style="--photo:url('https://images.unsplash.com/photo-1591040973846-61888c2de010?auto=format&amp;fit=crop&amp;w=900&amp;q=70')">
                     <h3 class="text-xl sm:text-2xl font-bold heading-font mb-6">Why Work in Portugal?</h3>
                     <ul class="space-y-3 sm:space-y-4">
                         <li class="flex items-start gap-3">
@@ -686,7 +714,11 @@
     </section>
 
     <!-- ====== WHY CHOOSE US ====== -->
-    <section id="why" class="py-16 sm:py-20 bg-gray-900 text-white">
+    <section id="why" class="has-photo py-16 sm:py-20 bg-gray-900 text-white">
+        <!-- Background: Porto at sunset (Unsplash, https://unsplash.com/photos/2aQ9N7lyFcM) -->
+        <figure class="section-bg" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1646921307555-e6fc19f384a7?auto=format&amp;fit=crop&amp;w=1800&amp;q=65" alt="" width="1800" height="1200" loading="lazy" decoding="async">
+        </figure>
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-8 sm:mb-12">
                 <h2 class="text-3xl sm:text-4xl font-bold heading-font">Why Choose London Travel Agency?</h2>
@@ -773,7 +805,11 @@
     </section>
 
     <!-- ====== CONTACT / CTA ====== -->
-    <section id="contact" class="py-16 sm:py-20 bg-gradient-to-br from-green-700 to-teal-900 text-white">
+    <section id="contact" class="has-photo py-16 sm:py-20 bg-gradient-to-br from-green-700 to-teal-900 text-white">
+        <!-- Background: aircraft wing above the clouds (Unsplash, https://unsplash.com/photos/84qOq203MS0) -->
+        <figure class="section-bg" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1529947327457-8f5cb53bc1b6?auto=format&amp;fit=crop&amp;w=1800&amp;q=65" alt="" width="1800" height="1200" loading="lazy" decoding="async">
+        </figure>
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold heading-font mb-6">
                 Apply Today
@@ -1003,7 +1039,15 @@
                     const t = Math.max(0, Math.min(1, -box.top / box.height));
                     scrollLayer.style.transform = `translateY(${t * 80}px) rotateX(${t * 14}deg) scale(${1 - t * .06})`;
                     backdrop.style.transform = `translateY(${t * 140}px)`;
+                    const vh = window.innerHeight;
+                    sectionBgs.forEach(bg => {
+                        const r = bg.parentElement.getBoundingClientRect();
+                        if (r.bottom < -100 || r.top > vh + 100) return;
+                        const p = Math.max(0, Math.min(1, (vh - r.top) / (vh + r.height)));
+                        bg.style.transform = `translateY(${(p - .5) * 110}px)`;
+                    });
                 };
+                const sectionBgs = document.querySelectorAll('.section-bg');
                 window.addEventListener('scroll', () => { if (!scrollFrame) scrollFrame = requestAnimationFrame(onScroll); }, { passive: true });
                 window.addEventListener('resize', onScroll, { passive: true });
                 onScroll();
