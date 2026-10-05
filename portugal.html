@@ -7,88 +7,264 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
+        /* Portugal: warm stone, Atlantic green, and restrained spatial motion. */
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+        :root { --ink:#183e35; --forest:#153f35; --muted:#68756f; --paper:#f7f7f0; --lime:#d8ed9a; --line:#dce4dc; }
+        * { box-sizing:border-box; }
+        html:root { scroll-behavior:smooth; scroll-padding-top:112px; }
+        :root body { margin:0; background:var(--paper); color:var(--ink); font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased; }
+        :root .heading-font { font-family:'Manrope',sans-serif; letter-spacing:-.045em; }
+        :root h1,:root h2,:root h3,:root h4,:root p { overflow-wrap:break-word; }
+        :root a,:root button { -webkit-tap-highlight-color:transparent; }
+        :root a:focus-visible,:root button:focus-visible { outline:3px solid #b8923b; outline-offset:5px; }
+        :root section { scroll-margin-top:100px; }
+        :root .max-w-7xl { max-width:1200px; }
+        :root .max-w-4xl { max-width:1120px; }
+        :root .site-nav { background:rgba(255,255,251,.96); box-shadow:0 1px 0 rgba(21,63,53,.1); backdrop-filter:blur(18px); }
+        :root .site-nav > div:first-child { min-height:88px; padding-top:8px; padding-bottom:8px; gap:20px; }
+        :root .site-nav img { height:64px; width:64px; border-radius:12px; }
+        :root .site-nav .brand-name { display:block; max-width:125px; font-size:15px; line-height:1.25; color:var(--forest); letter-spacing:-.025em; }
+        :root .desktop-nav { gap:24px; color:#56655e; font-size:12px; }
+        :root .desktop-nav a { white-space:nowrap; border:0; padding:8px 0; position:relative; }
+        :root .desktop-nav a[aria-current='page'] { color:var(--forest); }
+        :root .desktop-nav a[aria-current='page']::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--forest); }
+        :root .site-nav .nav-contact { background:var(--forest); border-radius:100px; padding:12px 18px; font-size:12px; box-shadow:0 4px 0 #092c22; }
+        :root .site-nav .nav-contact:hover { background:#245849; }
+        :root #mobile-menu-button { min-width:44px; min-height:44px; display:flex; align-items:center; justify-content:center; border-radius:10px; }
+        :root .mobile-menu-open { max-height:400px; opacity:1; visibility:visible; transition:max-height .25s ease,opacity .25s ease; }
+        :root .mobile-menu-closed { max-height:0; opacity:0; overflow:hidden; visibility:hidden; }
+        :root .page-nav { background:#eef1e8; border-color:#dce3d7; }
+        :root .page-nav > div { justify-content:flex-start; gap:28px; min-height:51px; font-size:12px; }
+        :root .page-nav span { color:var(--forest); margin-right:auto; font-size:13px; }
+        :root .page-nav a { color:#506056; padding:4px 0; }
+        :root .hero-bg { position:relative; isolation:isolate; min-height:620px; overflow:hidden; background:radial-gradient(ellipse at 72% 40%,#315b48 0,transparent 57%),#153f35; }
+        :root .hero-bg::before { content:''; position:absolute; width:680px; height:680px; border:1px solid #ffffff0b; border-radius:50%; top:-210px; left:-340px; box-shadow:0 0 0 80px #ffffff03,0 0 0 160px #ffffff03; pointer-events:none; z-index:-1; }
+        :root .hero-layout { display:grid; grid-template-columns:1.03fr 1fr; gap:72px; align-items:center; width:100%; padding-top:66px; padding-bottom:76px; }
+        :root .hero-copy { position:relative; z-index:2; }
+        :root .hero-badge { background:#ffffff0a; border:1px solid #ffffff24; color:#e5eddb; font-size:11px; letter-spacing:.11em; padding:9px 14px; margin-bottom:25px; }
+        :root .hero-badge > span { background:var(--lime); box-shadow:0 0 0 4px #d8ed9a12; animation:none; }
+        :root .hero-copy h1 { font-size:clamp(48px,5.6vw,72px); line-height:1.08; letter-spacing:-.06em; font-weight:500; }
+        :root .hero-copy h1 > span { color:var(--lime); display:inline-block; font-size:.76em; line-height:1.14; margin-top:12px; font-weight:600; letter-spacing:-.05em; }
+        :root .hero-copy p { max-width:450px; font-size:15px; line-height:1.9; color:#c6d6cd; margin-top:24px; }
+        :root .hero-actions { gap:12px; margin-top:30px; }
+        :root .hero-actions a { border-radius:100px; padding:15px 23px; font-size:13px; min-height:50px; transition:transform .25s,box-shadow .25s,background .25s; }
+        :root .hero-actions a:first-child { background:var(--lime); color:var(--forest); box-shadow:0 5px 0 #9bb76f; }
+        :root .hero-actions a:first-child:hover { transform:translateY(-3px); box-shadow:0 8px 0 #9bb76f; }
+        :root .hero-actions a:last-child { border:1px solid #ffffff4d; color:#fff; }
+        :root .hero-actions a:last-child:hover { background:#ffffff0d; }
+        :root .hero-scene { min-width:0; position:relative; height:450px; perspective:1400px; }
+        :root .scene-orbit { position:absolute; width:440px; height:440px; border:1px solid #d8ed9a30; border-radius:50%; left:-22px; top:-12px; transform:rotateX(24deg) rotateY(-12deg); }
+        :root .scene-orbit::after { content:''; position:absolute; inset:22px; border:1px dashed #d8ed9a20; border-radius:50%; }
+        :root .hero-photo { position:absolute; inset:6px 10px 18px 22px; border-radius:170px 170px 28px 28px; transform:rotate(3deg); background:#c0cebc; border:7px solid #f3f5e9; box-shadow:0 30px 65px #001a1a66,10px 12px 0 #a5b7a142; overflow:hidden; }
+        :root .hero-photo img { width:100%; height:100%; object-fit:cover; object-position:54% center; transform:scale(1.05); }
+        :root .hero-photo::after { content:''; position:absolute; inset:0; background:linear-gradient(0deg,#092f3159,transparent 60%); pointer-events:none; }
+        :root .scene-postcard { position:absolute; width:172px; height:132px; bottom:-8px; left:-34px; padding:7px; background:#fffdf3; border-radius:12px; transform:rotate(-10deg) translateZ(45px); box-shadow:0 16px 28px #001a1a4d; }
+        :root .scene-postcard img { width:100%; height:100%; object-fit:cover; border-radius:7px; }
+        :root .scene-stamp { position:absolute; right:-12px; top:40px; width:88px; height:88px; display:grid; place-items:center; border-radius:24px; background:var(--lime); color:var(--forest); box-shadow:0 8px 0 #8fa563,0 20px 32px #062a3159; transform:rotate(12deg) translateZ(65px); }
+        :root .scene-stamp svg { width:44px; height:44px; }
+        :root .scene-flag { position:absolute; right:35px; bottom:3px; height:48px; width:70px; background:linear-gradient(90deg,#1b744d 40%,#c94a41 40%); border:4px solid #fffdf3; border-radius:9px; box-shadow:0 8px 20px #001a1a55; transform:rotate(8deg); }
+        :root .scene-flag::after { content:''; position:absolute; width:17px; height:17px; background:#e8c960; border:3px solid #f2d787; border-radius:50%; left:17px; top:11px; }
+        :root .hero-scene { animation:scene-arrive 1s cubic-bezier(.2,.7,.2,1) both; }
+        :root .scene-stamp { animation:stamp-settle 4.5s ease-in-out; }
+        :root .trust-bar { position:relative; background:#fffefa; border-bottom:1px solid var(--line); padding:28px 0; }
+        :root .trust-items { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+        :root .trust-items > div { justify-content:center; gap:12px; border-right:1px solid var(--line); }
+        :root .trust-items > div:last-child { border:0; }
+        :root .trust-items i { color:#3e6454; font-size:21px; }
+        :root .trust-items .font-semibold { max-width:165px; font-size:12px; font-weight:500; line-height:1.6; color:#4b5b51; }
+        :root body > section:not(.hero-bg) { padding-top:88px; padding-bottom:88px; }
+        :root section h2 { font-size:clamp(28px,3vw,38px); font-weight:600; line-height:1.25; }
+        :root .section-heading { text-align:left; display:flex; align-items:flex-end; justify-content:space-between; gap:30px; margin-bottom:34px; }
+        :root .section-heading h2 { margin-bottom:0; }
+        :root .section-heading p { margin:0; max-width:320px; font-size:13px; line-height:1.7; color:var(--muted); }
+        :root #jobs { background:var(--paper); }
+        :root #jobs .job-grid { max-width:none; gap:20px; }
+        :root .card-hover { position:relative; transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease; transform:perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--lift,0px)); }
+        :root .card-hover:hover { --lift:-5px; box-shadow:0 20px 35px -18px #153f3540; }
+        :root #jobs .card-hover { background:#fffefa; border:1px solid #dce3d6; border-radius:20px; text-align:left; padding:28px; min-height:172px; box-shadow:0 5px 0 #e5e9dc; }
+        :root #jobs .card-hover:nth-child(2) { background:#eff2e9; }
+        :root #jobs .card-hover:nth-child(3) { background:#f7eee3; }
+        :root #jobs .card-hover:nth-child(4) { background:#eaf0ec; }
+        :root #jobs .card-hover i { display:flex; align-items:center; justify-content:center; width:56px; height:56px; border-radius:16px; background:white; color:#426944; font-size:25px; box-shadow:0 4px 0 #d9e0d1; margin-bottom:25px; transform:rotate(-6deg); }
+        :root #jobs .card-hover:nth-child(2) i { color:#6a7752; }
+        :root #jobs .card-hover:nth-child(3) i { color:#b4784e; }
+        :root #jobs .card-hover:nth-child(4) i { color:#5a7d74; }
+        :root #jobs .card-hover p { font-size:15px; }
+        :root #benefits { background:#e9eee2; color:var(--ink); }
+        :root #benefits > div > .grid { gap:70px; }
+        :root #benefits .salary-card { background:var(--forest); position:relative; overflow:hidden; border:1px solid #345a49; box-shadow:0 8px 0 #c6d3b9; border-radius:22px; color:#fff; padding:28px 32px; }
+        :root #benefits .salary-card::after { content:''; position:absolute; width:185px; height:185px; border:1px solid #d8ed9a26; border-radius:50%; right:-35px; top:-25px; box-shadow:0 0 0 28px #d8ed9a07,0 0 0 56px #d8ed9a05; pointer-events:none; }
+        :root #benefits .salary-card > div:first-child { font-size:54px; font-family:'Manrope',sans-serif; font-weight:500; letter-spacing:-.05em; }
+        :root #benefits .salary-card .text-yellow-300 { color:var(--lime); }
+        :root #benefits .salary-card .text-blue-200 { color:#c3d3c1; font-size:12px; margin-top:8px; }
+        :root #benefits .benefit-small { background:#ffffff80; border:1px solid #d3decc; border-radius:15px; padding:20px; }
+        :root #benefits .benefit-small i { color:#6c8259; font-size:20px; margin-bottom:14px; }
+        :root #benefits .benefit-small .font-semibold { font-size:13px; line-height:1.65; }
+        :root #benefits .benefits-list { background:transparent; border:0; padding:0; backdrop-filter:none; }
+        :root #benefits h3 { font-size:27px; font-weight:600; }
+        :root #benefits li { align-items:center; padding:12px 0; border-bottom:1px solid #cad6c3; margin:0; gap:14px; }
+        :root #benefits li:last-child { border:0; }
+        :root #benefits li i { color:#6f8656; font-size:17px; flex-shrink:0; margin:0; }
+        :root #benefits li span { font-size:14px; line-height:1.7; }
+        :root .documents-section { background:#fffefa; }
+        :root .documents-section .document-card { border:1px solid var(--line); background:#f6f7f0; border-radius:16px; padding:25px; }
+        :root .document-card > div { margin:0; min-height:40px; gap:17px; }
+        :root .document-card i { color:#66835a; width:40px; flex-shrink:0; font-size:26px; }
+        :root .document-card span { font-size:14px; line-height:1.6; }
+        :root .document-card p { padding-left:57px; font-size:12px; line-height:1.6; }
+        :root #process { background:#f0f2e8; border-top:1px solid #e3e8da; }
+        :root #process .package-heading p:nth-child(2) { color:var(--forest); font-size:40px; font-family:'Manrope',sans-serif; letter-spacing:-.045em; margin-top:16px; }
+        :root #process .package-heading p:nth-child(3) { font-size:13px; margin-top:5px; }
+        :root #process .card-hover { border-radius:22px; border-color:#d7e0cd; box-shadow:0 6px 0 #e1e7d7; padding:32px; }
+        :root #process .card-hover:last-child { border-color:#e7d8cb; }
+        :root #process h3 { font-size:20px; letter-spacing:-.03em; }
+        :root #process .text-green-700 { color:#386244; }
+        :root #process .text-red-700 { color:#956352; }
+        :root #process .text-red-500 { color:#b7806c; }
+        :root #process li { font-size:14px; line-height:1.6; }
+        :root #process li i { flex-shrink:0; }
+        :root .payment-section { background:#fffefa; }
+        :root .payment-section .payment-grid { position:relative; gap:24px; }
+        :root .payment-grid::before { content:''; position:absolute; top:50px; left:10%; right:10%; height:1px; background:#ccd9bc; }
+        :root .payment-grid .card-hover { border:1px solid #dce4d2; border-radius:20px; background:#f4f6ee; padding:30px 18px; box-shadow:0 5px 0 #e6ebdd; }
+        :root .payment-grid .card-hover > div:first-child { background:var(--forest); box-shadow:0 4px 0 #93ab7e; color:var(--lime); width:42px; height:42px; border-radius:13px; font-size:16px; margin-bottom:25px; }
+        :root .payment-grid .card-hover h4 { font-size:14px; color:#627356; margin-bottom:12px; }
+        :root .payment-grid .card-hover > div:nth-of-type(2) { color:var(--forest); font-size:24px; letter-spacing:-.04em; }
+        :root .payment-grid .card-hover p { font-size:12px; line-height:1.6; margin-top:8px; }
+        :root .payment-section .processing-note { background:#f5f0df; border-color:#e7dfc5; padding:22px; border-radius:15px; }
+        :root .processing-note p:first-child { color:#827045; font-size:13px; }
+        :root .processing-note p:last-child { font-size:12px; line-height:1.7; margin-top:6px; }
+        :root #why { background:radial-gradient(ellipse at top right,#2c513d,transparent 60%),#163b31; }
+        :root #why h2 { max-width:640px; margin:auto; }
+        :root #why .card-hover { border:1px solid #ffffff1c; background:#ffffff05; border-radius:20px; padding:30px 24px; box-shadow:0 5px 0 #0d2c231c; }
+        :root #why .card-hover > .rounded-full { border-radius:18px; background:#d8ed9a14; transform:rotate(-5deg); box-shadow:0 4px 0 #051f1b30; }
+        :root #why .card-hover i { color:var(--lime); font-size:25px; }
+        :root #why h3 { font-size:17px; }
+        :root #why .text-gray-400,:root #why .text-gray-300 { color:#b8ccbe; font-size:13px; line-height:1.8; }
+        :root #why .max-w-4xl { max-width:none; }
+        :root #why .text-yellow-400 { color:var(--lime); }
+        :root .services-section { background:var(--paper); }
+        :root .services-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+        :root .services-grid .card-hover { display:flex; align-items:center; text-align:left; gap:18px; background:#fffefa; border:1px solid var(--line); border-radius:17px; padding:25px; min-height:100px; }
+        :root .services-grid i { margin:0; font-size:24px; color:#739062; flex:0 0 30px; }
+        :root .services-grid p { font-size:13px; line-height:1.6; }
+        :root #contact { position:relative; background:#e8eddf; color:var(--forest); border-top:1px solid #d4dfcb; }
+        :root #contact > div { max-width:1000px; }
+        :root #contact h2 { font-size:clamp(36px,4vw,50px); }
+        :root #contact > div > p { color:#65755e; font-size:15px; line-height:1.85; max-width:660px; margin-left:auto; margin-right:auto; }
+        :root #contact .contact-card { background:#fffefa; border:1px solid #d1ddc6; border-radius:24px; box-shadow:0 10px 0 #d8e1cc,0 24px 40px -32px #163b3130; padding:36px; }
+        :root #contact .contact-card h3 { font-size:21px; font-weight:600; margin-bottom:30px; }
+        :root #contact .contact-card h4 { color:#76915f; font-size:13px; }
+        :root #contact .contact-card .text-blue-100 { color:#74806e; line-height:1.8; font-size:12px; margin-top:5px; }
+        :root #contact .contact-card .text-green-300 { color:#597547; }
+        :root #contact .contact-card .text-blue-400 { color:#749362; }
+        :root #contact .contact-card a { background:var(--forest); color:#fff; border-radius:100px; font-size:14px; padding:16px 28px; box-shadow:0 4px 0 #a6b897; }
+        :root #contact .contact-card a:hover { background:#285b46; }
+        :root #contact .contact-card a i { color:var(--lime); }
+        :root footer { background:#102d25 !important; }
+        :root footer .text-gray-500 { color:#97a89a; }
+        :root footer .text-gray-400 { color:#adbeaf; }
+        :root .whatsapp-float { position:fixed; bottom:24px; right:24px; width:54px; height:54px; background:#226b43; color:#fff; border:3px solid #fffff7; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; box-shadow:0 6px 20px #092c2240; z-index:60; transition:transform .2s; text-decoration:none; }
+        :root .whatsapp-float:hover { transform:translateY(-4px); }
+        :root .reveal-in { animation:section-arrive .65s ease both; }
+        @keyframes section-arrive { from { opacity:.65; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes scene-arrive { from { opacity:0; transform:translateY(24px) rotateY(-8deg); } to { opacity:1; transform:translateY(0) rotateY(0); } }
+        @keyframes stamp-settle { 0%,100% { transform:rotate(12deg) translateY(0); } 35% { transform:rotate(6deg) translateY(-14px); } 70% { transform:rotate(14deg) translateY(-4px); } }
+        @media(min-width:1024px) {
+            :root #mobile-menu-button { display:none; }
         }
-        .heading-font {
-            font-family: 'Poppins', sans-serif;
+        @media(max-width:1023px) {
+            :root .desktop-nav { display:none; }
+            :root #mobile-menu { display:block; }
+            :root .hero-layout { gap:34px; }
+            :root .hero-scene { height:370px; }
+            :root .scene-orbit { width:340px; height:340px; }
+            :root .scene-postcard { width:140px; height:108px; left:-12px; }
+            :root .scene-stamp { width:68px; height:68px; right:0; }
+            :root #benefits > div > .grid { gap:36px; }
+            :root .trust-items { gap:14px; }
+            :root .trust-items > div { gap:8px; }
+            :root .trust-items .font-semibold { font-size:11px; }
         }
-        .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url('images/portugal-hero.jpg') center/cover no-repeat;
+        @media(max-width:767px) {
+            html:root { scroll-padding-top:90px; }
+            :root .site-nav > div:first-child { min-height:76px; gap:12px; }
+            :root .site-nav img { height:52px; width:52px; }
+            :root .site-nav .brand-name { font-size:13px; max-width:112px; }
+            :root .site-nav .nav-contact { min-width:42px; min-height:42px; justify-content:center; padding:10px; }
+            :root .page-nav > div { gap:18px; font-size:11px; padding-top:10px; padding-bottom:10px; }
+            :root .page-nav span { font-size:12px; margin-right:auto; }
+            :root .hero-layout { grid-template-columns:1fr; gap:45px; padding-top:42px; padding-bottom:56px; }
+            :root .hero-copy { max-width:560px; }
+            :root .hero-copy h1 { font-size:58px; }
+            :root .hero-copy p { font-size:14px; line-height:1.85; }
+            :root .hero-copy h1 > span { font-size:.71em; }
+            :root .hero-badge { font-size:10px; margin-bottom:24px; }
+            :root .hero-scene { height:365px; width:min(100%,420px); margin:auto; }
+            :root .hero-photo { inset:0 18px 15px 28px; }
+            :root .scene-stamp { right:5px; top:20px; }
+            :root .scene-postcard { left:4px; bottom:-4px; }
+            :root .scene-flag { right:30px; bottom:2px; }
+            :root .trust-bar { padding:25px 0; }
+            :root .trust-items { grid-template-columns:repeat(2,1fr); gap:22px 14px; }
+            :root .trust-items > div { justify-content:flex-start; border:0; gap:10px; }
+            :root .trust-items .font-semibold { font-size:11px; max-width:140px; }
+            :root body > section:not(.hero-bg) { padding-top:58px; padding-bottom:58px; }
+            :root .section-heading { display:block; margin-bottom:28px; }
+            :root .section-heading p { margin-top:12px; }
+            :root #jobs .job-grid { gap:14px; }
+            :root #jobs .card-hover { padding:21px; min-height:158px; }
+            :root #jobs .card-hover p { font-size:13px; }
+            :root #jobs .card-hover i { width:48px; height:48px; font-size:22px; margin-bottom:20px; }
+            :root #benefits > div > .grid { grid-template-columns:1fr; }
+            :root #benefits .salary-card > div:first-child { font-size:48px; }
+            :root #benefits .benefit-small { padding:18px; }
+            :root .services-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+            :root .services-grid .card-hover { display:block; padding:20px; min-height:140px; }
+            :root .services-grid i { display:block; margin-bottom:18px; }
+            :root .services-grid p { font-size:12px; }
+            :root .payment-grid::before { display:none; }
+            :root .payment-grid .card-hover > div:nth-of-type(2) { font-size:22px; }
+            :root #contact .contact-card { padding:24px; }
+            :root #contact .contact-card a { padding:15px 20px; font-size:13px; }
+            :root footer { padding-bottom:90px !important; }
+            :root .whatsapp-float { width:50px; height:50px; right:17px; bottom:17px; }
         }
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        @media(max-width:380px) {
+            :root .site-nav .brand-name { font-size:11px; max-width:92px; }
+            :root .page-nav > div { gap:13px; }
+            :root .hero-copy h1 { font-size:51px; }
+            :root .hero-actions { gap:10px; }
+            :root .hero-actions a { padding:13px 18px; font-size:12px; }
+            :root .hero-scene { height:320px; }
+            :root .scene-orbit { width:290px; height:290px; left:-5px; }
+            :root .scene-postcard { width:125px; height:95px; }
         }
-        .card-hover:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-        
-        /* WhatsApp Floating Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 65px;
-            height: 65px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-        }
-        .whatsapp-pulse {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        @media(prefers-reduced-motion:reduce) {
+            html:root { scroll-behavior:auto; }
+            :root *,:root *::before,:root *::after { animation:none !important; transition:none !important; }
+            :root .card-hover,:root .card-hover:hover { transform:none; }
         }
 
-        /* Mobile Menu Transition */
-        .mobile-menu-open {
-            max-height: 500px;
-            opacity: 1;
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        }
-        .mobile-menu-closed {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
     <!-- ====== NAVBAR - WITH COMPANY LOGO ====== -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="site-nav bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 sm:py-2 flex justify-between items-center">
             <!-- Logo + Company Name -->
             <a href="index.html" class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
                 <img src="https://raw.githubusercontent.com/londontravelagency/bulgaria-work-permit/main/Company%20logo.jpeg" 
                      alt="London Travel Agency Logo" 
                      class="h-14 sm:h-16 md:h-24 lg:h-28 xl:h-32 w-auto object-contain">
-                <span class="text-sm sm:text-xl md:text-2xl font-bold heading-font text-blue-700 hidden xs:inline">London Travel Agency</span>
+                <span class="brand-name text-sm sm:text-xl md:text-2xl font-bold heading-font text-blue-700 hidden xs:inline">London Travel Agency</span>
             </a>
             
             <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center gap-3 lg:gap-4 text-xs lg:text-sm font-semibold">
+            <div class="desktop-nav hidden md:flex items-center gap-3 lg:gap-4 text-xs lg:text-sm font-semibold">
                 <a href="index.html" class="hover:text-blue-600 transition-colors pb-0.5 hover:border-b-2 hover:border-blue-600">Home</a>
-                <a href="portugal.html" class="text-blue-600 border-b-2 border-blue-600 pb-0.5">Schengen</a>
+                <a href="portugal.html" aria-current="page" class="text-blue-600 border-b-2 border-blue-600 pb-0.5">Schengen</a>
                 <a href="non-schengen.html" class="hover:text-blue-600 transition-colors pb-0.5 hover:border-b-2 hover:border-blue-600">Non Schengen</a>
                 <a href="student-visa.html" class="hover:text-blue-600 transition-colors">Student Visa</a>
                 <a href="legal-services.html" class="hover:text-blue-600 transition-colors">Legal Service</a>
@@ -98,13 +274,13 @@
             <!-- Right Side: Contact Us + Hamburger -->
             <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
                 <a href="contact.html" 
-                   class="bg-blue-600 hover:bg-blue-700 text-white px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl font-semibold flex items-center gap-1 sm:gap-1.5 transition-all text-xs sm:text-sm">
+                   class="nav-contact bg-blue-600 hover:bg-blue-700 text-white px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl font-semibold flex items-center gap-1 sm:gap-1.5 transition-all text-xs sm:text-sm">
                     <i class="fas fa-phone text-xs"></i>
                     <span class="hidden sm:inline">Contact Us</span>
                 </a>
                 
                 <!-- Mobile Hamburger Button -->
-                <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none" aria-label="Toggle menu">
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
                     <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -126,7 +302,7 @@
     </nav>
 
     <!-- Portugal page navigation -->
-    <div class="bg-blue-50 border-b border-blue-100">
+    <div class="page-nav bg-blue-50 border-b border-blue-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-semibold">
             <span class="text-blue-800">Portugal:</span>
             <a href="#jobs" class="text-gray-700 hover:text-blue-600 transition-colors">Jobs</a>
@@ -138,9 +314,9 @@
 
     <!-- ====== HERO SECTION ====== -->
     <section class="hero-bg text-white min-h-[70vh] flex items-center">
-        <div class="max-w-7xl mx-auto px-6 py-12 md:py-16">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-3xl text-sm mb-6">
+        <div class="hero-layout max-w-7xl mx-auto px-6 py-12 md:py-16">
+            <div class="hero-copy max-w-3xl">
+                <div class="hero-badge inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-3xl text-sm mb-6">
                     <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                     Schengen Area Opportunity
                 </div>
@@ -154,7 +330,7 @@
                     Portugal is a member of the Schengen Area. A Portugal Work Permit allows you to live and work legally in Portugal, with a pathway to long-term residence.
                 </p>
                 
-                <div class="flex flex-wrap gap-4 mt-8">
+                <div class="hero-actions flex flex-wrap gap-4 mt-8">
                     <a href="#contact" 
                        class="bg-white text-blue-700 hover:bg-yellow-300 hover:text-blue-800 px-6 sm:px-8 py-3 sm:py-4 rounded-3xl font-semibold text-base sm:text-lg flex items-center gap-3 transition-all">
                         Apply Now
@@ -166,13 +342,34 @@
                     </a>
                 </div>
             </div>
+            <!-- Decorative Lisbon photography, Unsplash.
+                 Sources: https://unsplash.com/photos/I7HKbpZM8kk
+                          https://unsplash.com/photos/WlgYp2677Xk -->
+            <div class="hero-scene" aria-hidden="true">
+                <div class="scene-orbit"></div>
+                <div class="hero-photo">
+                    <img src="https://images.unsplash.com/photo-1653580978963-271a0696cf13?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+                         alt="" width="1000" height="1200" fetchpriority="high" decoding="async">
+                </div>
+                <div class="scene-postcard">
+                    <img src="https://images.unsplash.com/photo-1501927023255-9063be98970c?auto=format&amp;fit=crop&amp;w=360&amp;h=260&amp;q=80"
+                         alt="" width="360" height="260" decoding="async">
+                </div>
+                <div class="scene-stamp">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m39 8-7 25-7-9-9-7 23-9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="m25 24 14-16M13 29l-6 6m12 0-6 6m-6-18-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="scene-flag"></div>
+            </div>
         </div>
     </section>
 
     <!-- ====== TRUST BAR ====== -->
-    <div class="bg-white py-4 sm:py-6 border-b">
+    <div class="trust-bar bg-white py-4 sm:py-6 border-b">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-wrap justify-center items-center gap-x-8 sm:gap-x-12 gap-y-4 sm:gap-y-6 text-gray-500 text-xs sm:text-sm">
+            <div class="trust-items flex flex-wrap justify-center items-center gap-x-8 sm:gap-x-12 gap-y-4 sm:gap-y-6 text-gray-500 text-xs sm:text-sm">
                 <div class="flex items-center gap-2 sm:gap-3">
                     <i class="fas fa-shield-alt text-xl sm:text-2xl text-blue-600"></i>
                     <div>
@@ -204,12 +401,12 @@
     <!-- ====== JOB SECTORS ====== -->
     <section id="jobs" class="py-16 sm:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12 sm:mb-16">
+            <div class="section-heading text-center mb-12 sm:mb-16">
                 <h2 class="text-3xl sm:text-4xl font-bold heading-font mb-4">Available Job Sectors</h2>
                 <p class="text-gray-600 text-sm sm:text-base max-w-md mx-auto">Immediate opportunities with reliable employers in Portugal</p>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto">
+            <div class="job-grid grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto">
                 <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-md card-hover">
                     <i class="fas fa-seedling text-2xl sm:text-3xl text-green-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-sm sm:text-base">Agriculture</p>
@@ -237,25 +434,25 @@
                 <div>
                     <h2 class="text-3xl sm:text-4xl font-bold heading-font mb-6">Salary &amp; Benefits</h2>
                     
-                    <div class="bg-white/10 rounded-3xl p-6 sm:p-8 mb-6">
+                    <div class="salary-card bg-white/10 rounded-3xl p-6 sm:p-8 mb-6">
                         <div class="text-4xl sm:text-5xl font-bold text-yellow-300">€920</div>
                         <div class="text-lg sm:text-xl">to <span class="font-bold text-yellow-300">€1,200</span></div>
                         <div class="text-blue-200 mt-1 text-sm sm:text-base">Monthly Salary</div>
                     </div>
                     
                     <div class="grid sm:grid-cols-2 gap-3 sm:gap-4">
-                        <div class="bg-white/10 rounded-2xl p-4 sm:p-5">
+                        <div class="benefit-small bg-white/10 rounded-2xl p-4 sm:p-5">
                             <i class="fas fa-home text-xl sm:text-2xl mb-2"></i>
                             <div class="font-semibold text-sm sm:text-base">Employer-Provided Accommodation</div>
                         </div>
-                        <div class="bg-white/10 rounded-2xl p-4 sm:p-5">
+                        <div class="benefit-small bg-white/10 rounded-2xl p-4 sm:p-5">
                             <i class="fas fa-utensils text-xl sm:text-2xl mb-2"></i>
                             <div class="font-semibold text-sm sm:text-base">Food Not Included</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 sm:p-8">
+                <div class="benefits-list bg-white/10 backdrop-blur-md rounded-3xl p-6 sm:p-8">
                     <h3 class="text-xl sm:text-2xl font-bold heading-font mb-6">Why Work in Portugal?</h3>
                     <ul class="space-y-3 sm:space-y-4">
                         <li class="flex items-start gap-3">
@@ -285,30 +482,30 @@
     </section>
 
     <!-- ====== REQUIRED DOCUMENTS ====== -->
-    <section class="py-16 sm:py-20 bg-white">
+    <section class="documents-section py-16 sm:py-20 bg-white">
         <div class="max-w-4xl mx-auto px-6">
             <h2 class="text-3xl sm:text-4xl font-bold heading-font text-center mb-8 sm:mb-12">Required Documents</h2>
             
             <div class="grid sm:grid-cols-2 gap-4 sm:gap-6">
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6">
+                <div class="document-card bg-gray-50 rounded-2xl p-4 sm:p-6">
                     <div class="flex items-center gap-3 mb-2">
                         <i class="fas fa-passport text-xl sm:text-2xl text-blue-600"></i>
                         <span class="font-semibold text-sm sm:text-base">Valid Passport Copy</span>
                     </div>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6">
+                <div class="document-card bg-gray-50 rounded-2xl p-4 sm:p-6">
                     <div class="flex items-center gap-3 mb-2">
                         <i class="fas fa-image text-xl sm:text-2xl text-blue-600"></i>
                         <span class="font-semibold text-sm sm:text-base">Recent Passport Photo (35 × 45 mm)</span>
                     </div>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6">
+                <div class="document-card bg-gray-50 rounded-2xl p-4 sm:p-6">
                     <div class="flex items-center gap-3 mb-2">
                         <i class="fas fa-file-alt text-xl sm:text-2xl text-blue-600"></i>
                         <span class="font-semibold text-sm sm:text-base">Updated CV / Resume</span>
                     </div>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6">
+                <div class="document-card bg-gray-50 rounded-2xl p-4 sm:p-6">
                     <div class="flex items-center gap-3 mb-2">
                         <i class="fas fa-certificate text-xl sm:text-2xl text-blue-600"></i>
                         <span class="font-semibold text-sm sm:text-base">Bangladesh Police Clearance Certificate</span>
@@ -322,7 +519,7 @@
     <!-- ====== PACKAGE COST ====== -->
     <section id="process" class="py-16 sm:py-20 bg-gray-50">
         <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-8 sm:mb-12">
+            <div class="package-heading text-center mb-8 sm:mb-12">
                 <h2 class="text-3xl sm:text-4xl font-bold heading-font mb-4">Package Cost</h2>
                 <p class="text-2xl sm:text-3xl font-bold text-green-600">BDT 22,00,000</p>
                 <p class="text-gray-500 text-sm sm:text-base">(22 Lakh)</p>
@@ -375,11 +572,11 @@
     </section>
 
     <!-- ====== PAYMENT PLAN ====== -->
-    <section class="py-16 sm:py-20 bg-white">
+    <section class="payment-section py-16 sm:py-20 bg-white">
         <div class="max-w-4xl mx-auto px-6">
             <h2 class="text-3xl sm:text-4xl font-bold heading-font text-center mb-8 sm:mb-12">Payment Plan</h2>
             
-            <div class="grid sm:grid-cols-3 gap-4 sm:gap-6">
+            <div class="payment-grid grid sm:grid-cols-3 gap-4 sm:gap-6">
                 <div class="bg-blue-50 rounded-2xl p-4 sm:p-6 text-center card-hover border border-blue-200">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mx-auto mb-3 sm:mb-4">1</div>
                     <h4 class="font-semibold text-base sm:text-lg mb-2">File Opening</h4>
@@ -402,7 +599,7 @@
                 </div>
             </div>
             
-            <div class="mt-6 sm:mt-8 bg-yellow-50 border border-yellow-200 rounded-2xl p-4 sm:p-6 text-center">
+            <div class="processing-note mt-6 sm:mt-8 bg-yellow-50 border border-yellow-200 rounded-2xl p-4 sm:p-6 text-center">
                 <p class="font-semibold text-yellow-800 text-sm sm:text-base">
                     <i class="fas fa-clock mr-2"></i> Estimated Processing Time: Approximately 6-7 months
                 </p>
@@ -465,11 +662,11 @@
     </section>
 
     <!-- ====== SERVICES ====== -->
-    <section class="py-16 sm:py-20 bg-white">
+    <section class="services-section py-16 sm:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl sm:text-4xl font-bold heading-font text-center mb-8 sm:mb-12">Our Services</h2>
             
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
+            <div class="services-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
                 <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
                     <i class="fas fa-file-circle-check text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-xs sm:text-sm">Work Permit Processing</p>
@@ -487,7 +684,7 @@
                     <p class="font-semibold text-xs sm:text-sm">Student Visas</p>
                 </div>
                 <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
-                    <i class="fas fa-umrah text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
+                    <i class="fas fa-kaaba text-2xl sm:text-3xl text-blue-600 mb-2 sm:mb-3"></i>
                     <p class="font-semibold text-xs sm:text-sm">Umrah Packages</p>
                 </div>
                 <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center card-hover">
@@ -508,7 +705,7 @@
                 Limited vacancies are available. Contact us today to check your eligibility and begin your Portugal Work Permit Visa application.
             </p>
             
-            <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-white/20">
+            <div class="contact-card bg-white/10 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-white/20">
                 <h3 class="text-xl sm:text-2xl font-bold mb-6">Contact Information</h3>
                 
                 <div class="grid sm:grid-cols-2 gap-6 text-left">
@@ -540,7 +737,7 @@
                 
                 <div class="mt-6 sm:mt-8">
                     <a href="https://wa.me/13477067980" 
-                       target="_blank"
+                       target="_blank" rel="noopener noreferrer"
                        class="inline-block bg-white text-green-700 hover:bg-yellow-300 hover:text-green-900 px-6 sm:px-10 py-3 sm:py-4 rounded-3xl font-bold text-base sm:text-lg transition-all">
                         <i class="fab fa-whatsapp text-green-500 text-lg sm:text-xl mr-3"></i>
                         Apply on WhatsApp Now
@@ -571,40 +768,73 @@
     </footer>
 
     <!-- ====== WHATSAPP FLOATING BUTTON ====== -->
-    <a href="https://wa.me/13477067980" target="_blank" 
+    <a href="https://wa.me/13477067980" target="_blank" rel="noopener noreferrer"
        class="whatsapp-float whatsapp-pulse" 
-       title="Chat with us on WhatsApp">
+       title="Chat with us on WhatsApp" aria-label="Chat with us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', () => {
             const menuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (menuButton && mobileMenu) {
-                menuButton.addEventListener('click', function() {
-                    const isOpen = mobileMenu.classList.contains('mobile-menu-open');
-                    mobileMenu.classList.toggle('mobile-menu-open');
-                    mobileMenu.classList.toggle('mobile-menu-closed');
-                    
-                    const icon = menuButton.querySelector('svg');
-                    if (isOpen) {
-                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
-                    } else {
-                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
-                    }
-                });
-                
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', function() {
-                        mobileMenu.classList.remove('mobile-menu-open');
-                        mobileMenu.classList.add('mobile-menu-closed');
-                        const icon = menuButton.querySelector('svg');
-                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            const icon = menuButton.querySelector('svg');
+            const setMenu = (open) => {
+                mobileMenu.classList.toggle('mobile-menu-open', open);
+                mobileMenu.classList.toggle('mobile-menu-closed', !open);
+                menuButton.setAttribute('aria-expanded', String(open));
+                icon.innerHTML = open
+                    ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>'
+                    : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            };
+            menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
+            mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+                    setMenu(false);
+                    menuButton.focus();
+                }
+            });
+            const desktop = window.matchMedia('(min-width:1024px)');
+            desktop.addEventListener('change', () => setMenu(false));
+
+            // Progressive enhancement: all content remains visible without JavaScript.
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+            const cards = document.querySelectorAll('.card-hover');
+            cards.forEach(card => {
+                let frame = 0;
+                const reset = () => {
+                    cancelAnimationFrame(frame);
+                    frame = 0;
+                    card.style.removeProperty('--rx');
+                    card.style.removeProperty('--ry');
+                };
+                card.addEventListener('pointermove', event => {
+                    if (reducedMotion.matches || !finePointer.matches || event.pointerType === 'touch') return;
+                    cancelAnimationFrame(frame);
+                    frame = requestAnimationFrame(() => {
+                        const box = card.getBoundingClientRect();
+                        const x = Math.max(-.5, Math.min(.5, (event.clientX - box.left) / box.width - .5));
+                        const y = Math.max(-.5, Math.min(.5, (event.clientY - box.top) / box.height - .5));
+                        card.style.setProperty('--rx', `${-y * 6}deg`);
+                        card.style.setProperty('--ry', `${x * 6}deg`);
                     });
-                });
+                }, { passive: true });
+                card.addEventListener('pointerleave', reset);
+                card.addEventListener('pointercancel', reset);
+                reducedMotion.addEventListener('change', reset);
+                finePointer.addEventListener('change', reset);
+            });
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) return;
+                        if (!reducedMotion.matches) entry.target.classList.add('reveal-in');
+                        observer.unobserve(entry.target);
+                    });
+                }, { threshold: .08 });
+                document.querySelectorAll('body > section:not(.hero-bg) > div').forEach(section => observer.observe(section));
             }
         });
     </script>
