@@ -89,6 +89,38 @@
         @media (prefers-reduced-motion: reduce) {
             .benefits-video { display: none; }
         }
+        /* Why Choose Us: motion video background (motionsites.ai) with dark overlay + frosted cards */
+        .why-bg {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-color: #111827; /* fallback while the video loads */
+        }
+        .why-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            pointer-events: none;
+        }
+        .why-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(rgba(17, 24, 39, 0.6), rgba(17, 24, 39, 0.78));
+        }
+        .why-bg .bg-white\/5 {
+            background-color: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .why-bg .text-gray-400 { color: #d1d5db; }
+        @media (prefers-reduced-motion: reduce) {
+            .why-video { display: none; }
+        }
         /* Apply Today / Contact background: consultants meeting clients in a glass-walled office */
         .contact-bg {
             background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.25), rgba(15, 23, 42, 0.45)), url('https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?auto=format&fit=crop&w=2400&q=80');
@@ -621,7 +653,10 @@
     </section>
 
     <!-- ====== WHY CHOOSE US ====== -->
-    <section id="why" class="py-16 sm:py-20 bg-gray-900 text-white">
+    <section id="why" class="why-bg py-16 sm:py-20 text-white">
+        <video class="why-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4" type="video/mp4">
+        </video>
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-8 sm:mb-12">
                 <h2 class="text-3xl sm:text-4xl font-bold heading-font">Why Choose London Travel Agency?</h2>
