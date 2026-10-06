@@ -84,8 +84,17 @@
             position: absolute;
             inset: 0;
             z-index: -1;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.7));
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.68), rgba(15, 23, 42, 0.82));
         }
+        /* Frosted cards + soft text shadow so text stays readable over the moving video */
+        .benefits-bg .bg-white\/10 {
+            background-color: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+        }
+        .benefits-bg h2, .benefits-bg h3 { text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6); }
+        .benefits-bg .text-blue-200 { color: #e0e7ff; }
         @media (prefers-reduced-motion: reduce) {
             .benefits-video { display: none; }
         }
@@ -423,7 +432,7 @@
     <!-- ====== SALARY & BENEFITS ====== -->
     <section id="benefits" lang="bn" class="benefits-bg bn-font py-16 sm:py-20 text-white">
         <video class="benefits-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260506_031045_0e1165dd-ab48-46e3-ad3d-5fe77f217647.mp4" type="video/mp4">
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260624_210218_173f8eba-17ff-4e27-972b-d128af25bf49.mp4" type="video/mp4">
         </video>
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
