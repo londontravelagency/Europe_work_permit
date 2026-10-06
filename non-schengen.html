@@ -84,17 +84,17 @@
             position: absolute;
             inset: 0;
             z-index: -1;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.68), rgba(15, 23, 42, 0.82));
+            /* light tint only, so the motion video stays clearly visible */
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.3));
         }
-        /* Frosted cards + soft text shadow so text stays readable over the moving video */
+        /* Clear see-through cards (no blur); text shadow keeps text readable over the video */
         .benefits-bg .bg-white\/10 {
-            background-color: rgba(15, 23, 42, 0.45);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.14);
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.25);
         }
-        .benefits-bg h2, .benefits-bg h3 { text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6); }
-        .benefits-bg .text-blue-200 { color: #e0e7ff; }
+        .benefits-bg { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85), 0 2px 12px rgba(0, 0, 0, 0.5); }
+        .benefits-bg i { filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.8)); }
+        .benefits-bg .text-blue-200 { color: #ffffff; }
         @media (prefers-reduced-motion: reduce) {
             .benefits-video { display: none; }
         }
@@ -457,7 +457,7 @@
                     </div>
                 </div>
                 
-                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 sm:p-8">
+                <div class="bg-white/10 rounded-3xl p-6 sm:p-8">
                     <h3 class="text-xl sm:text-2xl font-bold heading-font mb-6">কেন নন-শেনজেন ইউরোপে কাজ করবেন?</h3>
                     <ul class="space-y-3 sm:space-y-4">
                         <li class="flex items-start gap-3">
