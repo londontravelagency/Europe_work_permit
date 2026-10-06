@@ -76,12 +76,15 @@ section.photo-bg::after { content: ""; position: absolute; inset: 0; background:
 @media (min-width: 640px) { .hero-shot figcaption { font-size: 12px; padding: 28px 14px 10px; } }
 /* Footer: motion video background (motionsites.ai), light tint so the video stays visible */
 footer.footer-motion { position: relative; overflow: hidden; isolation: isolate; background-color: #111827; color: #e5e7eb; text-shadow: 0 1px 3px rgba(0,0,0,.85), 0 2px 12px rgba(0,0,0,.5); }
-footer.footer-motion .footer-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; pointer-events: none; }
+/* Main video shows the whole frame (no zoom/crop) */
+footer.footer-motion .footer-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; z-index: -2; pointer-events: none; }
+/* Soft copy of the same video fills the empty edges around it */
+footer.footer-motion .footer-video-fill { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(28px) saturate(1.1); z-index: -3; pointer-events: none; }
 footer.footer-motion::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.45)); }
 footer.footer-motion .text-gray-400 { color: #f3f4f6; }
 footer.footer-motion .text-gray-500 { color: #e5e7eb; }
 footer.footer-motion svg { filter: drop-shadow(0 2px 6px rgba(0,0,0,.7)); }
-@media (prefers-reduced-motion: reduce) { footer.footer-motion .footer-video { display: none; } }
+@media (prefers-reduced-motion: reduce) { footer.footer-motion .footer-video, footer.footer-motion .footer-video-fill { display: none; } }
 </style>
 <script>document.documentElement.className += " js";</script>
 </head>
@@ -725,6 +728,9 @@ or with our team before budgeting.
 </section>
 <!-- ====== FOOTER ====== -->
 <footer class="footer-motion text-gray-400 py-8 sm:py-12">
+<video class="footer-video-fill" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+<source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260702_051048_5ef213b5-26db-4da8-b604-7ef823760b6b.mp4" type="video/mp4">
+</video>
 <video class="footer-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
 <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260702_051048_5ef213b5-26db-4da8-b604-7ef823760b6b.mp4" type="video/mp4">
 </video>
