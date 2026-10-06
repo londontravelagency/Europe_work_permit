@@ -85,6 +85,18 @@ footer.footer-motion .text-gray-400 { color: #f3f4f6; }
 footer.footer-motion .text-gray-500 { color: #e5e7eb; }
 footer.footer-motion svg { filter: drop-shadow(0 2px 6px rgba(0,0,0,.7)); }
 @media (prefers-reduced-motion: reduce) { footer.footer-motion .footer-video, footer.footer-motion .footer-video-fill { display: none; } }
+/* Study Options: motion video background (motionsites.ai), light tint so the video stays visible */
+section.study-bg { position: relative; overflow: hidden; isolation: isolate; background-color: #0f172a; }
+section.study-bg .study-video, section.study-bg .study-video-fill { position: absolute; pointer-events: none; }
+section.study-bg .study-video { inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; z-index: -2; }
+section.study-bg .study-video-fill { inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(28px); z-index: -3; }
+@media (min-width: 1024px) { section.study-bg .study-video { object-fit: cover; } section.study-bg .study-video-fill { display: none; } }
+section.study-bg::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.35)); }
+section.study-bg .study-intro { color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.85), 0 2px 12px rgba(0,0,0,.5); }
+section.study-bg .study-intro .text-blue-600 { color: #bfdbfe; }
+section.study-bg .study-intro .text-gray-600 { color: #f3f4f6; }
+section.study-bg .bg-gray-50 { background-color: rgba(255,255,255,.9); border-color: rgba(255,255,255,.6); }
+@media (prefers-reduced-motion: reduce) { section.study-bg .study-video, section.study-bg .study-video-fill { display: none; } }
 </style>
 <script>document.documentElement.className += " js";</script>
 </head>
@@ -245,9 +257,15 @@ countries, and London puts you inside one of the world's largest graduate job ma
 </div>
 </section>
 <!-- ====== STUDY LEVELS ====== -->
-<section class="py-14 sm:py-20 bg-white">
+<section class="study-bg py-14 sm:py-20">
+<video class="study-video-fill" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+<source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260606_170109_f96e01a5-b0db-4274-b24d-8d97e99ec928.mp4" type="video/mp4">
+</video>
+<video class="study-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+<source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260606_170109_f96e01a5-b0db-4274-b24d-8d97e99ec928.mp4" type="video/mp4">
+</video>
 <div class="max-w-7xl mx-auto px-6">
-<div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 reveal">
+<div class="study-intro text-center max-w-2xl mx-auto mb-10 sm:mb-14 reveal">
 <span class="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Study Options</span>
 <h2 class="text-2xl sm:text-4xl font-bold heading-font mt-3 mb-4">Which route fits you?</h2>
 <p class="text-gray-600 text-sm sm:text-base">We match your academic history, budget and English level to the right course level &mdash; then build the visa file around it.</p>
