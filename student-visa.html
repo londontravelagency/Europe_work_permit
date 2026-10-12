@@ -97,6 +97,129 @@ section.study-bg .study-intro .text-blue-600 { color: #bfdbfe; }
 section.study-bg .study-intro .text-gray-600 { color: #f3f4f6; }
 section.study-bg .bg-gray-50 { background-color: rgba(255,255,255,.9); border-color: rgba(255,255,255,.6); }
 @media (prefers-reduced-motion: reduce) { section.study-bg .study-video, section.study-bg .study-video-fill { display: none; } }
+/* ====== APPLY ONLINE FORM (pop-up) ====== */
+html.ap-lock, html.ap-lock body { overflow: hidden; }
+.ap-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: stretch; justify-content: center; }
+.ap-modal[hidden], .ap-modal [hidden] { display: none !important; }
+.ap-backdrop { position: absolute; inset: 0; background: rgba(15,23,42,.65); backdrop-filter: blur(3px); }
+.ap-panel { position: relative; background: #fff; width: 100%; max-width: 860px; height: 100%; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 30px 60px -12px rgba(2,6,23,.5); animation: apIn .28s cubic-bezier(.2,.7,.3,1); }
+@media (min-width: 720px) { .ap-modal { align-items: center; padding: 24px; } .ap-panel { height: auto; max-height: calc(100dvh - 48px); border-radius: 22px; } }
+@keyframes apIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .ap-panel { animation: none; } }
+.ap-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 18px 20px 12px; background: linear-gradient(120deg,#1d4ed8,#4f46e5); color: #fff; }
+.ap-kicker { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #c7d2fe; }
+.ap-head h2 { font-size: 20px; font-weight: 700; line-height: 1.2; margin-top: 2px; }
+@media (min-width: 640px) { .ap-head { padding: 22px 28px 14px; } .ap-head h2 { font-size: 24px; } }
+.ap-x { width: 38px; height: 38px; border-radius: 12px; background: rgba(255,255,255,.15); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; transition: background .2s; }
+.ap-x:hover { background: rgba(255,255,255,.28); }
+.ap-steps { display: flex; gap: 10px; padding: 0 20px 14px; background: linear-gradient(120deg,#1d4ed8,#4f46e5); list-style: none; margin: 0; }
+@media (min-width: 640px) { .ap-steps { padding: 0 28px 16px; } }
+.ap-steps li { display: flex; align-items: center; gap: 8px; color: #c7d2fe; font-size: 12.5px; font-weight: 600; cursor: pointer; min-width: 0; }
+.ap-steps li span { width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(255,255,255,.45); display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+.ap-steps li em { font-style: normal; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: none; }
+@media (min-width: 640px) { .ap-steps li em { display: inline; } }
+.ap-steps li.is-active { color: #fff; }
+.ap-steps li.is-active em { display: inline; }
+.ap-steps li.is-active { flex: 1 1 auto; }
+@media (min-width: 640px) { .ap-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; } }
+.ap-steps li.is-active span { background: #fff; color: #1d4ed8; border-color: #fff; }
+.ap-steps li.is-done span { background: #22c55e; border-color: #22c55e; color: #fff; }
+.ap-progress { height: 4px; background: #e0e7ff; }
+.ap-progress div { height: 100%; width: 25%; background: linear-gradient(90deg,#22c55e,#16a34a); transition: width .35s ease; }
+.ap-body { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 22px 20px 28px; }
+@media (min-width: 640px) { .ap-body { padding: 26px 28px 32px; } }
+.ap-h3 { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; color: #111827; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+.ap-h4 { font-size: 15px; font-weight: 700; color: #1f2937; margin: 26px 0 4px; display: flex; align-items: center; gap: 8px; }
+.ap-lead { font-size: 13.5px; color: #6b7280; margin-bottom: 16px; }
+.ap-grid { display: grid; gap: 14px; }
+@media (min-width: 640px) { .ap-grid { grid-template-columns: 1fr 1fr; gap: 16px 18px; } .ap-grid-3 { grid-template-columns: repeat(3,1fr); } .ap-grid-5 { grid-template-columns: repeat(5,1fr); } }
+.ap-grid-5 { grid-template-columns: 1fr 1fr; }
+.ap-span { grid-column: 1 / -1; }
+.ap-field { min-width: 0; border: 0; padding: 0; margin: 0; }
+.ap-label, .ap-field > legend { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; padding: 0; }
+.ap-req { color: #dc2626; font-weight: 700; margin-left: 2px; }
+.ap-opt { color: #9ca3af; font-weight: 500; font-size: 12px; }
+.ap-input { width: 100%; border: 1.5px solid #d1d5db; border-radius: 12px; padding: 11px 13px; font-size: 16px; line-height: 1.35; background: #fff; color: #111827; transition: border-color .15s, box-shadow .15s; -webkit-appearance: none; appearance: none; }
+select.ap-input { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 34px; }
+@media (min-width: 640px) { .ap-input { font-size: 15px; } }
+.ap-input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 4px rgba(37,99,235,.15); }
+textarea.ap-input { min-height: 96px; resize: vertical; }
+.ap-hint { font-size: 12px; color: #6b7280; margin-top: 5px; }
+.ap-err { display: none; font-size: 12.5px; color: #dc2626; margin-top: 5px; font-weight: 500; }
+.ap-invalid > .ap-err, .ap-invalid > .ap-errbox { display: block; }
+.ap-invalid .ap-input { border-color: #dc2626; }
+.ap-invalid .ap-chip span { border-color: #fca5a5; }
+.ap-errbox { display: none; background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; border-radius: 12px; padding: 10px 14px; font-size: 13px; font-weight: 500; margin-bottom: 12px; }
+/* chips (radio / checkbox) */
+.ap-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.ap-chip { position: relative; cursor: pointer; }
+.ap-chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.ap-chip span { display: inline-flex; align-items: center; gap: 6px; padding: 9px 14px; border: 1.5px solid #d1d5db; border-radius: 999px; font-size: 14px; font-weight: 500; color: #374151; background: #fff; transition: all .15s; user-select: none; }
+.ap-chip:hover span { border-color: #93c5fd; }
+.ap-chip input:checked + span { background: #eff6ff; border-color: #2563eb; color: #1d4ed8; font-weight: 600; }
+.ap-chip input:checked + span::before { content: "\2713"; font-weight: 800; }
+.ap-chip input:focus-visible + span { box-shadow: 0 0 0 4px rgba(37,99,235,.2); }
+.ap-chip input:disabled + span { opacity: .45; cursor: not-allowed; }
+.ap-seg { display: inline-flex; border: 1.5px solid #d1d5db; border-radius: 12px; overflow: hidden; flex-wrap: wrap; }
+.ap-seg label { position: relative; cursor: pointer; }
+.ap-seg input { position: absolute; opacity: 0; }
+.ap-seg span { display: block; padding: 9px 13px; font-size: 13.5px; font-weight: 500; color: #4b5563; background: #fff; border-right: 1px solid #e5e7eb; }
+.ap-seg label:last-child span { border-right: 0; }
+.ap-seg input:checked + span { background: #2563eb; color: #fff; }
+.ap-seg input:focus-visible + span { box-shadow: inset 0 0 0 3px rgba(255,255,255,.6); }
+/* qualification / job cards */
+.ap-card { position: relative; border: 1.5px solid #e5e7eb; border-radius: 16px; padding: 16px; background: #f9fafb; margin-bottom: 14px; }
+@media (min-width: 640px) { .ap-card { padding: 18px 20px; } }
+.ap-card-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 12px; }
+.ap-card-head h5 { font-size: 14.5px; font-weight: 700; color: #1e3a8a; }
+.ap-card-x { width: 30px; height: 30px; border-radius: 9px; color: #6b7280; font-size: 20px; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
+.ap-card-x:hover { background: #fee2e2; color: #dc2626; }
+.ap-card.is-filled { border-color: #bfdbfe; background: #f8fbff; }
+.ap-addrow { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; border: 1.5px dashed #cbd5e1; border-radius: 16px; padding: 14px 16px; }
+.ap-addrow .ap-field { flex: 1 1 240px; }
+.ap-btn-add { background: #eff6ff; color: #1d4ed8; border: 1.5px solid #bfdbfe; font-weight: 700; font-size: 14px; padding: 11px 18px; border-radius: 12px; transition: background .15s; }
+.ap-btn-add:hover { background: #dbeafe; }
+.ap-reveal { margin-top: 14px; padding: 16px; border-radius: 14px; background: #f8fafc; border: 1px solid #e2e8f0; }
+/* files */
+.ap-file { display: flex; align-items: center; gap: 12px; border: 1.5px dashed #cbd5e1; border-radius: 14px; padding: 12px 14px; background: #fff; cursor: pointer; transition: border-color .15s, background .15s; }
+.ap-file:hover { border-color: #60a5fa; background: #f8fbff; }
+.ap-file i { font-size: 20px; color: #2563eb; width: 24px; text-align: center; }
+.ap-file b { display: block; font-size: 14px; color: #1f2937; }
+.ap-file small { display: block; font-size: 12px; color: #6b7280; }
+.ap-file input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.ap-file:focus-within { box-shadow: 0 0 0 4px rgba(37,99,235,.15); border-color: #2563eb; }
+.ap-files { margin-top: 6px; font-size: 12.5px; color: #166534; }
+.ap-files li { display: flex; gap: 6px; align-items: center; }
+.ap-note { background: #f0f9ff; border: 1px solid #bae6fd; color: #075985; border-radius: 12px; padding: 10px 14px; font-size: 13px; }
+.ap-consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: #374151; background: #f9fafb; border: 1.5px solid #e5e7eb; border-radius: 14px; padding: 14px; cursor: pointer; }
+.ap-consent input { width: 18px; height: 18px; margin-top: 2px; accent-color: #2563eb; flex-shrink: 0; }
+.ap-hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; }
+/* footer */
+.ap-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 20px; border-top: 1px solid #e5e7eb; background: #fff; padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+@media (min-width: 640px) { .ap-foot { padding: 14px 28px; } }
+.ap-foot-note { font-size: 12.5px; color: #6b7280; font-weight: 500; }
+.ap-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; font-size: 15px; padding: 12px 22px; border-radius: 12px; transition: all .15s; }
+.ap-btn-ghost { color: #374151; background: #f3f4f6; }
+.ap-btn-ghost:hover { background: #e5e7eb; }
+.ap-btn-primary { color: #fff; background: #2563eb; box-shadow: 0 8px 18px -6px rgba(37,99,235,.55); }
+.ap-btn-primary:hover { background: #1d4ed8; }
+.ap-btn-green { color: #fff; background: #16a34a; box-shadow: 0 8px 18px -6px rgba(22,163,74,.55); }
+.ap-btn-green:hover { background: #15803d; }
+.ap-btn[disabled] { opacity: .65; cursor: wait; }
+.ap-spin { width: 16px; height: 16px; border: 2.5px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: apSpin .8s linear infinite; }
+@keyframes apSpin { to { transform: rotate(360deg); } }
+.ap-done { text-align: center; padding: 28px 8px; }
+.ap-done-ico { width: 76px; height: 76px; border-radius: 50%; margin: 0 auto 18px; display: flex; align-items: center; justify-content: center; font-size: 34px; color: #fff; background: #16a34a; box-shadow: 0 12px 28px -8px rgba(22,163,74,.6); }
+.ap-done-ico.is-warn { background: #f59e0b; box-shadow: 0 12px 28px -8px rgba(245,158,11,.6); }
+.ap-done h3 { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+.ap-done p { color: #4b5563; font-size: 14.5px; max-width: 520px; margin: 0 auto 10px; }
+.ap-ref { display: inline-block; font-family: ui-monospace, Menlo, monospace; font-size: 16px; font-weight: 700; letter-spacing: .04em; background: #eff6ff; color: #1d4ed8; border: 1px dashed #93c5fd; border-radius: 10px; padding: 8px 14px; margin: 6px 0 16px; }
+.ap-done-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 8px; }
+.ap-grid-5 .ap-span-sm { grid-column: 1 / -1; }
+@media (min-width: 640px) { .ap-grid-5 .ap-span-sm { grid-column: auto; } }
+.ap-cta-pulse { animation: apGlow 2.4s ease-in-out infinite; }
+@keyframes apGlow { 0%,100% { box-shadow: 0 10px 25px -8px rgba(255,255,255,.35); } 50% { box-shadow: 0 10px 34px -4px rgba(255,255,255,.75); } }
+@media (prefers-reduced-motion: reduce) { .ap-cta-pulse { animation: none; } }
 </style>
 <script>document.documentElement.className += " js";</script>
 </head>
@@ -155,8 +278,8 @@ End-to-end guidance for your UK Student Visa &mdash; university selection, CAS, 
 biometrics and pre-departure support. Handled by our London-based team.
 </p>
 <div class="flex flex-wrap gap-3 mb-10">
-<a href="#contact" class="bg-white text-blue-700 hover:bg-blue-50 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base inline-flex items-center gap-2 transition-all shadow-xl">
-<i class="fas fa-clipboard-check"></i> Free Eligibility Check
+<a href="#apply" data-open-apply class="ap-cta-pulse bg-white text-blue-700 hover:bg-blue-50 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base inline-flex items-center gap-2 transition-all shadow-xl">
+<i class="fas fa-file-signature"></i> Apply Online &ndash; Free Eligibility Check
 </a>
 <a href="#universities" class="bg-white/10 hover:bg-white/20 border border-white/40 text-white px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base inline-flex items-center gap-2 transition-all backdrop-blur-sm">
 <i class="fas fa-university"></i> View Universities
@@ -726,6 +849,9 @@ or with our team before budgeting.
 </div>
 
 <div class="flex flex-wrap gap-3">
+<a href="#apply" data-open-apply class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 px-6 py-3 rounded-xl font-bold text-sm inline-flex items-center gap-2 transition-all shadow-lg">
+<i class="fas fa-file-signature"></i> Apply Online
+</a>
 <a href="contact.html" class="bg-white text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-xl font-bold text-sm inline-flex items-center gap-2 transition-all shadow-lg">
 <i class="fas fa-paper-plane"></i> Send an Enquiry
 </a>
@@ -802,6 +928,191 @@ or with our team before budgeting.
 </div>
 </footer>
 
+<!-- ====== APPLY ONLINE FORM (pop-up) ====== -->
+<div id="apply-modal" class="ap-modal" role="dialog" aria-modal="true" aria-labelledby="ap-title" hidden>
+<div class="ap-backdrop" data-ap-close></div>
+<div class="ap-panel">
+<header class="ap-head">
+<div>
+<p class="ap-kicker">Free eligibility check &middot; takes about 5 minutes</p>
+<h2 id="ap-title" class="heading-font">Student application</h2>
+</div>
+<button type="button" class="ap-x" data-ap-close aria-label="Close form"><i class="fas fa-xmark"></i></button>
+</header>
+<ol class="ap-steps" id="ap-steps">
+<li data-go="0" class="is-active"><span>1</span><em>About you</em></li>
+<li data-go="1"><span>2</span><em>Education</em></li>
+<li data-go="2"><span>3</span><em>English &amp; work</em></li>
+<li data-go="3"><span>4</span><em>Study plan</em></li>
+</ol>
+<div class="ap-progress"><div id="ap-bar"></div></div>
+
+<form id="apply-form" class="ap-body" novalidate autocomplete="on">
+<input type="text" name="website" class="ap-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+<!-- STEP 1: ABOUT YOU -->
+<section class="ap-step" data-step="0">
+<h3 class="ap-h3">&#128100; 1. About you</h3>
+<p class="ap-lead">Fields marked <span class="ap-req">*</span> are required.</p>
+<div class="ap-grid">
+<div class="ap-field ap-span"><label class="ap-label" for="ap-name">Full name (as in passport)<span class="ap-req">*</span></label><input id="ap-name" name="fullName" class="ap-input" autocomplete="name" placeholder="e.g. Md Rahim Uddin"><p class="ap-err"></p></div>
+<div class="ap-field"><label class="ap-label" for="ap-phone">WhatsApp / phone<span class="ap-req">*</span></label><input id="ap-phone" name="phone" type="tel" class="ap-input" autocomplete="tel" inputmode="tel" placeholder="+880 1XXX XXXXXX"><p class="ap-hint">Include your country code.</p><p class="ap-err"></p></div>
+<div class="ap-field"><label class="ap-label" for="ap-email">Email<span class="ap-req">*</span></label><input id="ap-email" name="email" type="email" class="ap-input" autocomplete="email" inputmode="email" placeholder="you@example.com"><p class="ap-err"></p></div>
+<div class="ap-field"><label class="ap-label" for="ap-dob">Date of birth<span class="ap-req">*</span></label><input id="ap-dob" name="dob" type="date" class="ap-input" autocomplete="bday"><p class="ap-err"></p></div>
+<div class="ap-field"><label class="ap-label" for="ap-nat">Nationality<span class="ap-req">*</span></label><input id="ap-nat" name="nationality" class="ap-input" list="ap-nationalities" placeholder="e.g. Bangladeshi"><p class="ap-err"></p></div>
+<div class="ap-field"><label class="ap-label" for="ap-country">Current country<span class="ap-req">*</span></label><input id="ap-country" name="currentCountry" class="ap-input" list="ap-countries" autocomplete="country-name" placeholder="e.g. Bangladesh"><p class="ap-err"></p></div>
+<fieldset class="ap-field ap-span"><legend>Applying as<span class="ap-req">*</span></legend>
+<div class="ap-chips">
+<label class="ap-chip"><input type="radio" name="applyingAs" value="Single student"><span>Single student</span></label>
+<label class="ap-chip"><input type="radio" name="applyingAs" value="With spouse (no children)"><span>With spouse (no children)</span></label>
+<label class="ap-chip"><input type="radio" name="applyingAs" value="With spouse and children"><span>With spouse and children</span></label>
+</div><p class="ap-err"></p></fieldset>
+</div>
+</section>
+
+<!-- STEP 2: EDUCATION -->
+<section class="ap-step" data-step="1" hidden>
+<h3 class="ap-h3">&#128218; 2. Education</h3>
+<p class="ap-lead">Fill in what you have. Leave SSC or HSC empty if it does not apply. At least one qualification is required.</p>
+<div class="ap-field" id="ap-quals-wrap"><div class="ap-errbox"></div><div id="ap-quals"></div></div>
+<div class="ap-addrow">
+<div class="ap-field"><label class="ap-label" for="ap-addtype">Add a qualification</label>
+<select id="ap-addtype" class="ap-input">
+<option value="">Add O/A Level, Dakhil, Alim, other&hellip;</option>
+<option value="ssc">SSC (Secondary School Certificate)</option>
+<option value="hsc">HSC (Higher Secondary Certificate)</option>
+<option value="dakhil">Dakhil (madrasah, SSC equivalent)</option>
+<option value="alim">Alim (madrasah, HSC equivalent)</option>
+<option value="olevel">O Level (GCE / IGCSE)</option>
+<option value="alevel">A Level (GCE)</option>
+<option value="other">Other qualification (type its name)</option>
+</select></div>
+<button type="button" class="ap-btn-add" id="ap-addqual">+ Add</button>
+</div>
+
+<fieldset class="ap-field" style="margin-top:26px"><legend class="ap-h4" style="margin-top:0">&#127891; Highest study after HSC<span class="ap-req">*</span></legend>
+<div class="ap-chips">
+<label class="ap-chip"><input type="radio" name="highest" value="None"><span>None</span></label>
+<label class="ap-chip"><input type="radio" name="highest" value="Diploma / Degree (pass)"><span>Diploma / Degree (pass)</span></label>
+<label class="ap-chip"><input type="radio" name="highest" value="Bachelor's (Graduation)"><span>Bachelor's (Graduation)</span></label>
+<label class="ap-chip"><input type="radio" name="highest" value="Master's"><span>Master's</span></label>
+<label class="ap-chip"><input type="radio" name="highest" value="Accountancy (ACCA, CA, CMA…)"><span>Accountancy (ACCA, CA, CMA&hellip;)</span></label>
+<label class="ap-chip"><input type="radio" name="highest" value="Law (LLB, Bar-at-Law…)"><span>Law (LLB, Bar-at-Law&hellip;)</span></label>
+<label class="ap-chip"><input type="radio" name="highest" value="Medical / Nursing / Care"><span>Medical / Nursing / Care</span></label>
+</div><p class="ap-err"></p></fieldset>
+<div id="ap-highest-details" class="ap-reveal" hidden>
+<div class="ap-grid">
+<div class="ap-field"><label class="ap-label" for="ap-hi-subject">Subject / programme<span class="ap-req">*</span></label><input id="ap-hi-subject" name="hiSubject" class="ap-input" placeholder="e.g. BBA in Marketing"><p class="ap-err"></p></div>
+<div class="ap-field"><label class="ap-label" for="ap-hi-inst">Institution <span class="ap-opt">(optional)</span></label><input id="ap-hi-inst" name="hiInstitution" class="ap-input" placeholder="e.g. National University"><p class="ap-err"></p></div>
+<div class="ap-field"><label class="ap-label" for="ap-hi-year">Year completed (or expected)<span class="ap-req">*</span></label><select id="ap-hi-year" name="hiYear" class="ap-input" data-years="study"></select><p class="ap-err"></p></div>
+<div class="ap-field"><label class="ap-label" for="ap-hi-result">Result / CGPA <span class="ap-opt">(optional)</span></label><input id="ap-hi-result" name="hiResult" class="ap-input" placeholder="e.g. CGPA 3.25 out of 4"><p class="ap-err"></p></div>
+</div>
+</div>
+</section>
+
+<!-- STEP 3: ENGLISH & WORK -->
+<section class="ap-step" data-step="2" hidden>
+<h3 class="ap-h3">&#128172; 3. English &amp; work</h3>
+<p class="ap-lead">Tell us about your English level and any work experience.</p>
+<div class="ap-grid">
+<div class="ap-field"><label class="ap-label" for="ap-test">English proficiency test<span class="ap-req">*</span></label>
+<select id="ap-test" name="englishTest" class="ap-input">
+<option value="">Choose&hellip;</option>
+<option>IELTS Academic</option><option>IELTS UKVI (Academic)</option><option>IELTS General Training</option>
+<option>PTE Academic</option><option>PTE Academic UKVI</option><option>TOEFL iBT</option><option>Duolingo English Test</option>
+<option>Cambridge C1 Advanced</option><option>Cambridge C2 Proficiency</option><option>Oxford Test of English</option>
+<option>LanguageCert Academic</option><option>Other (specify)</option><option>None yet / planning to take</option>
+<option>Medium of instruction letter (MOI, taught in English)</option>
+</select><p class="ap-err"></p></div>
+<div class="ap-field" id="ap-test-other-wrap" hidden><label class="ap-label" for="ap-test-other">Test name<span class="ap-req">*</span></label><input id="ap-test-other" name="englishTestOther" class="ap-input" placeholder="e.g. Skills for English (SELT)"><p class="ap-err"></p></div>
+</div>
+
+<div id="ap-scores-block" class="ap-reveal" hidden>
+<p class="ap-hint" id="ap-scores-hint" style="margin:0 0 12px"></p>
+<div class="ap-grid ap-grid-5" id="ap-scores"></div>
+</div>
+<div id="ap-moi-note" class="ap-note" style="margin-top:14px" hidden><i class="fas fa-circle-info"></i> Many universities accept an MOI letter from your previous university instead of IELTS. Include it in your documents PDF (step 4) &mdash; we will confirm which universities accept it.</div>
+
+<div class="ap-grid" style="margin-top:14px" id="ap-testdate-block" hidden>
+<fieldset class="ap-field"><legend id="ap-testdate-label">Test date (month and year)<span class="ap-req">*</span></legend>
+<div class="ap-grid" style="grid-template-columns:1fr 1fr;gap:10px">
+<select name="testMonth" class="ap-input" aria-label="Month"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select>
+<select name="testYear" class="ap-input" aria-label="Year" data-years="test"></select>
+</div><p class="ap-err"></p></fieldset>
+</div>
+
+<h4 class="ap-h4">&#128188; Employment</h4>
+<fieldset class="ap-field"><legend>Have you worked in the past 5 years (including while studying)?<span class="ap-req">*</span></legend>
+<div class="ap-chips">
+<label class="ap-chip"><input type="radio" name="worked" value="Yes"><span>Yes</span></label>
+<label class="ap-chip"><input type="radio" name="worked" value="No"><span>No</span></label>
+</div><p class="ap-err"></p></fieldset>
+<div id="ap-jobs-block" style="margin-top:14px" hidden>
+<div id="ap-jobs"></div>
+<button type="button" class="ap-btn-add" id="ap-addjob">+ Add another job</button>
+</div>
+
+<div class="ap-field" style="margin-top:22px"><label class="ap-label" for="ap-gap">Study gap <span class="ap-opt">(optional)</span></label>
+<textarea id="ap-gap" name="studyGap" class="ap-input" rows="3" placeholder="If there is a gap since your last study, tell us briefly what you did (work, family business, preparing for IELTS&hellip;)."></textarea><p class="ap-err"></p></div>
+</section>
+
+<!-- STEP 4: STUDY PLAN -->
+<section class="ap-step" data-step="3" hidden>
+<h3 class="ap-h3">&#127891; 4. Study plan</h3>
+<p class="ap-lead">Where and what would you like to study?</p>
+<fieldset class="ap-field"><legend>Preferred countries<span class="ap-req">*</span></legend>
+<p class="ap-hint" style="margin:-2px 0 10px">Pick up to 3 &ndash; our team will check which you're eligible for. <b id="ap-ccount">0 of 3 selected</b></p>
+<div class="ap-chips" id="ap-countries"></div><p class="ap-err"></p></fieldset>
+
+<div class="ap-grid" style="margin-top:18px">
+<div class="ap-field ap-span"><label class="ap-label" for="ap-subject">Subject you want to study<span class="ap-req">*</span></label><input id="ap-subject" name="subject" class="ap-input" list="ap-subjects" placeholder="e.g. Business Management, Computer Science, Nursing"><p class="ap-err"></p></div>
+<div class="ap-field"><label class="ap-label" for="ap-level">Level<span class="ap-req">*</span></label>
+<select id="ap-level" name="level" class="ap-input"><option value="">Choose&hellip;</option><option>Foundation / pathway</option><option>A-Level / GCSE / O-Level (school, under 18)</option><option>Diploma / HND</option><option>Bachelor's</option><option>Master's</option><option>MBA</option><option>PhD / Doctorate</option><option>Language course (6 months)</option><option>Language course (1 year)</option><option>Short-term training / certificate</option><option>Professional course (e.g. ACCA, nursing adaptation, NCLEX)</option><option>Internship / work placement</option><option>Vocational / apprenticeship</option><option>Other</option></select><p class="ap-err"></p></div>
+<div class="ap-field"><label class="ap-label" for="ap-intake">Intake<span class="ap-req">*</span></label>
+<select id="ap-intake" name="intake" class="ap-input"><option value="">Choose&hellip;</option><option>February</option><option>September</option><option>Either / not sure</option></select><p class="ap-err"></p></div>
+<div class="ap-field"><label class="ap-label" for="ap-budget">Yearly budget <span class="ap-opt">(optional)</span></label>
+<select id="ap-budget" name="budget" class="ap-input"><option value="">Choose&hellip; (optional)</option><option>Under EUR 3,000</option><option>EUR 3,000 &ndash; 5,000</option><option>EUR 5,000 &ndash; 8,000</option><option>EUR 8,000 &ndash; 12,000</option><option>EUR 12,000 &ndash; 20,000</option><option>Over EUR 20,000</option><option>Not sure yet</option></select><p class="ap-err"></p></div>
+</div>
+
+<h4 class="ap-h4">&#128206; Documents <span class="ap-opt">(optional &ndash; you can send them later)</span></h4>
+<div class="ap-note" style="margin-bottom:12px"><b><i class="fas fa-file-pdf"></i> Please put ALL your documents together in ONE single PDF file</b> and upload it below. Include whatever you have:
+<ul style="list-style:disc;margin:8px 0 0 20px;line-height:1.7">
+<li>Passport (photo page)</li>
+<li>SSC / HSC (or equivalent) certificates and mark sheets</li>
+<li>Bachelor's / Master's / diploma certificates and transcripts</li>
+<li>IELTS / PTE / other English test result, or MOI letter</li>
+<li>CV / r&eacute;sum&eacute;</li>
+<li>Bank statement / financial or sponsor documents</li>
+<li>Experience / job letters</li>
+<li>Any other documents (SOP, recommendation letters, offer letter&hellip;)</li>
+</ul>
+<p style="margin-top:8px">Tip: free phone apps such as Adobe Scan or Microsoft Lens, or the website ilovepdf.com, can scan and merge all pages into one PDF.</p></div>
+<div class="ap-field"><span class="ap-label">All documents &ndash; one PDF file <span class="ap-opt">(optional)</span></span><label class="ap-file"><i class="fas fa-file-pdf"></i><div><b>Choose PDF file</b><small>Single PDF only, up to 20 MB</small></div><input type="file" name="documents" data-label="All documents" accept=".pdf,application/pdf"></label><ul class="ap-files"></ul><p class="ap-hint">Sent securely, together with this form, directly to our team.</p><p class="ap-err"></p></div>
+
+<div class="ap-field" style="margin-top:22px"><label class="ap-label" for="ap-note-txt">&#9997;&#65039; Special note for our team<span class="ap-req">*</span></label>
+<textarea id="ap-note-txt" name="note" class="ap-input" rows="4" placeholder="Anything else you'd like us to know that you couldn't put above."></textarea>
+<p class="ap-hint">Anything else you'd like us to know that you couldn't put above. <b id="ap-wc">0 words &middot; min. 20 characters</b></p><p class="ap-err"></p></div>
+
+<div class="ap-field" style="margin-top:18px"><label class="ap-consent"><input type="checkbox" name="consent" value="yes"><span>I confirm the information is correct and agree that London Travel Agency &amp; Consultancy may store and use my data and documents to assess my application and contact me.<span class="ap-req">*</span></span></label><p class="ap-err"></p></div>
+</section>
+
+<!-- RESULT -->
+<section id="ap-result" class="ap-done" hidden aria-live="polite"></section>
+</form>
+
+<footer class="ap-foot" id="ap-foot">
+<button type="button" class="ap-btn ap-btn-ghost" id="ap-back" hidden><i class="fas fa-arrow-left"></i> Back</button>
+<span class="ap-foot-note" id="ap-stepnote">Step 1 of 4</span>
+<button type="button" class="ap-btn ap-btn-primary" id="ap-next">Continue <i class="fas fa-arrow-right"></i></button>
+<button type="submit" form="apply-form" class="ap-btn ap-btn-green" id="ap-submit" hidden>&#128640; Submit application</button>
+</footer>
+</div>
+</div>
+
+<datalist id="ap-nationalities"><option>Bangladeshi</option><option>Indian</option><option>Pakistani</option><option>Nepali</option><option>Sri Lankan</option><option>Nigerian</option><option>Ghanaian</option><option>Kenyan</option><option>Filipino</option><option>Vietnamese</option><option>Indonesian</option><option>Egyptian</option><option>Moroccan</option><option>British</option></datalist>
+<datalist id="ap-countries"><option>Bangladesh</option><option>United Kingdom</option><option>India</option><option>Pakistan</option><option>Nepal</option><option>Sri Lanka</option><option>United Arab Emirates</option><option>Saudi Arabia</option><option>Qatar</option><option>Kuwait</option><option>Oman</option><option>Malaysia</option><option>Singapore</option><option>Italy</option><option>Portugal</option><option>Nigeria</option></datalist>
+<datalist id="ap-subjects"><option>Business Management</option><option>Business Administration (MBA)</option><option>Accounting &amp; Finance</option><option>Computer Science</option><option>Information Technology</option><option>Data Science / AI</option><option>Cyber Security</option><option>Nursing</option><option>Health &amp; Social Care</option><option>Public Health</option><option>Pharmacy</option><option>Civil Engineering</option><option>Mechanical Engineering</option><option>Electrical &amp; Electronic Engineering</option><option>Hospitality &amp; Tourism Management</option><option>Law</option><option>Marketing</option><option>Logistics &amp; Supply Chain</option><option>Project Management</option><option>Economics</option></datalist>
+
 <a href="https://wa.me/13477067980" target="_blank" rel="noopener" class="whatsapp-float whatsapp-pulse" title="Chat with us on WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
 <script>
@@ -832,6 +1143,547 @@ document.addEventListener("DOMContentLoaded", function () {
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   items.forEach(function (el) { io.observe(el); });
 });
+</script>
+
+<script>
+/* ====== APPLY ONLINE FORM ====== */
+(function () {
+'use strict';
+/* Paste your Google Apps Script "Web app" URL between the quotes (see setup guide).
+   While it is empty, submissions are sent to WhatsApp instead. */
+var APPLY_ENDPOINT = '';
+var WHATSAPP_NUMBER = '13477067980';
+var MAX_FILE = 20 * 1024 * 1024, MAX_TOTAL = 20 * 1024 * 1024;
+var OK_TYPES = /\.pdf$/i;
+
+var modal = document.getElementById('apply-modal');
+if (!modal) return;
+var form = document.getElementById('apply-form');
+var steps = [].slice.call(form.querySelectorAll('.ap-step'));
+var dots = [].slice.call(document.querySelectorAll('#ap-steps li'));
+var bar = document.getElementById('ap-bar');
+var btnBack = document.getElementById('ap-back'), btnNext = document.getElementById('ap-next'), btnSubmit = document.getElementById('ap-submit');
+var stepNote = document.getElementById('ap-stepnote');
+var result = document.getElementById('ap-result');
+var current = 0, lastFocus = null, sending = false, finished = false;
+var YEAR = new Date().getFullYear();
+
+function $(s, r) { return (r || document).querySelector(s); }
+function $$(s, r) { return [].slice.call((r || document).querySelectorAll(s)); }
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+function opts(list, placeholder) { return (placeholder ? '<option value="">' + placeholder + '</option>' : '') + list.map(function (v) { return '<option>' + esc(v) + '</option>'; }).join(''); }
+function range(a, b, step) { var o = []; if (step > 0) { for (var i = a; i <= b + 1e-9; i += step) o.push(+i.toFixed(2)); } else { for (var j = a; j >= b; j += step) o.push(j); } return o; }
+var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+/* year selects */
+$$('select[data-years]', modal).forEach(function (s) {
+  var t = s.getAttribute('data-years');
+  s.innerHTML = t === 'test' ? opts(range(YEAR, YEAR - 10, -1), 'Year') : opts(range(YEAR + 4, 1970, -1), 'Year');
+});
+
+/* ---------- open / close ---------- */
+function openForm() {
+  lastFocus = document.activeElement;
+  modal.hidden = false;
+  document.documentElement.classList.add('ap-lock');
+  if (location.hash !== '#apply' && history.replaceState) history.replaceState(null, '', '#apply');
+  setTimeout(function () { var f = $('.ap-step:not([hidden]) .ap-input, .ap-step:not([hidden]) input', form); var fine = window.matchMedia && matchMedia('(pointer: fine)').matches; if (f && !finished && fine) f.focus({ preventScroll: true }); else $('.ap-x', modal).focus({ preventScroll: true }); }, 60);
+}
+function closeForm() {
+  if (sending) return;
+  modal.hidden = true;
+  document.documentElement.classList.remove('ap-lock');
+  if (location.hash === '#apply' && history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+document.addEventListener('click', function (e) {
+  var o = e.target.closest('[data-open-apply], a[href="#apply"]');
+  if (o) { e.preventDefault(); openForm(); return; }
+  if (e.target.closest('[data-ap-close]')) { e.preventDefault(); closeForm(); }
+});
+document.addEventListener('keydown', function (e) {
+  if (modal.hidden) return;
+  if (e.key === 'Escape') { closeForm(); return; }
+  if (e.key === 'Tab') { /* keep focus inside the dialog */
+    var f = $$('button, [href], input:not([type=hidden]), select, textarea', modal).filter(function (x) { return !x.disabled && x.offsetParent !== null && !x.classList.contains('ap-hp'); });
+    if (!f.length) return;
+    if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+    else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+  }
+});
+function hashOpen() { if (location.hash === '#apply' && modal.hidden) openForm(); }
+window.addEventListener('hashchange', hashOpen);
+hashOpen();
+
+/* ---------- steps ---------- */
+function show(i) {
+  current = i;
+  steps.forEach(function (s, k) { s.hidden = k !== i; });
+  dots.forEach(function (d, k) { d.classList.toggle('is-active', k === i); d.classList.toggle('is-done', k < i); d.querySelector('span').textContent = k < i ? '✓' : (k + 1); });
+  bar.style.width = ((i + 1) / steps.length * 100) + '%';
+  btnBack.hidden = i === 0;
+  btnNext.hidden = i === steps.length - 1;
+  btnSubmit.hidden = i !== steps.length - 1;
+  stepNote.textContent = 'Step ' + (i + 1) + ' of ' + steps.length;
+  form.scrollTop = 0;
+}
+btnNext.addEventListener('click', function () { if (validate(current)) show(current + 1); });
+btnBack.addEventListener('click', function () { show(current - 1); });
+dots.forEach(function (d, k) {
+  d.addEventListener('click', function () {
+    if (finished || k === current) return;
+    if (k < current) return show(k);
+    for (var s = current; s < k; s++) { if (!validate(s)) { show(s); validate(s); return; } }
+    show(k);
+  });
+});
+
+/* ---------- errors ---------- */
+function wrapOf(x) { return x.closest('.ap-field'); }
+function setErr(w, msg) {
+  if (!w) return;
+  w.classList.add('ap-invalid');
+  var e = w.querySelector(':scope > .ap-err') || w.querySelector(':scope > .ap-errbox');
+  if (e) e.textContent = msg;
+}
+function clearErr(w) { if (w) w.classList.remove('ap-invalid'); }
+form.addEventListener('input', function (e) { clearErr(wrapOf(e.target)); var c = e.target.closest('.ap-qual'); if (c) { clearErr($('#ap-quals-wrap')); markFilled(c); } });
+form.addEventListener('change', function (e) { clearErr(wrapOf(e.target)); });
+
+function val(name) { var el = form.elements[name]; if (!el) return ''; return (el.value || '').trim(); }
+function wrapByName(name) { var el = form.querySelector('[name="' + name + '"]'); return el ? wrapOf(el) : null; }
+
+/* ---------- qualifications ---------- */
+var QTYPES = {
+  ssc: { label: 'SSC (Secondary School Certificate)', groups: ['Science', 'Commerce (Business Studies)', 'Arts (Humanities)', 'Other'], results: ['Marks', 'GPA'], hint: 'Leave empty if you did not take SSC.' },
+  hsc: { label: 'HSC (Higher Secondary Certificate)', groups: ['Science', 'Commerce (Business Studies)', 'Arts (Humanities)', 'Other'], results: ['Marks', 'GPA'], hint: 'Leave empty if you did not take HSC.' },
+  dakhil: { label: 'Dakhil (madrasah, SSC equivalent)', groups: ['Science', 'Humanities', 'General', 'Mujabbid', 'Other'], results: ['Marks', 'GPA'] },
+  alim: { label: 'Alim (madrasah, HSC equivalent)', groups: ['Science', 'Humanities', 'General', 'Mujabbid', 'Other'], results: ['Marks', 'GPA'] },
+  olevel: { label: 'O Level (GCE / IGCSE)', groupLabel: 'Exam board', groups: ['Cambridge (CAIE)', 'Pearson Edexcel', 'Oxford AQA', 'Other'], results: ['Grades', 'Marks'] },
+  alevel: { label: 'A Level (GCE)', groupLabel: 'Exam board', groups: ['Cambridge (CAIE)', 'Pearson Edexcel', 'Oxford AQA', 'Other'], results: ['Grades', 'Marks'] },
+  other: { label: 'Other qualification', groups: ['Science', 'Commerce / Business', 'Arts / Humanities', 'Technical / Vocational', 'Other'], results: ['Marks', 'GPA', 'Grades'], named: true }
+};
+var RLABEL = { Marks: 'Marks (e.g. 850 out of 1000)', GPA: 'GPA (out of 5)', Grades: 'Grades (e.g. 3A*, 2A)' };
+var qid = 0;
+var qbox = $('#ap-quals');
+
+function addQual(type, isDefault) {
+  var T = QTYPES[type], id = 'q' + (++qid);
+  var card = document.createElement('div');
+  card.className = 'ap-card ap-qual';
+  card.setAttribute('data-type', type);
+  if (isDefault) card.setAttribute('data-default', '1');
+  card.innerHTML =
+    '<div class="ap-card-head"><h5>' + esc(T.label) + '</h5><button type="button" class="ap-card-x" data-remove aria-label="Remove ' + esc(T.label) + '">&times;</button></div>' +
+    '<div class="ap-grid">' +
+    (T.named ? '<div class="ap-field ap-span"><label class="ap-label" for="' + id + 'n">Qualification name<span class="ap-req">*</span></label><input id="' + id + 'n" class="ap-input q-name" placeholder="e.g. Diploma in Engineering, SSC (Vocational)"><p class="ap-err"></p></div>' : '') +
+    '<div class="ap-field"><label class="ap-label" for="' + id + 'y">Year<span class="ap-req">*</span></label><select id="' + id + 'y" class="ap-input q-year">' + opts(range(YEAR + 1, 1970, -1), 'Year') + '</select><p class="ap-err"></p></div>' +
+    '<div class="ap-field"><label class="ap-label" for="' + id + 'g">' + (T.groupLabel || 'Group') + '<span class="ap-req">*</span></label><select id="' + id + 'g" class="ap-input q-group">' + opts(T.groups, 'Choose…') + '</select><p class="ap-err"></p></div>' +
+    '<fieldset class="ap-field ap-span"><legend>Result<span class="ap-req">*</span></legend><div class="ap-seg">' +
+    T.results.map(function (r, k) { return '<label><input type="radio" name="' + id + '-rt" value="' + r + '"' + (k === 0 ? ' checked' : '') + ' class="q-rt"><span>' + RLABEL[r] + '</span></label>'; }).join('') +
+    '</div></fieldset>' +
+    '<div class="ap-field q-box q-box-Marks"><label class="ap-label" for="' + id + 'm">Marks achieved<span class="ap-req">*</span></label><input id="' + id + 'm" type="number" inputmode="numeric" min="1" class="ap-input q-marks" placeholder="e.g. 850"><p class="ap-err"></p></div>' +
+    '<div class="ap-field q-box q-box-Marks"><label class="ap-label" for="' + id + 't">Total marks (out of)<span class="ap-req">*</span></label><select id="' + id + 't" class="ap-input q-total">' + opts(range(100, 1500, 100), 'Choose…') + '</select><p class="ap-err"></p></div>' +
+    '<div class="ap-field q-box q-box-GPA"><label class="ap-label" for="' + id + 'p">GPA (out of 5)<span class="ap-req">*</span></label><input id="' + id + 'p" type="number" inputmode="decimal" min="0" max="5" step="0.01" class="ap-input q-gpa" placeholder="e.g. 4.50"><p class="ap-err"></p></div>' +
+    '<div class="ap-field q-box q-box-Grades ap-span"><label class="ap-label" for="' + id + 'r">Grades<span class="ap-req">*</span></label><input id="' + id + 'r" class="ap-input q-grades" placeholder="e.g. 3A*, 4A, 1B"><p class="ap-err"></p></div>' +
+    '</div>' + (T.hint ? '<p class="ap-hint" style="margin-top:10px">' + T.hint + '</p>' : '');
+  qbox.appendChild(card);
+  syncResult(card);
+  return card;
+}
+function syncResult(card) {
+  var rt = (card.querySelector('.q-rt:checked') || {}).value;
+  $$('.q-box', card).forEach(function (b) { b.hidden = !b.classList.contains('q-box-' + rt); });
+}
+function readQual(card) {
+  var g = function (c) { var e = card.querySelector(c); return e ? e.value.trim() : ''; };
+  var type = card.getAttribute('data-type'), T = QTYPES[type];
+  return { type: type, name: T.named ? g('.q-name') : T.label, year: g('.q-year'), group: g('.q-group'),
+    resultType: (card.querySelector('.q-rt:checked') || {}).value, marks: g('.q-marks'), total: g('.q-total'), gpa: g('.q-gpa'), grades: g('.q-grades') };
+}
+function qualEmpty(q) { return !(q.year || q.group || q.marks || q.total || q.gpa || q.grades || (QTYPES[q.type].named && q.name)); }
+function markFilled(card) { card.classList.toggle('is-filled', !qualEmpty(readQual(card))); }
+function qualResultText(q) {
+  if (q.resultType === 'Marks') return q.marks + ' out of ' + q.total;
+  if (q.resultType === 'GPA') return 'GPA ' + q.gpa + ' out of 5';
+  return 'Grades: ' + q.grades;
+}
+qbox.addEventListener('change', function (e) { if (e.target.classList.contains('q-rt')) syncResult(e.target.closest('.ap-card')); });
+qbox.addEventListener('click', function (e) {
+  if (!e.target.closest('[data-remove]')) return;
+  var card = e.target.closest('.ap-card');
+  if (!qualEmpty(readQual(card)) && !confirm('Remove this qualification?')) return;
+  card.remove();
+});
+$('#ap-addqual').addEventListener('click', function () {
+  var sel = $('#ap-addtype'), t = sel.value;
+  if (!t) { sel.focus(); return; }
+  var existing = t !== 'other' && qbox.querySelector('.ap-qual[data-type="' + t + '"]');
+  var card = existing || addQual(t, false);
+  sel.value = '';
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  var f = card.querySelector('.q-name, .q-year'); if (f) setTimeout(function () { f.focus({ preventScroll: true }); }, 250);
+});
+addQual('ssc', true); addQual('hsc', true);
+
+/* highest study */
+form.addEventListener('change', function (e) {
+  if (e.target.name === 'highest') $('#ap-highest-details').hidden = e.target.value === 'None';
+});
+
+/* ---------- English test ---------- */
+var IELTS = { min: 0, max: 9, step: 0.5, select: true, overall: 'Overall band', hint: 'Scores: 0–9, in steps of 0.5. Overall and all four skill scores are required.' };
+var TESTS = {
+  'IELTS Academic': IELTS, 'IELTS UKVI (Academic)': IELTS, 'IELTS General Training': IELTS,
+  'PTE Academic': { min: 10, max: 90, step: 1, hint: 'Scores: 10–90. Overall and all four skill scores are required.' },
+  'PTE Academic UKVI': { min: 10, max: 90, step: 1, hint: 'Scores: 10–90. Overall and all four skill scores are required.' },
+  'TOEFL iBT': { min: 0, max: 120, step: 0.5, hint: 'Enter the scores exactly as on your score report (1–6 band scale, or 0–120 overall and 0–30 per skill on older reports).' },
+  'Duolingo English Test': { min: 10, max: 160, step: 5, labels: ['Literacy', 'Comprehension', 'Conversation', 'Production'], hint: 'Scores: 10–160, in steps of 5. Overall and all four subscores are required.' },
+  'Cambridge C1 Advanced': { min: 80, max: 230, step: 1, hint: 'Cambridge English Scale scores (80–230). Overall and all four skill scores are required.' },
+  'Cambridge C2 Proficiency': { min: 80, max: 230, step: 1, hint: 'Cambridge English Scale scores (80–230). Overall and all four skill scores are required.' },
+  'Oxford Test of English': { min: 0, max: 170, step: 1, hint: 'Enter the scores as on your certificate. Overall and all four skill scores are required.' },
+  'LanguageCert Academic': { min: 0, max: 100, step: 0.5, hint: 'Enter the scores as on your score report. Overall and all four skill scores are required.' },
+  'Other (specify)': { min: 0, max: 1000, step: 'any', other: true, hint: 'Enter the scores as on your score report. Overall and all four skill scores are required.' },
+  'None yet / planning to take': { none: true },
+  'Medium of instruction letter (MOI, taught in English)': { moi: true }
+};
+var SKILLS = ['Listening', 'Reading', 'Writing', 'Speaking'];
+var testSel = $('#ap-test');
+function testCfg() { return TESTS[testSel.value] || null; }
+testSel.addEventListener('change', function () {
+  var c = testCfg(), hasScores = c && !c.none && !c.moi;
+  $('#ap-test-other-wrap').hidden = !(c && c.other);
+  $('#ap-scores-block').hidden = !hasScores;
+  $('#ap-moi-note').hidden = !(c && c.moi);
+  $('#ap-testdate-block').hidden = !c;
+  var dateField = $('#ap-testdate-label').closest('.ap-field');
+  dateField.hidden = !!(c && c.moi);
+  $('#ap-testdate-label').innerHTML = c && c.none ? 'Planned test date <span class="ap-opt">(optional)</span>' : 'Test date (month and year)<span class="ap-req">*</span>';
+  var ty = form.elements.testYear;
+  ty.innerHTML = c && c.none ? opts(range(YEAR, YEAR + 2, 1), 'Year') : opts(range(YEAR, YEAR - 10, -1), 'Year');
+  if (!hasScores) { $('#ap-scores').innerHTML = ''; return; }
+  $('#ap-scores-hint').textContent = c.hint;
+  var labels = [c.overall || 'Overall score'].concat(c.labels || SKILLS);
+  $('#ap-scores').innerHTML = labels.map(function (l, k) {
+    var id = 'ap-s' + k, input = c.select
+      ? '<select id="' + id + '" class="ap-input ap-score" data-label="' + l + '">' + opts(range(c.min, c.max, c.step).map(function (n) { return n.toFixed(1); }), '–') + '</select>'
+      : '<input id="' + id + '" type="number" inputmode="decimal" class="ap-input ap-score" data-label="' + l + '" min="' + c.min + '" max="' + c.max + '" step="' + c.step + '">';
+    return '<div class="ap-field' + (k === 0 ? ' ap-span-sm' : '') + '"><label class="ap-label" for="' + id + '">' + l + '<span class="ap-req">*</span></label>' + input + '<p class="ap-err"></p></div>';
+  }).join('');
+});
+
+/* ---------- employment ---------- */
+var jobBox = $('#ap-jobs'), jid = 0;
+function addJob() {
+  var id = 'j' + (++jid), card = document.createElement('div');
+  card.className = 'ap-card ap-job';
+  var monthSel = function (cls) { return '<select class="ap-input ' + cls + '" aria-label="Month">' + opts(MONTHS, 'Month') + '</select>'; };
+  var yearSel = function (cls) { return '<select class="ap-input ' + cls + '" aria-label="Year">' + opts(range(YEAR, YEAR - 15, -1), 'Year') + '</select>'; };
+  card.innerHTML = '<div class="ap-card-head"><h5>Job</h5><button type="button" class="ap-card-x" data-remove-job aria-label="Remove job">&times;</button></div>' +
+    '<div class="ap-grid">' +
+    '<div class="ap-field"><label class="ap-label" for="' + id + 't">Job title<span class="ap-req">*</span></label><input id="' + id + 't" class="ap-input j-title" placeholder="e.g. Sales Executive"><p class="ap-err"></p></div>' +
+    '<div class="ap-field"><label class="ap-label" for="' + id + 'e">Employer<span class="ap-req">*</span></label><input id="' + id + 'e" class="ap-input j-employer" placeholder="Company name"><p class="ap-err"></p></div>' +
+    '<fieldset class="ap-field"><legend>From<span class="ap-req">*</span></legend><div class="ap-grid" style="grid-template-columns:1fr 1fr;gap:10px">' + monthSel('j-fm') + yearSel('j-fy') + '</div><p class="ap-err"></p></fieldset>' +
+    '<fieldset class="ap-field j-towrap"><legend>To<span class="ap-req">*</span></legend><div class="ap-grid j-to" style="grid-template-columns:1fr 1fr;gap:10px">' + monthSel('j-tm') + yearSel('j-ty') + '</div>' +
+    '<label class="ap-hint" style="display:flex;gap:6px;align-items:center;margin-top:8px;cursor:pointer"><input type="checkbox" class="j-current" style="accent-color:#2563eb"> I still work here</label><p class="ap-err"></p></fieldset>' +
+    '</div>';
+  jobBox.appendChild(card);
+  refreshJobs();
+  return card;
+}
+function refreshJobs() {
+  var cards = $$('.ap-job', jobBox);
+  cards.forEach(function (c, k) { c.querySelector('h5').textContent = cards.length > 1 ? 'Job ' + (k + 1) : 'Job'; c.querySelector('[data-remove-job]').hidden = cards.length === 1; });
+  $('#ap-addjob').hidden = cards.length >= 5;
+}
+jobBox.addEventListener('change', function (e) {
+  if (e.target.classList.contains('j-current')) { var to = e.target.closest('.ap-job').querySelector('.j-to'); to.hidden = e.target.checked; clearErr(wrapOf(e.target)); }
+});
+jobBox.addEventListener('click', function (e) { if (e.target.closest('[data-remove-job]')) { e.target.closest('.ap-job').remove(); refreshJobs(); } });
+$('#ap-addjob').addEventListener('click', function () { var c = addJob(); c.querySelector('.j-title').focus(); });
+form.addEventListener('change', function (e) {
+  if (e.target.name !== 'worked') return;
+  var yes = e.target.value === 'Yes';
+  $('#ap-jobs-block').hidden = !yes;
+  if (yes && !jobBox.children.length) addJob();
+});
+function readJobs() {
+  return $$('.ap-job', jobBox).map(function (c) {
+    var g = function (s) { return c.querySelector(s).value.trim(); };
+    return { title: g('.j-title'), employer: g('.j-employer'), fromMonth: g('.j-fm'), fromYear: g('.j-fy'), current: c.querySelector('.j-current').checked, toMonth: g('.j-tm'), toYear: g('.j-ty') };
+  });
+}
+
+/* ---------- countries ---------- */
+var COUNTRIES = ['United Kingdom', 'Ireland', 'Germany', 'France', 'Netherlands', 'Italy', 'Spain', 'Portugal', 'Malta', 'Cyprus', 'Hungary', 'Poland', 'Lithuania', 'Latvia', 'Czech Republic', 'Austria', 'Finland', 'Sweden', 'Denmark', 'Belgium', 'Bulgaria', 'Romania', 'Canada', 'Australia', 'USA', 'Not sure – advise me'];
+$('#ap-countries').innerHTML = COUNTRIES.map(function (c) { return '<label class="ap-chip"><input type="checkbox" name="countries" value="' + esc(c) + '"><span>' + esc(c) + '</span></label>'; }).join('');
+function syncCountries() {
+  var boxes = $$('input[name=countries]', form), n = boxes.filter(function (b) { return b.checked; }).length;
+  boxes.forEach(function (b) { b.disabled = !b.checked && n >= 3; });
+  $('#ap-ccount').textContent = n + ' of 3 selected';
+}
+$('#ap-countries').addEventListener('change', syncCountries);
+
+/* ---------- note word count ---------- */
+var note = form.elements.note;
+note.addEventListener('input', function () {
+  var t = note.value.trim(), w = t ? t.split(/\s+/).length : 0;
+  $('#ap-wc').textContent = w + ' word' + (w === 1 ? '' : 's') + ' · ' + (t.length >= 20 ? '✓' : 'min. 20 characters');
+});
+
+/* ---------- files ---------- */
+function fmtSize(b) { return b > 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(b / 1024)) + ' KB'; }
+function fileProblem(input) {
+  var files = [].slice.call(input.files || []);
+  for (var i = 0; i < files.length; i++) {
+    if (!OK_TYPES.test(files[i].name)) return '“' + files[i].name + '” is not a PDF. Please combine all your documents into one PDF file.';
+    if (files[i].size > MAX_FILE) return '“' + files[i].name + '” is larger than 20 MB. Please compress the PDF (e.g. on ilovepdf.com) or send some documents later.';
+  }
+  return '';
+}
+$$('input[type=file]', form).forEach(function (inp) {
+  inp.addEventListener('change', function () {
+    var w = wrapOf(inp), list = w.querySelector('.ap-files'), p = fileProblem(inp);
+    list.innerHTML = [].slice.call(inp.files).map(function (f) { return '<li><i class="fas fa-check-circle"></i> ' + esc(f.name) + ' (' + fmtSize(f.size) + ')</li>'; }).join('');
+    w.querySelector('.ap-file b').textContent = inp.files.length ? 'Change file' + (inp.multiple ? 's' : '') : (inp.multiple ? 'Choose files' : 'Choose file');
+    if (p) setErr(w, p); else clearErr(w);
+  });
+});
+
+/* ---------- validation ---------- */
+function validate(i) {
+  var first = null;
+  function bad(w, msg) { setErr(w, msg); if (!first) first = w; }
+  function need(name, msg) { if (!val(name)) bad(wrapByName(name), msg); }
+  var step = steps[i];
+  $$('.ap-invalid', step).forEach(clearErr);
+
+  if (i === 0) {
+    if (val('fullName').length < 3) bad(wrapByName('fullName'), 'Please enter your full name as written in your passport.');
+    var digits = val('phone').replace(/\D/g, '');
+    if (digits.length < 7 || digits.length > 15 || /[^\d\s+()\-]/.test(val('phone'))) bad(wrapByName('phone'), 'Please enter a valid WhatsApp / phone number with country code.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val('email'))) bad(wrapByName('email'), 'Please enter a valid email address.');
+    var dob = val('dob'), d = dob ? new Date(dob + 'T00:00:00') : null, age = d ? (Date.now() - d) / 31557600000 : NaN;
+    if (!dob || isNaN(age)) bad(wrapByName('dob'), 'Please enter your date of birth.');
+    else if (age < 10 || age > 80) bad(wrapByName('dob'), 'Please check your date of birth.');
+    need('nationality', 'Please enter your nationality.');
+    need('currentCountry', 'Please enter the country you live in now.');
+    need('applyingAs', 'Please choose how you are applying.');
+  }
+
+  if (i === 1) {
+    var complete = 0;
+    $$('.ap-qual', qbox).forEach(function (card) {
+      var q = readQual(card), T = QTYPES[q.type];
+      if (qualEmpty(q)) return;
+      var f = function (cls, msg) { bad(wrapOf(card.querySelector(cls)), msg); };
+      var ok = true;
+      if (T.named && !q.name) { f('.q-name', 'Please type the name of the qualification.'); ok = false; }
+      if (!q.year) { f('.q-year', 'Choose the year.'); ok = false; }
+      if (!q.group) { f('.q-group', 'Choose an option.'); ok = false; }
+      if (q.resultType === 'Marks') {
+        var m = parseFloat(q.marks), t = parseFloat(q.total);
+        if (!q.total) { f('.q-total', 'Choose the total marks.'); ok = false; }
+        if (!(m > 0)) { f('.q-marks', 'Enter the marks you achieved.'); ok = false; }
+        else if (t && m > t) { f('.q-marks', 'Marks achieved cannot be more than the total.'); ok = false; }
+      } else if (q.resultType === 'GPA') {
+        var g = parseFloat(q.gpa);
+        if (!(g >= 0 && g <= 5) || q.gpa === '') { f('.q-gpa', 'Enter a GPA between 0 and 5.'); ok = false; }
+      } else if (!q.grades) { f('.q-grades', 'Enter your grades.'); ok = false; }
+      if (ok) complete++;
+    });
+    if (!complete && !first) bad($('#ap-quals-wrap'), 'Please fill in at least one qualification (for example SSC or HSC).');
+    need('highest', 'Please choose your highest study after HSC.');
+    if (val('highest') && val('highest') !== 'None') {
+      need('hiSubject', 'Please enter the subject or programme.');
+      need('hiYear', 'Choose the year.');
+    }
+  }
+
+  if (i === 2) {
+    var c = testCfg();
+    if (!c) bad(wrapByName('englishTest'), 'Please choose an option (or “None yet”).');
+    else {
+      if (c.other) need('englishTestOther', 'Please type the name of the test.');
+      if (!c.none && !c.moi) {
+        $$('.ap-score', form).forEach(function (s) {
+          var v = s.value.trim(), n = parseFloat(v), w = wrapOf(s);
+          if (v === '' || isNaN(n)) return bad(w, 'Required.');
+          if (n < c.min || n > c.max) return bad(w, 'Must be ' + c.min + '–' + c.max + '.');
+          if (c.step !== 'any' && Math.abs(n / c.step - Math.round(n / c.step)) > 1e-6) bad(w, 'Steps of ' + c.step + '.');
+        });
+        if (!val('testMonth') || !val('testYear')) bad(wrapByName('testMonth'), 'Please choose the month and year of your test.');
+        else {
+          var td = new Date(+val('testYear'), MONTHS.indexOf(val('testMonth')), 1);
+          if (td > new Date()) bad(wrapByName('testMonth'), 'The test date cannot be in the future.');
+        }
+      }
+    }
+    need('worked', 'Please answer Yes or No.');
+    if (val('worked') === 'Yes') {
+      $$('.ap-job', jobBox).forEach(function (card) {
+        var g = function (s) { return card.querySelector(s); };
+        if (!g('.j-title').value.trim()) bad(wrapOf(g('.j-title')), 'Enter your job title.');
+        if (!g('.j-employer').value.trim()) bad(wrapOf(g('.j-employer')), 'Enter the employer.');
+        if (!g('.j-fm').value || !g('.j-fy').value) bad(wrapOf(g('.j-fm')), 'Choose the start month and year.');
+        if (!g('.j-current').checked) {
+          if (!g('.j-tm').value || !g('.j-ty').value) bad(wrapOf(g('.j-tm')), 'Choose the end month and year, or tick “I still work here”.');
+          else if (g('.j-fy').value && g('.j-fm').value && (+g('.j-ty').value * 12 + MONTHS.indexOf(g('.j-tm').value)) < (+g('.j-fy').value * 12 + MONTHS.indexOf(g('.j-fm').value))) bad(wrapOf(g('.j-tm')), 'End date is before the start date.');
+        }
+      });
+    }
+  }
+
+  if (i === 3) {
+    var nC = $$('input[name=countries]:checked', form).length;
+    if (!nC) bad(wrapOf($('#ap-countries')), 'Please pick at least one country.');
+    need('subject', 'Please enter the subject you want to study.');
+    need('level', 'Please choose a level.');
+    need('intake', 'Please choose an intake.');
+    var total = 0;
+    $$('input[type=file]', form).forEach(function (inp) {
+      if (inp.closest('[hidden]')) return;
+      var p = fileProblem(inp); if (p) bad(wrapOf(inp), p);
+      [].forEach.call(inp.files, function (f) { total += f.size; });
+    });
+    if (total > MAX_TOTAL && !first) bad(wrapOf(form.elements.documents), 'Your PDF is ' + fmtSize(total) + '. Please keep it under 20 MB (you can send the rest later).');
+    if (val('note').length < 20) bad(wrapByName('note'), 'Please write at least 20 characters.');
+    if (!form.elements.consent.checked) bad(wrapByName('consent'), 'Please tick to confirm.');
+  }
+
+  if (first) {
+    first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    var f = first.querySelector('input:not([type=hidden]):not([disabled]), select, textarea');
+    if (f) setTimeout(function () { try { f.focus({ preventScroll: true }); } catch (e) {} }, 300);
+    return false;
+  }
+  return true;
+}
+
+/* ---------- collect ---------- */
+function makeRef() {
+  var d = new Date(), p = function (n) { return ('0' + n).slice(-2); };
+  var r = Math.random().toString(36).slice(2, 6).toUpperCase();
+  return 'LTA-' + String(d.getFullYear()).slice(2) + p(d.getMonth() + 1) + p(d.getDate()) + '-' + r;
+}
+function collect() {
+  var c = testCfg() || {};
+  var scores = {};
+  if (!c.none && !c.moi) $$('.ap-score', form).forEach(function (s) { scores[s.getAttribute('data-label')] = s.value.trim(); });
+  var hi = val('highest');
+  return {
+    ref: makeRef(),
+    submittedAt: new Date().toISOString(),
+    page: location.href.split('#')[0],
+    website: form.elements.website.value,
+    about: { fullName: val('fullName'), phone: val('phone'), email: val('email'), dob: val('dob'), nationality: val('nationality'), currentCountry: val('currentCountry'), applyingAs: val('applyingAs') },
+    education: {
+      qualifications: $$('.ap-qual', qbox).map(readQual).filter(function (q) { return !qualEmpty(q); }).map(function (q) {
+        return { name: q.name, year: q.year, group: q.group, resultType: q.resultType, result: qualResultText(q) };
+      }),
+      highest: hi, highestDetails: hi && hi !== 'None' ? { subject: val('hiSubject'), institution: val('hiInstitution'), year: val('hiYear'), result: val('hiResult') } : null
+    },
+    english: { test: val('englishTest') === 'Other (specify)' ? 'Other: ' + val('englishTestOther') : val('englishTest'), scores: scores, testDate: c.moi ? '' : [val('testMonth'), val('testYear')].join(' ').trim() },
+    employment: { worked: val('worked'), jobs: val('worked') === 'Yes' ? readJobs().map(function (j) {
+      return { title: j.title, employer: j.employer, from: j.fromMonth + ' ' + j.fromYear, to: j.current ? 'Present' : j.toMonth + ' ' + j.toYear };
+    }) : [] },
+    studyGap: val('studyGap'),
+    plan: { countries: $$('input[name=countries]:checked', form).map(function (b) { return b.value; }), subject: val('subject'), level: val('level'), intake: val('intake'), budget: val('budget') },
+    note: val('note'),
+    consent: true
+  };
+}
+function readFile(file, field, label) {
+  return new Promise(function (res, rej) {
+    var r = new FileReader();
+    r.onload = function () { res({ field: field, label: label, name: file.name, mimeType: file.type || 'application/octet-stream', size: file.size, data: String(r.result).split(',')[1] }); };
+    r.onerror = function () { rej(new Error('Could not read ' + file.name)); };
+    r.readAsDataURL(file);
+  });
+}
+function summaryText(d) {
+  var L = [];
+  L.push('*New student application* (' + d.ref + ')', '');
+  L.push('*About me*', 'Name: ' + d.about.fullName, 'WhatsApp/phone: ' + d.about.phone, 'Email: ' + d.about.email, 'Date of birth: ' + d.about.dob, 'Nationality: ' + d.about.nationality, 'Current country: ' + d.about.currentCountry, 'Applying as: ' + d.about.applyingAs, '');
+  L.push('*Education*');
+  d.education.qualifications.forEach(function (q) { L.push('- ' + q.name + ', ' + q.year + ', ' + q.group + ', ' + q.result); });
+  L.push('Highest after HSC: ' + d.education.highest + (d.education.highestDetails ? ' – ' + [d.education.highestDetails.subject, d.education.highestDetails.institution, d.education.highestDetails.year, d.education.highestDetails.result].filter(Boolean).join(', ') : ''), '');
+  var sc = Object.keys(d.english.scores).map(function (k) { return k + ' ' + d.english.scores[k]; }).join(', ');
+  L.push('*English*', d.english.test + (sc ? ' – ' + sc : '') + (d.english.testDate ? ' (' + d.english.testDate + ')' : ''), '');
+  L.push('*Work (last 5 years)*: ' + d.employment.worked);
+  d.employment.jobs.forEach(function (j) { L.push('- ' + j.title + ' at ' + j.employer + ', ' + j.from + ' – ' + j.to); });
+  if (d.studyGap) L.push('Study gap: ' + d.studyGap);
+  L.push('', '*Study plan*', 'Countries: ' + d.plan.countries.join(', '), 'Subject: ' + d.plan.subject, 'Level: ' + d.plan.level, 'Intake: ' + d.plan.intake);
+  if (d.plan.budget) L.push('Yearly budget: ' + d.plan.budget);
+  L.push('', '*Note*', d.note);
+  return L.join('\n');
+}
+function waLink(text) { return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text); }
+
+function finish(html) {
+  finished = true;
+  steps.forEach(function (s) { s.hidden = true; });
+  $('#ap-steps').hidden = true;
+  $('#ap-foot').hidden = true;
+  bar.style.width = '100%';
+  result.innerHTML = html;
+  result.hidden = false;
+  form.scrollTop = 0;
+  var b = result.querySelector('a, button'); if (b) b.focus({ preventScroll: true });
+}
+function showWhatsApp(d, reason) {
+  var hasFiles = $$('input[type=file]', form).some(function (i) { return i.files.length; });
+  finish('<div class="ap-done-ico is-warn"><i class="fab fa-whatsapp"></i></div>' +
+    '<h3>One last step: send it on WhatsApp</h3>' +
+    '<p>' + (reason ? esc(reason) + ' ' : '') + 'Tap the button below &mdash; WhatsApp opens with all your answers filled in. Just press send.</p>' +
+    '<div class="ap-ref">' + esc(d.ref) + '</div>' +
+    (hasFiles ? '<p style="font-size:13px">Please attach your documents PDF in the same WhatsApp chat.</p>' : '') +
+    '<div class="ap-done-actions"><a class="ap-btn ap-btn-green" target="_blank" rel="noopener" href="' + esc(waLink(summaryText(d))) + '"><i class="fab fa-whatsapp"></i> Send on WhatsApp</a>' +
+    '<button type="button" class="ap-btn ap-btn-ghost" data-ap-close>Close</button></div>');
+}
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  if (sending || finished) return;
+  for (var s = 0; s < steps.length; s++) { if (!validate(s)) { show(s); validate(s); return; } }
+  var d = collect();
+  if (!APPLY_ENDPOINT) { showWhatsApp(d); return; }
+
+  sending = true;
+  var nFiles = 0;
+  $$('input[type=file]', form).forEach(function (i) { if (!i.closest('[hidden]')) nFiles += i.files.length; });
+  btnSubmit.disabled = btnBack.disabled = true;
+  btnSubmit.innerHTML = '<span class="ap-spin"></span> ' + (nFiles ? 'Uploading ' + nFiles + ' file' + (nFiles > 1 ? 's' : '') + '…' : 'Sending…');
+
+  var jobs = [];
+  $$('input[type=file]', form).forEach(function (inp) {
+    if (inp.closest('[hidden]')) return;
+    [].forEach.call(inp.files, function (f) { jobs.push(readFile(f, inp.name, inp.getAttribute('data-label'))); });
+  });
+  Promise.all(jobs).then(function (files) {
+    d.files = files;
+    return fetch(APPLY_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(d), redirect: 'follow' });
+  }).then(function (r) { return r.json(); }).then(function (res) {
+    if (!res || !res.ok) throw new Error(res && res.error || 'Server error');
+        var msg = 'Hi, I have just submitted my student application. My reference is ' + d.ref + '.';
+    finish('<div class="ap-done-ico"><i class="fas fa-check"></i></div>' +
+      '<h3>Thank you, ' + esc(d.about.fullName) + '! Your application is in.</h3>' +
+      '<p>Our team will review your profile and contact you on WhatsApp or email, usually within 24 hours. Please keep your reference number:</p>' +
+      '<div class="ap-ref">' + esc(res.ref || d.ref) + '</div>' +
+      '<div class="ap-done-actions"><a class="ap-btn ap-btn-green" target="_blank" rel="noopener" href="' + esc(waLink(msg)) + '"><i class="fab fa-whatsapp"></i> Chat with us on WhatsApp</a>' +
+      '<button type="button" class="ap-btn ap-btn-ghost" data-ap-close>Close</button></div>');
+  }).catch(function (err) {
+    if (window.console) console.error('Application submit failed:', err);
+    showWhatsApp(d, 'We could not reach our server just now.');
+  }).then(function () {
+    sending = false;
+    btnSubmit.disabled = btnBack.disabled = false;
+    btnSubmit.innerHTML = '&#128640; Submit application';
+  });
+});
+
+show(0);
+})();
 </script>
 
 </body>
